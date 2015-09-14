@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="96R33OLJDi" />
+  
+  <title>w3c基础整理之ECMAScript（三） | 【JBlog】- 生命无Take two，更新需谨慎</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="##基本概念
+###对象ECMAScript中，把对象（object）定义为“属性的无序集合，每个属性存放一个原始值、对象或函数”。严格来说，这意味着对象是无特定顺序的值的数组。
+###类每个对象都由类定义，可以把类看做对象的配方。类不仅要定义对象的接口（interface）（开发者访问的属性和方法），还要定义对象的内部工作（使属性和方法发挥作用的代码）。编译器和解释程序都根据类的说明构建对象。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="w3c基础整理之ECMAScript（三）">
+<meta property="og:url" content="http://junozero.github.io/2014/12/30/w3c基础整理之ECMAScript（三）/index.html">
+<meta property="og:site_name" content="【JBlog】- 生命无Take two，更新需谨慎">
+<meta property="og:description" content="##基本概念
+###对象ECMAScript中，把对象（object）定义为“属性的无序集合，每个属性存放一个原始值、对象或函数”。严格来说，这意味着对象是无特定顺序的值的数组。
+###类每个对象都由类定义，可以把类看做对象的配方。类不仅要定义对象的接口（interface）（开发者访问的属性和方法），还要定义对象的内部工作（使属性和方法发挥作用的代码）。编译器和解释程序都根据类的说明构建对象。">
+<meta property="og:updated_time" content="2014-12-30T07:04:48.684Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="w3c基础整理之ECMAScript（三）">
+<meta name="twitter:description" content="##基本概念
+###对象ECMAScript中，把对象（object）定义为“属性的无序集合，每个属性存放一个原始值、对象或函数”。严格来说，这意味着对象是无特定顺序的值的数组。
+###类每个对象都由类定义，可以把类看做对象的配方。类不仅要定义对象的接口（interface）（开发者访问的属性和方法），还要定义对象的内部工作（使属性和方法发挥作用的代码）。编译器和解释程序都根据类的说明构建对象。">
+  
+    <link rel="alternative" href="/atom.xml" title="【JBlog】- 生命无Take two，更新需谨慎" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <!-- <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css"> -->
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+  <link rel="stylesheet" href="http://animator.ringotc.net/style/animator.min.css"/>
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner LightSpeedIn">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">【JBlog】- 生命无Take two，更新需谨慎</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">To be or not to be,this is a question</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/atom.xml">RSS</a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-w3c基础整理之ECMAScript（三）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/12/30/w3c基础整理之ECMAScript（三）/" class="article-date">
+  <time datetime="2014-12-30T01:36:00.000Z" itemprop="datePublished">12月 30 2014</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/w3c基础整理/">w3c基础整理</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      w3c基础整理之ECMAScript（三）
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##基本概念</p>
+<p>###对象<br>ECMAScript中，把对象（object）定义为“属性的无序集合，每个属性存放一个原始值、对象或函数”。严格来说，这意味着对象是无特定顺序的值的数组。</p>
+<p>###类<br>每个对象都由类定义，可以把类看做对象的配方。类不仅要定义对象的接口（interface）（开发者访问的属性和方法），还要定义对象的内部工作（使属性和方法发挥作用的代码）。编译器和解释程序都根据类的说明构建对象。</p>
+<p>###实例<br>程序使用类创建对象时，生成的对象叫作类的实例（instance）。对类生成的对象的个数的唯一限制来自于运行代码的机器的物理内存。每个实例的行为相同，但实例处理一组独立的数据。由类创建对象实例的过程叫做实例化（instantiation）。</p>
+<p>###面向对象语言的要求<br>一种面向对象语言需要向开发者提供四种基本能力：<br>1、封装 - 把相关的信息（无论数据或方法）存储在对象中的能力<br>2、聚集 - 把一个对象存储在另一个对象内的能力<br>3、继承 - 由另一个类（或多个类）得来类的属性和方法的能力<br>4、多态 - 编写能以多种方法运行的函数或方法的能力</p>
+<p>ECMAScript 支持这些要求，因此可被是看做面向对象的。<br><a id="more"></a></p>
+<p>###对象的组成<br>在 ECMAScript 中，对象由特性（attribute）构成，特性可以是原始值，也可以是引用值。如果特性存放的是函数，它将被看作对象的方法（method），否则该特性被看作对象的属性（property）。</p>
+<p>###早绑定和晚绑定<br>所谓绑定（binding），即把对象的接口与对象实例结合在一起的方法。<br><strong>早绑定（early binding）</strong>是指在实例化对象之前定义它的属性和方法，这样编译器或解释程序就能够提前转换机器代码。在 Java 和 Visual Basic 这样的语言中，有了早绑定，就可以在开发环境中使用 IntelliSense（即给开发者提供对象中属性和方法列表的功能）。ECMAScript 不是强类型语言，所以不支持早绑定。</p>
+<p><strong>晚绑定（late binding）</strong>指的是编译器或解释程序在运行前，不知道对象的类型。使用晚绑定，无需检查对象的类型，只需检查对象是否支持属性和方法即可。<strong>ECMAScript 中的所有变量都采用晚绑定方法</strong>。这样就允许执行大量的对象操作，而无任何惩罚。</p>
+<hr>
+<p>##对象的类型<br>在 ECMAScript 中，所有对象并非同等创建的。</p>
+<p>一般来说，可以创建并使用的对象有三种：本地对象、内置对象和宿主对象。</p>
+<p>###本地对象<br>ECMA-262 把本地对象（native object）定义为“独立于宿主环境的 ECMAScript 实现提供的对象”。简单来说，本地对象就是 ECMA-262 定义的类（引用类型）。它们包括：<br>1、Object<br>2、Function<br>3、Array<br>4、String<br>5、Boolean<br>6、Number<br>7、Date<br>8、RegExp<br>9、Error<br>10、EvalError<br>11、RangeError<br>12、ReferenceError<br>13、SyntaxError<br>14、TypeError<br>15、URIError</p>
+<p>###内置对象<br>ECMA-262 把内置对象（built-in object）定义为“由 ECMAScript 实现提供的、独立于宿主环境的所有对象，在 ECMAScript 程序开始执行时出现”。这意味着开发者不必明确实例化内置对象，它已被实例化了。ECMA-262 只定义了两个内置对象，即 Global 和 Math （它们也是本地对象，根据定义，每个内置对象都是本地对象）。</p>
+<p>###宿主对象<br>所有非本地对象都是宿主对象（host object），即由 ECMAScript 实现的宿主环境提供的对象。</p>
+<p>所有 BOM 和 DOM 对象都是宿主对象。</p>
+<hr>
+<p>##如何创建对象</p>
+<p>对象的创建方式是用关键字 new 后面跟上实例化的类的名字：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var o = new Object();</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>##关键字new<br>new是一个关键字，用于创建一个对象。</p>
+<p>带有new执行的函数，返回的是一个对象，不带new的函数，只是一个普通的函数，返回值是根据函数的return而定义。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function Car() &#123;&#125;&#10;var c = Car();&#10;var c1 = new Car();&#10;&#10;alert(c);&#9;&#9;&#9;// undefined&#10;alert(c1);&#9;&#9;&#9;// Object</span><br></pre></td></tr></table></figure></p>
+<p>可以看到，c变量只是引用了Car函数的执行，Car函数并没有返回任何值，所以c为undefined。而c1变量引用了new运算符所构造的Car对象，所以c1为Object。</p>
+<hr>
+<p>##静态类</p>
+<p>###静态作用域<br>静态作用域定义的属性和方法任何时候都能从同一位置访问。在 Java 中，类可具有属性和方法，无需实例化该类的对象，即可访问这些属性和方法，例如 java.net.URLEncoder 类，它的函数 encode() 就是静态方法。</p>
+<p>###ECMAScript 没有静态作用域<br>严格来说，ECMAScript 并没有静态作用域。</p>
+<p>###利用全局变量实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var CarFactory = &#123;&#10;&#9;createCar: function() &#123;&#125;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>通过这种方式可以实现在任意代码的位置调用 CarFactory.createCar方法，那么可以看成，CarFactory是一个静态工厂类，而createCar就是函数对应的静态方法。</p>
+<p>以上的实际方式等同于以下的代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var CarFactory = new Object();&#10;CarFactory.createCar = function() &#123;&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>这样就可以很清晰的看到，其实已经实例化了该类，只不过在赋值的时候就初始化了。这样的方式可以很方便的定义一些全局公共使用的对象，单也提供了开放性的接口，所有开发者都可以直接修改这个对象里面的内容，使代码存在不稳定以及安全隐患，建议尽可能避免这样使用。</p>
+<hr>
+<p>##工厂模式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function createCar(color) &#123;&#10;&#9;var o = new Object();&#10;&#9;o.color = color;&#10;&#9;o.door = 4;&#10;&#10;&#9;o.showColor = function() &#123;&#10;&#9;&#9;alert(this.color);&#10;&#9;&#125;;&#10;&#10;&#9;return o;&#10;&#125;&#10;&#10;var car1 = createCar(&#39;red&#39;);&#10;var car2 = createCar(&#39;blue&#39;);&#10;&#10;alert(car1.showColor());&#9;&#9;// red&#10;alert(car2.showColor());&#9;&#9;// blue</span><br></pre></td></tr></table></figure></p>
+<p>函数createCar是一个工厂，工厂内部生成Car的对象并返回。</p>
+<hr>
+<p>##构造函数模式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function Car(color) &#123;&#10;&#9;this.color = color;&#10;&#9;this.door = 4;&#10;&#10;&#9;this.showColor = function() &#123;&#10;&#9;&#9;alert(this.color);&#10;&#9;&#125;;&#10;&#125;&#10;&#10;var car1 = new Car(&#39;red&#39;);&#10;var car2 = new Car(&#39;blue&#39;);&#10;&#10;alert(car1.showColor());&#9;&#9;// red&#10;alert(car2.showColor());&#9;&#9;// blue</span><br></pre></td></tr></table></figure></p>
+<p>注意，构造函数模式必须使用new关键字，虽然Car函数中没有return，但new的函数后，默认返回的就是Car对应的this对象。</p>
+<hr>
+<p>##关键字this<br>关键字 this 总是指向调用该方法的对象（当前的作用域）。</p>
+<p>上述代码能正确显示red和blue，就是因为this关键字的“功劳”。</p>
+<hr>
+<p>##*Prototype<br>Prototype（原形），是ECMAScript中的一个重要学科，它是对象中的一个成员变量，默认对象的prototype对象就是Object。</p>
+<p>我们再来看一下上面的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function Car(color) &#123;&#10;&#9;this.color = color;&#10;&#9;this.door = 4;&#10;&#10;&#9;this.showColor = function() &#123;&#10;&#9;&#9;alert(this.color);&#10;&#9;&#125;;&#10;&#125;&#10;&#10;var car1 = new Car(&#39;red&#39;);&#10;var car2 = new Car(&#39;blue&#39;);&#10;&#10;alert(car1.showColor());&#9;&#9;// red&#10;alert(car2.showColor());&#9;&#9;// blue</span><br></pre></td></tr></table></figure></p>
+<p>每一次调用new Car，实际上都会开辟一块内存空间来存储属性color和door，还有方法showColor，对于Car来说，color是变化的，而door和showColor是固定的，如果每一个new Car都生成这些固定的变量和方法，将会大大的消耗内存，那么ECMAScript如何解决这样的问题呢？</p>
+<p>答案就是通过prototype，先看以下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function Car(color) &#123;&#10;&#9;this.color = color;&#10;&#125;&#10;&#10;Car.prototype.door = 4;&#10;Car.prototype.showColor = function() &#123;&#10;&#9;alert(this.color);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>prototype对于Car函数只会初始化一次，无论new Car多少次，它也只有会初始化一次，那么将会大大的降低了内存的消耗。</p>
+<p>prototype另外的一个关键就是原型链，通过强大的原型链实现继承，结合作用域链实现强大的功能。关于原型链将会在下面继承中整理。</p>
+<hr>
+<p>##类的继承<br>要用 ECMAScript 实现继承机制，您可以从要继承的基类入手。所有开发者定义的类都可作为基类。出于安全原因，本地类和宿主类不能作为基类，这样可以防止公用访问编译过的浏览器级的代码，因为这些代码可以被用于恶意攻击。</p>
+<p>ECMAScript 实现继承的方式不止一种。这是因为 JavaScript 中的继承机制并不是明确规定的，而是通过模仿实现的。这意味着所有的继承细节并非完全由解释程序处理。</p>
+<hr>
+<p>###对象冒充（经典的继承方法，但已过时）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function ClassA(color) &#123;&#10;&#9;this.color = color;&#10;&#9;this.showColor = function() &#123;&#10;&#9;&#9;alert(this.color);&#10;&#9;&#125;;&#10;&#125;&#10;&#10;function ClassB(color, name) &#123;&#10;&#9;//&#20851;&#38190;&#20195;&#30721;&#24320;&#22987;&#10;&#9;//&#25226;ClassA&#30340;&#20989;&#25968;&#25351;&#21521;&#26412;&#22320;&#30340;&#19968;&#20010;newMethod&#21464;&#37327;&#12290;&#10;&#9;this.newMethod = ClassA;&#10;&#10;&#9;//&#25191;&#34892;&#26412;&#22320;newMethod&#20989;&#25968;&#65292;&#20256;&#36882;color&#21442;&#25968;&#12290;&#10;&#9;//&#25191;&#34892;&#23436;&#25104;&#21518;&#65292;this&#20013;&#22810;&#20986;ClassA&#20013;&#23450;&#20041;&#30340;color&#23646;&#24615;&#21644;showColor&#26041;&#27861;&#12290;&#10;&#9;this.newMethod(color);&#10;&#9;&#10;&#9;//&#25191;&#34892;&#23436;&#25104;&#21518;&#65292;&#21024;&#38500;&#24341;&#29992;newMethod&#12290;&#10;&#9;delete this.newMethod;&#10;&#9;//&#20851;&#38190;&#20195;&#30721;&#32467;&#26463;&#10;&#9;&#10;&#9;this.name = name;&#10;&#9;this.showName = function() &#123;&#10;&#9;&#9;alert(this.name);&#10;&#9;&#125;&#10;&#125;&#10;&#10;&#10;var ca = new ClassA(&#39;red&#39;);&#10;var cb = new ClassB(&#39;blue&#39;, &#39;yjj&#39;);&#10;&#10;ca.showColor();&#9;&#9;&#9;&#9;// red&#10;cb.showColor();&#9;&#9;&#9;&#9;// blue&#10;cb.showName();&#9;&#9;&#9;&#9;// yjj</span><br></pre></td></tr></table></figure></p>
+<p>上述代码，ClassA作为基类，ClassB通过“对象冒充”继承基类ClassA，使ClassB类生成的对象带有ClassA的属性和方法。</p>
+<p><strong>由于这种继承方法的流行，ECMAScript 的第三版为 Function 对象加入了两个方法，即 call() 和 apply()。</strong></p>
+<hr>
+<p>###call<br>call() 方法是与经典的对象冒充方法最相似的方法。它的第一个参数用作 this 的对象。其他参数都直接传递给函数自身。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function ClassA(color) &#123;&#10;&#9;this.color = color;&#10;&#9;this.showColor = function() &#123;&#10;&#9;&#9;alert(this.color);&#10;&#9;&#125;;&#10;&#125;&#10;&#10;function ClassB(color, name) &#123;&#10;&#9;//this.newMethod = ClassA;&#10;&#9;//this.newMethod(color);&#10;&#9;//delete this.newMethod;&#10;&#9;ClassA.call(this, color);&#10;&#9;&#10;&#9;this.name = name;&#10;&#9;this.showName = function() &#123;&#10;&#9;&#9;alert(this.name);&#10;&#9;&#125;&#10;&#125;&#10;&#10;&#10;var ca = new ClassA(&#39;red&#39;);&#10;var cb = new ClassB(&#39;blue&#39;, &#39;yjj&#39;);&#10;&#10;ca.showColor();&#9;&#9;&#9;&#9;// red&#10;cb.showColor();&#9;&#9;&#9;&#9;// blue&#10;cb.showName();&#9;&#9;&#9;&#9;// yjj</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>###apply<br>apply与call方法基本相同，但第二个参数传递的是数组。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function ClassA(color) &#123;&#10;&#9;this.color = color;&#10;&#9;this.showColor = function() &#123;&#10;&#9;&#9;alert(this.color);&#10;&#9;&#125;;&#10;&#125;&#10;&#10;function ClassB(color, name) &#123;&#10;&#9;ClassA.apply(this, [color]);&#10;&#9;// or&#10;&#9;// ClassA.apply(this, arguments);&#10;&#9;&#10;&#9;this.name = name;&#10;&#9;this.showName = function() &#123;&#10;&#9;&#9;alert(this.name);&#10;&#9;&#125;&#10;&#125;&#10;&#10;&#10;var ca = new ClassA(&#39;red&#39;);&#10;var cb = new ClassB(&#39;blue&#39;, &#39;yjj&#39;);&#10;&#10;ca.showColor();&#9;&#9;&#9;&#9;// red&#10;cb.showColor();&#9;&#9;&#9;&#9;// blue&#10;cb.showName();&#9;&#9;&#9;&#9;// yjj</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>###apply的小技巧<br>通过apply的第二个参数是一个数组的特性，我们可以利用此特性完成一些小功能。<br>如找出一个数组中最小的数字，Math的min方法通过传递0……n个参数，从中找出最小的数字，但不支持数组的参数，这样子很不方便，但我们可以利用apply来这样子实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arr = [3, 1, 5, 99];&#10;Math.min.apply(null, arr);&#9;&#9;// 1</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>###原型链继承<br>假设，上述代码中，ClassA的showColor方法属于固定的，那么根据代码优化原则，应该定义到prototype中，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function ClassA(color) &#123;&#10;&#9;this.color = color;&#10;&#125;&#10;&#10;ClassA.prototype.showColor = function() &#123;&#10;&#9;alert(this.color);&#10;&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>那么<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function ClassB(color, name) &#123;&#10;&#9;ClassA.call(this, [color]);&#10;&#9;&#10;&#9;this.name = name;&#10;&#9;this.showName = function() &#123;&#10;&#9;&#9;alert(this.name);&#10;&#9;&#125;&#10;&#125;&#10;&#10;&#10;var ca = new ClassA(&#39;red&#39;);&#10;var cb = new ClassB(&#39;blue&#39;, &#39;yjj&#39;);&#10;&#10;ca.showColor();&#9;&#9;&#9;&#9;// red&#10;cb.showColor();&#9;&#9;&#9;&#9;// error&#65292;showColor&#26041;&#27861;&#26410;&#23450;&#20041;&#65292;&#19979;&#38754;&#20195;&#30721;&#19981;&#25191;&#34892;&#12290;&#10;cb.showName();&#9;&#9;&#9;&#9;//</span><br></pre></td></tr></table></figure></p>
+<p>为什么报错，这是因为无论对象冒充、还是call或者apply，都只是针对本作用域，而不会继承prototype的原型链，所以导致没有找到ClassA原形里面的showColor方法，我们可以通过原型链进行解决。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function ClassA(color) &#123;&#10;&#9;this.color = color;&#10;&#125;&#10;&#10;ClassA.prototype.showColor = function() &#123;&#10;&#9;alert(this.color);&#10;&#125;;&#10;&#10;function ClassB(color, name) &#123;&#10;&#9;ClassA.call(this, [color]);&#10;&#9;&#10;&#9;this.name = name;&#10;&#9;this.showName = function() &#123;&#10;&#9;&#9;alert(this.name);&#10;&#9;&#125;&#10;&#125;&#10;&#10;//&#35774;&#32622;&#21407;&#22411;&#20026;ClassA&#23545;&#35937;&#65292;&#20351;ClassB&#31867;&#20855;&#26377;ClassA&#21450;&#20854;&#21407;&#22411;&#38142;&#19978;&#30340;&#25152;&#26377;&#23646;&#24615;&#21644;&#26041;&#27861;&#12290;&#10;ClassB.prototype = new ClassA();&#10;&#10;var ca = new ClassA(&#39;red&#39;);&#10;var cb = new ClassB(&#39;blue&#39;, &#39;yjj&#39;);&#10;&#10;ca.showColor();&#9;&#9;&#9;&#9;// red&#10;cb.showColor();&#9;&#9;&#9;&#9;// blue&#10;cb.showName();&#9;&#9;&#9;&#9;// yjj</span><br></pre></td></tr></table></figure></p>
+<p>通过这种混合的处理方式，就可以轻松在ECMAScript中实现继承。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+	  
+		<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+		<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"32"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+	  
+	  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ECMA-262/">ECMA-262</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ECMAScript/">ECMAScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/教程/">教程</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/12/30/前端奇奇怪怪的面试题集合一/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          前端奇奇怪怪的面试题集合一
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/12/29/w3c基础整理之ECMAScript（二）/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">w3c基础整理之ECMAScript（二）</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-w3c基础整理之ECMAScript（三）" data-title="w3c基础整理之ECMAScript（三）" data-url="http://junozero.github.io/2014/12/30/w3c基础整理之ECMAScript（三）/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'junozero'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap" style="margin-top: 80px;">
+<h3 class="widget-title"></h3>
+<script type="text/javascript">document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E%3Cscript charset="utf-8" src="http://rp.baidu.com/rp3w/3w.js?sid=1517466735662991446') + '&t=' + (Math.ceil(new Date()/3600000)) + unescape('"%3E%3C/script%3E'));</script>
+</div>
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分　类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/w3c基础整理/">w3c基础整理</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/yeoman/">yeoman</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端面试题/">前端面试题</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随心/">随心</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标　签</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ECMA-262/" style="font-size: 14.29px;">ECMA-262</a> <a href="/tags/ECMAScript/" style="font-size: 14.29px;">ECMAScript</a> <a href="/tags/css/" style="font-size: 18.57px;">css</a> <a href="/tags/css-hack/" style="font-size: 11.43px;">css hack</a> <a href="/tags/div/" style="font-size: 10px;">div</a> <a href="/tags/html/" style="font-size: 15.71px;">html</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/javascript/" style="font-size: 17.14px;">javascript</a> <a href="/tags/w3c/" style="font-size: 10px;">w3c</a> <a href="/tags/xhtml/" style="font-size: 12.86px;">xhtml</a> <a href="/tags/yeoman/" style="font-size: 10px;">yeoman</a> <a href="/tags/学习/" style="font-size: 20px;">学习</a> <a href="/tags/效率/" style="font-size: 11.43px;">效率</a> <a href="/tags/教程/" style="font-size: 20px;">教程</a> <a href="/tags/随心/" style="font-size: 10px;">随心</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最　新</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2014/12/30/前端奇奇怪怪的面试题集合一/">前端奇奇怪怪的面试题集合一</a>
+          </li>
+        
+          <li>
+            <a href="/2014/12/30/w3c基础整理之ECMAScript（三）/">w3c基础整理之ECMAScript（三）</a>
+          </li>
+        
+          <li>
+            <a href="/2014/12/29/w3c基础整理之ECMAScript（二）/">w3c基础整理之ECMAScript（二）</a>
+          </li>
+        
+          <li>
+            <a href="/2014/12/26/w3c基础整理之ECMAScript（一）/">w3c基础整理之ECMAScript（一）</a>
+          </li>
+        
+          <li>
+            <a href="/2014/12/24/w3c基础整理之javascript/">w3c基础整理之javascript</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=1&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=1974917765&verifier=b3036f78&dpc=1"></iframe>
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 JuNoZero<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+	
+  <script type="text/javascript">
+	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Feaf367df663ef6379476299331002ff8' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/atom.xml" class="mobile-nav-link">RSS</a>
+  
+</nav>
+    
+
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> -->
+<script src="http://cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+  
+  <a href="https://github.com/junozero"><img style="position: absolute; top: 0; left: 0; border: 0; z-index: 1;" src="https://camo.githubusercontent.com/c6286ade715e9bea433b4705870de482a654f78a/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_white_ffffff.png"></a>
+</body>
+</html>

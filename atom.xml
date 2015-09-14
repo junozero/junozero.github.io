@@ -1,0 +1,1009 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[【JBlog】- 生命无Take two，更新需谨慎]]></title>
+  <subtitle><![CDATA[To be or not to be,this is a question]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://junozero.github.io/"/>
+  <updated>2014-12-31T02:38:05.006Z</updated>
+  <id>http://junozero.github.io/</id>
+  
+  <author>
+    <name><![CDATA[JuNoZero]]></name>
+    <email><![CDATA[junozero@163.com]]></email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[前端奇奇怪怪的面试题集合一]]></title>
+    <link href="http://junozero.github.io/2014/12/30/%E5%89%8D%E7%AB%AF%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86%E5%90%88%E4%B8%80/"/>
+    <id>http://junozero.github.io/2014/12/30/前端奇奇怪怪的面试题集合一/</id>
+    <published>2014-12-30T09:15:00.000Z</published>
+    <updated>2014-12-31T02:38:05.006Z</updated>
+    <content type="html"><![CDATA[<p>收集奇奇怪怪的面试题（当然不止面试题），是想通过题目去让大家思考、去运用所学习、所理解的知识，在合适的场景使用，更深刻的理解一些基础的知识，更实际的运用一些新的技术。这里的题目与答案是分开的，所期望的就是，把题目做完了，再去对比解答，看自己思考的是否正确。</p>
+<p><strong>注意：以下题目收集于网络和个人日常工作，答案以及解答属于个人见解，并不确保完全正确，如发现问题，请及时指出，大家一同讨论，共同进步。</strong></p>
+<hr>
+<p>##题目一<br>实现一个遍历数组或对象里所有成员的迭代器，代码只能在答题区域内，并且不能使用全局变量。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var each = function(obj, fn)&#123;&#10;&#9;//+++++++++++&#31572;&#39064;&#21306;&#22495;+++++++++++&#10;&#9;    &#10;&#10;&#10;&#10;&#9;//+++++++++++&#31572;&#39064;&#32467;&#26463;+++++++++++&#10;&#125;;&#10;&#10;try&#123;&#10;&#9;var data1 = [4,5,6,7,8,9,10,11,12];&#10;&#9;var data2 = &#123;&#10;&#9;&#9;&#34;a&#34;: 4,&#10;&#9;&#9;&#34;b&#34;: 5,&#10;&#9;&#9;&#34;c&#34;: 6&#10;&#9;&#125;;&#10;&#9;&#10;&#9;each(data1, function(o)&#123;&#10;&#9;&#9;if( 6 == this )&#10;&#9;&#9;&#9;return true;&#10;&#9;&#9;else if( 8 == this )&#10;&#9;&#9;&#9;return false;&#10;&#9;&#9;console.log(o + &#34;: \&#34;&#34; + this + &#34;\&#34;&#34;);&#10;&#9;&#125;);&#10;&#9;&#10;&#9;/*------[&#25191;&#34892;&#32467;&#26524;]------&#10;&#9;&#10;&#9;1: &#34;4&#34;&#10;&#9;2: &#34;5&#34;&#10;&#9;4: &#34;7&#34;&#10;&#9;&#10;&#9;------------------*/&#10;&#9;&#10;&#9;each(data2, function(v, n)&#123;&#10;&#9;&#9;if( 5 == this )&#10;&#9;&#9;&#9;return true;&#10;&#9;&#9;console.log(n + &#34;: \&#34;&#34; + v + &#34;\&#34;&#34;);&#10;&#9;&#125;);&#10;&#9;&#10;&#9;/*------[&#25191;&#34892;&#32467;&#26524;]------&#10;&#9;&#10;&#9;a: &#34;4&#34;&#10;&#9;c: &#34;6&#34;&#10;&#9;&#10;&#9;------------------*/&#10;&#125;catch(e)&#123;&#10;&#9;console.error(&#34;&#25191;&#34892;&#20986;&#38169;&#65292;&#38169;&#35823;&#20449;&#24687;: &#34; + e);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p><a href="#题目一答案">参考答案</a><br><a id="more"></a></p>
+<hr>
+<p>##题目二<br>在仅编写css3的情况下，在原有的html的框架下，实现以下效果。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;div class=&#34;box&#34;&#62;&#10;  &#60;div class=&#34;item&#34;&#62;01&#60;/div&#62;&#10;  &#60;div class=&#34;item&#34;&#62;02&#60;/div&#62;&#10;  &#60;div class=&#34;item&#34;&#62;03&#60;/div&#62;&#10;&#60;/div&#62;</span><br></pre></td></tr></table></figure></p>
+<p>box宽度为100%，01宽度固定200px，02和03各占剩余的50%。</p>
+<p><iframe src="http://codepen.io/junozero/full/XJjwOX/" width="100%" height="200px" frameborder="0" scrolling="no"> </iframe><br><a href="#题目二答案">参考答案</a></p>
+<hr>
+<p>##题目三<br>JavaScript方面小贤是一条可爱的小狗(Dog)，它的叫声很好听(wow)，每次看到主人的时候就会乖乖叫一声(yelp)。从这段描述可以得到以下对象：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function Dog() &#123;&#10;&#9;this.wow = function() &#123;&#10;&#9;&#9;alert(&#39;Wow&#39;);&#10;&#9;&#125;&#10;&#9;this.yelp = function() &#123;&#10;&#9;&#9;this.wow();&#10;&#9;&#125;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>小芒和小贤一样，原来也是一条可爱的小狗，可是突然有一天疯了(MadDog)，一看到人就会每隔半秒叫一声(wow)地不停叫唤(yelp)。请根据描述，按示例的形式用代码来实现。<br><a href="#题目三答案">参考答案</a></p>
+<hr>
+<p>##题目四<br>请回答以下代码执行的输出结果。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123; x: 1 &#125;;&#10;var b = a;&#10;a.x = 2;&#10;alert(b.x);       // &#31572;&#39064;&#65306;b.x&#31561;&#20110;&#22810;&#23569;&#10;a = &#123; x: 3 &#125;;&#10;alert(b.x);       // &#31572;&#39064;&#65306;b.x&#31561;&#20110;&#22810;&#23569;&#10;a.x = 4;&#10;alert(b.x);       // &#31572;&#39064;&#65306;b.x&#31561;&#20110;&#22810;&#23569;</span><br></pre></td></tr></table></figure></p>
+<p><a href="#题目四答案">参考答案</a></p>
+<hr>
+<p>##题目五<br>假设，BigMemory类初始化后需要占用100M内存，请解答以下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var a = new BigMemory();&#10;var b = new BigMemory();&#10;var c = new BigMemory();&#10;&#10;var d = a;&#10;var e = b;&#10;var f = c;&#10;&#10;a = null;&#10;b = null;&#10;d = null;&#10;&#10;//&#20551;&#35774;&#24050;&#25191;&#34892;&#22403;&#22334;&#22238;&#25910;&#12290;&#10;&#10;//&#31572;&#65306;&#35831;&#38382;&#29616;&#22312;&#21344;&#29992;&#20102;&#22810;&#23569;&#20869;&#23384;&#12290;</span><br></pre></td></tr></table></figure></p>
+<p><a href="#题目五答案">参考答案</a></p>
+<hr>
+<p>##题目一答案<br>先贴代码。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function each(obj, fn) &#123;&#10;  //&#36890;&#36807;for&#36941;&#21382;&#23545;&#35937;&#65292;&#25903;&#25345;&#23545;&#25968;&#32452;&#21644;&#23545;&#35937;&#30340;&#36941;&#21382;&#65292;&#36820;&#22238;&#23545;&#24212;&#30340;key&#10;  for(var key in obj) &#123;&#10;    //&#21028;&#26029;fn&#26159;&#21542;&#26377;&#20256;&#36882;&#65292;&#22914;&#26524;&#27809;&#26377;&#20256;&#36882;&#35813;&#21442;&#25968;&#19981;&#22788;&#29702;&#65292;&#36991;&#20813;&#20195;&#30721;&#25191;&#34892;&#24322;&#24120;&#10;    if(fn) &#123;&#10;      //&#24403;fun&#38656;&#35201;&#20256;&#36882;&#30340;&#21442;&#25968;&#20026;1&#26102;&#10;      if(fn.length == 1) &#123;&#10;        //&#36890;&#36807;call&#26041;&#27861;&#65292;&#25226;fn&#20989;&#25968;&#25191;&#34892;&#30340;&#20316;&#29992;&#22495;&#25913;&#20026;obj[key]&#65292;&#26082;&#20989;&#25968;&#20869;&#37096;this&#25351;&#21521;&#23545;&#24212;&#30340;&#20540;&#10;        //&#26681;&#25454;&#39064;&#30446;&#35201;&#27714;&#65292;&#20256;&#36882;&#30340;&#21442;&#25968;&#20026;&#23545;&#24212;&#25968;&#32452;&#30340;&#19979;&#26631;+1&#10;        //&#24403;&#20989;&#25968;&#36820;&#22238;false&#26102;&#65292;&#36339;&#20986;&#25972;&#20010;for&#24490;&#29615;&#10;        if(fn.call(obj[key], parseInt(key)+1) === false) &#123;&#10;          break;&#10;        &#125;&#10;      //&#24403;fun&#38656;&#35201;&#20256;&#36882;&#30340;&#21442;&#25968;&#20026;2&#26102;&#10;      &#125; else if(fn.length == 2) &#123;&#10;        //&#26681;&#25454;&#39064;&#30446;&#35201;&#27714;&#65292;&#31532;&#19968;&#20010;&#20256;&#36882;&#30340;&#21442;&#25968;&#20026;&#23545;&#24212;&#30340;value&#65292;&#31532;&#20108;&#20010;&#20256;&#36882;&#30340;&#21442;&#25968;&#20026;&#23545;&#24212;&#30340;key&#10;        fn.call(obj[key], obj[key], key)&#10;      &#125;&#10;    &#125;&#10;  &#125;&#10;&#125;&#10;&#10;var data1 = [4,5,6,7,8,9,10,11,12];&#10;var data2 = &#123;&#10;  &#34;a&#34;: 4,&#10;  &#34;b&#34;: 5,&#10;  &#34;c&#34;: 6&#10;&#125;;&#10;&#10;each(data1, function(o)&#123;&#10;  if( 6 == this )&#10;    return true;&#10;  else if( 8 == this )&#10;    return false;&#10;  console.log(o + &#34;: \&#34;&#34; + this + &#34;\&#34;&#34;);&#10;&#125;);&#10;/*------[&#25191;&#34892;&#32467;&#26524;]------&#10;&#10;1: &#34;4&#34;&#10;2: &#34;5&#34;&#10;4: &#34;7&#34;&#10;&#10;------------------*/&#10;&#10;&#10;each(data2, function(v, n)&#123;&#10;&#9;if( 5 == this )&#10;&#9;&#9;return true;&#10;&#9;console.log(n + &#34;: \&#34;&#34; + v + &#34;\&#34;&#34;);&#10;&#125;);&#10;/*------[&#25191;&#34892;&#32467;&#26524;]------&#10;&#10;a: &#34;4&#34;&#10;c: &#34;6&#34;&#10;&#10;------------------*/</span><br></pre></td></tr></table></figure></p>
+<p>这题考的是重点是作用域理解和参数传递的个数的伪多态处理。首先，通过call方法执行fn函数，把作用域修改为对应的数值，既fn的this等于对应的obj[key]；其次，通过fn.length判断函数参数的个数来进行伪多态进行不同的处理；最后通过“===”进行强制类型判断正确识别return的返回值false和undefined。</p>
+<hr>
+<p>##题目二答案<br>这题考的是css3里面的新属性display: box，既可伸缩盒子。先上css代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;&#10;  background-color: black;&#10;  display: -webkit-box;&#10;  display: -moz-box;&#10;  display: -ms-flexbox;&#10;  display: box;&#10;  padding: 10px;&#10;&#125;&#10;&#10;.item &#123;&#10;  height: 80px;&#10;  margin: 10px;&#10;&#125;&#10;&#10;.item:nth-child(1) &#123;&#10;  width: 200px;&#10;  background-color: green;&#10;&#125;&#10;&#10;.item:nth-child(2) &#123;&#10;  background-color: red;&#10;  -webkit-box-flex: 5;&#10;  -moz-box-flex: 5;&#10;  -ms-flex: 5;&#10;  box-flex: 5;&#10;&#125;&#10;&#10;.item:nth-child(3) &#123;&#10;  background-color: yellow;&#10;  -webkit-box-flex: 5;&#10;  -moz-box-flex: 5;&#10;  -ms-flex: 5;&#10;  box-flex: 5;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>首先，可以看到display: box，可惜的是，目前firefox、chrome、ie11等浏览器都有自己的规范，并未统一使用规范，所以实现的代码啰嗦了点。<br>1、设置box属性display: box，这样子下级的元素会变为内联元素。<br>2、通过css3的新选择器:nth-child(n)，选择出对应的元素并赋予css属性。<br>3、box-flex设置可伸缩的百分比，如果同级元素有固定宽度的，那么上级宽度减去固定宽度后再计算百分比。</p>
+<hr>
+<p>##题目三答案<br>题目三主要考的是继承，原型链还有作用域的应用，答案可以有多个，这里选取两个较为典型的。<br>解答一：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function Dog() &#123;&#10;&#9;this.wow = function() &#123;&#10;&#9;&#9;alert(&#39;Wow&#39;);&#10;&#9;&#125;&#10;&#9;this.yelp = function() &#123;&#10;&#9;&#9;this.wow();&#10;&#9;&#125;&#10;&#125;&#10;&#10;function MadDog() &#123;&#10;  //&#36890;&#36807;&#23545;&#35937;&#20882;&#20805;&#65292;&#25226;Dog&#31867;&#30340;&#23646;&#24615;&#21644;&#26041;&#27861;&#32487;&#25215;&#21040;&#26412;&#31867;&#30340;&#20316;&#29992;&#22495;&#20013;&#12290;&#10;  Dog.call(this);&#10;  &#10;  this.yelp = function() &#123;&#10;    var that = this;&#10;    this.wow();&#10;    setInterval(function() &#123;&#10;      that.wow();&#10;    &#125;, 500);&#10;  &#125;&#10;&#125;&#10;&#10;//&#21021;&#22987;&#21270;&#23567;&#36132;&#12290;&#10;var dog = new Dog();&#10;//&#30475;&#35265;&#20154;&#21518;&#65292;&#24456;&#20054;&#24039;&#30340;&#21483;&#19968;&#22768;&#12290;&#10;dog.yelp();&#10;&#10;//&#21021;&#22987;&#21270;&#30127;&#29399;&#23567;&#33426;&#10;var madDog = new MadDog();&#10;//&#30475;&#35265;&#20154;&#21518;&#24320;&#22987;&#27599;&#20010;&#21322;&#31186;&#30340;&#29378;&#21483;&#12290;&#10;madDog.yelp();</span><br></pre></td></tr></table></figure></p>
+<p>这种解答方法，采用function对象自带的call方法（可以采用apply代替），实现对象冒充，把Dog类的属性初始化到this属性中，既把dog的方法和属性继承到MarkDog的作用域中，使MarkDog具有Dog的基本属性和方法。然后在重写MarkDog的方法，调用setInterval计时器方法，每半秒调用一次叫，这里需要主要一个问题就是作用域，setInterval执行所调用的方法是一个闭包，且作用域已经改为window，既this=window，如果直接编写this.wow()方法会报错，所以这里在执行前把this赋值到that，并在闭包中调用，引用了闭包的其中一项特性，常驻内存。</p>
+<p>解答二：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function Dog() &#123;&#10;&#9;this.wow = function() &#123;&#10;&#9;&#9;alert(&#39;Wow&#39;);&#10;&#9;&#125;&#10;&#9;this.yelp = function() &#123;&#10;&#9;&#9;this.wow();&#10;&#9;&#125;&#10;&#125;&#10;&#10;function MadDog() &#123;&#10;  this.yelp = function() &#123;&#10;    var that = this;&#10;    this.wow();&#10;    setInterval(function() &#123;&#10;      that.wow();&#10;    &#125;, 500);&#10;  &#125;&#10;&#125;&#10;&#10;//&#25226;Dog&#23545;&#35937;&#36171;&#20540;&#21040;MadDog&#30340;&#21407;&#22411;&#20013;&#23454;&#29616;&#32487;&#25215;&#12290;&#10;MadDog.prototype = new Dog();&#10;&#10;//&#21021;&#22987;&#21270;&#23567;&#36132;&#12290;&#10;var dog = new Dog();&#10;//&#30475;&#35265;&#20154;&#21518;&#65292;&#24456;&#20054;&#24039;&#30340;&#21483;&#19968;&#22768;&#12290;&#10;dog.yelp();&#10;&#10;//&#21021;&#22987;&#21270;&#30127;&#29399;&#23567;&#33426;&#10;var madDog = new MadDog();&#10;//&#30475;&#35265;&#20154;&#21518;&#24320;&#22987;&#27599;&#20010;&#21322;&#31186;&#30340;&#29378;&#21483;&#12290;&#10;madDog.yelp();</span><br></pre></td></tr></table></figure></p>
+<p>解答二方法与解答一基本相同，唯一不同的地方就是解答二用了原型来实现继承，通过配置MadDog.prototype=new Dog()，把dog的属性和方法通过原型链继承到MadDog中。</p>
+<hr>
+<p>##题目四答案<br>题目四考的主要是变量的引用，靠的就是各位的基础知识是否扎实。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123; x: 1 &#125;;&#10;var b = a;&#10;a.x = 2;&#10;alert(b.x);       // &#31572;&#39064;&#65306;b.x&#31561;&#20110;2&#10;a = &#123; x: 3 &#125;;&#10;alert(b.x);       // &#31572;&#39064;&#65306;b.x&#31561;&#20110;2&#10;a.x = 4;&#10;alert(b.x);       // &#31572;&#39064;&#65306;b.x&#31561;&#20110;2</span><br></pre></td></tr></table></figure></p>
+<p>看完答案，是否觉得很“2”呢，222：<br>1、第一个2估计没有人会答错，因为a和b指向的都是用一个对象，变量只是一个引用而已，所以无论改变a还是改变b都会改变，所以改变a.x之后，b.x也同时改变。<br>2、第二个2，如果答了三，那么第三个答案也会答错，a = { x: 3 }等于a = new Object，所以这行代码过后，a和b所引用的对象已经不一致了，所以无论a改变了什么，b也不会改变，所以，答案就是222。</p>
+<hr>
+<p>##题目五<br>又一题考变量的引用，还有垃圾回收机制的问题，先假设每一行后都有垃圾回收，这样可以方便分析问题。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var a = new BigMemory(); &#9;// 100M&#10;var b = new BigMemory();&#9;// 200M&#10;var c = new BigMemory();&#9;// 300M&#10;&#10;var d = a;&#9;&#9;&#9;&#9;&#9;// 300M&#10;var e = b;&#9;&#9;&#9;&#9;&#9;// 300M&#10;var f = c;&#9;&#9;&#9;&#9;&#9;// 300M&#10;&#10;a = null;&#9;&#9;&#9;&#9;&#9;// 300M&#10;b = null;&#9;&#9;&#9;&#9;&#9;// 300M&#10;d = null;&#9;&#9;&#9;&#9;&#9;// 200M a&#21644;d&#30340;&#24341;&#29992;&#37117;&#21024;&#38500;&#20102;&#65292;&#25152;&#20197;&#23545;&#35937;&#27809;&#26377;&#20877;&#34987;&#24341;&#29992;&#26102;&#65292;&#22403;&#22334;&#22238;&#25910;&#12290;&#10;&#10;//&#20551;&#35774;&#24050;&#25191;&#34892;&#22403;&#22334;&#22238;&#25910;&#12290;&#10;&#10;//&#31572;&#65306;&#35831;&#38382;&#29616;&#22312;&#21344;&#29992;&#20102;&#22810;&#23569;&#20869;&#23384;&#12290; 200M</span><br></pre></td></tr></table></figure></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>收集奇奇怪怪的面试题（当然不止面试题），是想通过题目去让大家思考、去运用所学习、所理解的知识，在合适的场景使用，更深刻的理解一些基础的知识，更实际的运用一些新的技术。这里的题目与答案是分开的，所期望的就是，把题目做完了，再去对比解答，看自己思考的是否正确。</p>
+<p><strong>注意：以下题目收集于网络和个人日常工作，答案以及解答属于个人见解，并不确保完全正确，如发现问题，请及时指出，大家一同讨论，共同进步。</strong></p>
+<hr>
+<p>##题目一<br>实现一个遍历数组或对象里所有成员的迭代器，代码只能在答题区域内，并且不能使用全局变量。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var each = function(obj, fn)&#123;&#10;&#9;//+++++++++++&#31572;&#39064;&#21306;&#22495;+++++++++++&#10;&#9;    &#10;&#10;&#10;&#10;&#9;//+++++++++++&#31572;&#39064;&#32467;&#26463;+++++++++++&#10;&#125;;&#10;&#10;try&#123;&#10;&#9;var data1 = [4,5,6,7,8,9,10,11,12];&#10;&#9;var data2 = &#123;&#10;&#9;&#9;&#34;a&#34;: 4,&#10;&#9;&#9;&#34;b&#34;: 5,&#10;&#9;&#9;&#34;c&#34;: 6&#10;&#9;&#125;;&#10;&#9;&#10;&#9;each(data1, function(o)&#123;&#10;&#9;&#9;if( 6 == this )&#10;&#9;&#9;&#9;return true;&#10;&#9;&#9;else if( 8 == this )&#10;&#9;&#9;&#9;return false;&#10;&#9;&#9;console.log(o + &#34;: \&#34;&#34; + this + &#34;\&#34;&#34;);&#10;&#9;&#125;);&#10;&#9;&#10;&#9;/*------[&#25191;&#34892;&#32467;&#26524;]------&#10;&#9;&#10;&#9;1: &#34;4&#34;&#10;&#9;2: &#34;5&#34;&#10;&#9;4: &#34;7&#34;&#10;&#9;&#10;&#9;------------------*/&#10;&#9;&#10;&#9;each(data2, function(v, n)&#123;&#10;&#9;&#9;if( 5 == this )&#10;&#9;&#9;&#9;return true;&#10;&#9;&#9;console.log(n + &#34;: \&#34;&#34; + v + &#34;\&#34;&#34;);&#10;&#9;&#125;);&#10;&#9;&#10;&#9;/*------[&#25191;&#34892;&#32467;&#26524;]------&#10;&#9;&#10;&#9;a: &#34;4&#34;&#10;&#9;c: &#34;6&#34;&#10;&#9;&#10;&#9;------------------*/&#10;&#125;catch(e)&#123;&#10;&#9;console.error(&#34;&#25191;&#34892;&#20986;&#38169;&#65292;&#38169;&#35823;&#20449;&#24687;: &#34; + e);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p><a href="#题目一答案">参考答案</a><br>]]>
+    
+    </summary>
+    
+      <category term="ECMA-262" scheme="http://junozero.github.io/tags/ECMA-262/"/>
+    
+      <category term="ECMAScript" scheme="http://junozero.github.io/tags/ECMAScript/"/>
+    
+      <category term="css" scheme="http://junozero.github.io/tags/css/"/>
+    
+      <category term="html" scheme="http://junozero.github.io/tags/html/"/>
+    
+      <category term="javascript" scheme="http://junozero.github.io/tags/javascript/"/>
+    
+      <category term="面试" scheme="http://junozero.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="前端面试题" scheme="http://junozero.github.io/categories/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[w3c基础整理之ECMAScript（三）]]></title>
+    <link href="http://junozero.github.io/2014/12/30/w3c%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86%E4%B9%8BECMAScript%EF%BC%88%E4%B8%89%EF%BC%89/"/>
+    <id>http://junozero.github.io/2014/12/30/w3c基础整理之ECMAScript（三）/</id>
+    <published>2014-12-30T01:36:00.000Z</published>
+    <updated>2014-12-30T07:04:48.684Z</updated>
+    <content type="html"><![CDATA[<p>##基本概念</p>
+<p>###对象<br>ECMAScript中，把对象（object）定义为“属性的无序集合，每个属性存放一个原始值、对象或函数”。严格来说，这意味着对象是无特定顺序的值的数组。</p>
+<p>###类<br>每个对象都由类定义，可以把类看做对象的配方。类不仅要定义对象的接口（interface）（开发者访问的属性和方法），还要定义对象的内部工作（使属性和方法发挥作用的代码）。编译器和解释程序都根据类的说明构建对象。</p>
+<p>###实例<br>程序使用类创建对象时，生成的对象叫作类的实例（instance）。对类生成的对象的个数的唯一限制来自于运行代码的机器的物理内存。每个实例的行为相同，但实例处理一组独立的数据。由类创建对象实例的过程叫做实例化（instantiation）。</p>
+<p>###面向对象语言的要求<br>一种面向对象语言需要向开发者提供四种基本能力：<br>1、封装 - 把相关的信息（无论数据或方法）存储在对象中的能力<br>2、聚集 - 把一个对象存储在另一个对象内的能力<br>3、继承 - 由另一个类（或多个类）得来类的属性和方法的能力<br>4、多态 - 编写能以多种方法运行的函数或方法的能力</p>
+<p>ECMAScript 支持这些要求，因此可被是看做面向对象的。<br><a id="more"></a></p>
+<p>###对象的组成<br>在 ECMAScript 中，对象由特性（attribute）构成，特性可以是原始值，也可以是引用值。如果特性存放的是函数，它将被看作对象的方法（method），否则该特性被看作对象的属性（property）。</p>
+<p>###早绑定和晚绑定<br>所谓绑定（binding），即把对象的接口与对象实例结合在一起的方法。<br><strong>早绑定（early binding）</strong>是指在实例化对象之前定义它的属性和方法，这样编译器或解释程序就能够提前转换机器代码。在 Java 和 Visual Basic 这样的语言中，有了早绑定，就可以在开发环境中使用 IntelliSense（即给开发者提供对象中属性和方法列表的功能）。ECMAScript 不是强类型语言，所以不支持早绑定。</p>
+<p><strong>晚绑定（late binding）</strong>指的是编译器或解释程序在运行前，不知道对象的类型。使用晚绑定，无需检查对象的类型，只需检查对象是否支持属性和方法即可。<strong>ECMAScript 中的所有变量都采用晚绑定方法</strong>。这样就允许执行大量的对象操作，而无任何惩罚。</p>
+<hr>
+<p>##对象的类型<br>在 ECMAScript 中，所有对象并非同等创建的。</p>
+<p>一般来说，可以创建并使用的对象有三种：本地对象、内置对象和宿主对象。</p>
+<p>###本地对象<br>ECMA-262 把本地对象（native object）定义为“独立于宿主环境的 ECMAScript 实现提供的对象”。简单来说，本地对象就是 ECMA-262 定义的类（引用类型）。它们包括：<br>1、Object<br>2、Function<br>3、Array<br>4、String<br>5、Boolean<br>6、Number<br>7、Date<br>8、RegExp<br>9、Error<br>10、EvalError<br>11、RangeError<br>12、ReferenceError<br>13、SyntaxError<br>14、TypeError<br>15、URIError</p>
+<p>###内置对象<br>ECMA-262 把内置对象（built-in object）定义为“由 ECMAScript 实现提供的、独立于宿主环境的所有对象，在 ECMAScript 程序开始执行时出现”。这意味着开发者不必明确实例化内置对象，它已被实例化了。ECMA-262 只定义了两个内置对象，即 Global 和 Math （它们也是本地对象，根据定义，每个内置对象都是本地对象）。</p>
+<p>###宿主对象<br>所有非本地对象都是宿主对象（host object），即由 ECMAScript 实现的宿主环境提供的对象。</p>
+<p>所有 BOM 和 DOM 对象都是宿主对象。</p>
+<hr>
+<p>##如何创建对象</p>
+<p>对象的创建方式是用关键字 new 后面跟上实例化的类的名字：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var o = new Object();</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>##关键字new<br>new是一个关键字，用于创建一个对象。</p>
+<p>带有new执行的函数，返回的是一个对象，不带new的函数，只是一个普通的函数，返回值是根据函数的return而定义。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function Car() &#123;&#125;&#10;var c = Car();&#10;var c1 = new Car();&#10;&#10;alert(c);&#9;&#9;&#9;// undefined&#10;alert(c1);&#9;&#9;&#9;// Object</span><br></pre></td></tr></table></figure></p>
+<p>可以看到，c变量只是引用了Car函数的执行，Car函数并没有返回任何值，所以c为undefined。而c1变量引用了new运算符所构造的Car对象，所以c1为Object。</p>
+<hr>
+<p>##静态类</p>
+<p>###静态作用域<br>静态作用域定义的属性和方法任何时候都能从同一位置访问。在 Java 中，类可具有属性和方法，无需实例化该类的对象，即可访问这些属性和方法，例如 java.net.URLEncoder 类，它的函数 encode() 就是静态方法。</p>
+<p>###ECMAScript 没有静态作用域<br>严格来说，ECMAScript 并没有静态作用域。</p>
+<p>###利用全局变量实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var CarFactory = &#123;&#10;&#9;createCar: function() &#123;&#125;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>通过这种方式可以实现在任意代码的位置调用 CarFactory.createCar方法，那么可以看成，CarFactory是一个静态工厂类，而createCar就是函数对应的静态方法。</p>
+<p>以上的实际方式等同于以下的代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var CarFactory = new Object();&#10;CarFactory.createCar = function() &#123;&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>这样就可以很清晰的看到，其实已经实例化了该类，只不过在赋值的时候就初始化了。这样的方式可以很方便的定义一些全局公共使用的对象，单也提供了开放性的接口，所有开发者都可以直接修改这个对象里面的内容，使代码存在不稳定以及安全隐患，建议尽可能避免这样使用。</p>
+<hr>
+<p>##工厂模式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function createCar(color) &#123;&#10;&#9;var o = new Object();&#10;&#9;o.color = color;&#10;&#9;o.door = 4;&#10;&#10;&#9;o.showColor = function() &#123;&#10;&#9;&#9;alert(this.color);&#10;&#9;&#125;;&#10;&#10;&#9;return o;&#10;&#125;&#10;&#10;var car1 = createCar(&#39;red&#39;);&#10;var car2 = createCar(&#39;blue&#39;);&#10;&#10;alert(car1.showColor());&#9;&#9;// red&#10;alert(car2.showColor());&#9;&#9;// blue</span><br></pre></td></tr></table></figure></p>
+<p>函数createCar是一个工厂，工厂内部生成Car的对象并返回。</p>
+<hr>
+<p>##构造函数模式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function Car(color) &#123;&#10;&#9;this.color = color;&#10;&#9;this.door = 4;&#10;&#10;&#9;this.showColor = function() &#123;&#10;&#9;&#9;alert(this.color);&#10;&#9;&#125;;&#10;&#125;&#10;&#10;var car1 = new Car(&#39;red&#39;);&#10;var car2 = new Car(&#39;blue&#39;);&#10;&#10;alert(car1.showColor());&#9;&#9;// red&#10;alert(car2.showColor());&#9;&#9;// blue</span><br></pre></td></tr></table></figure></p>
+<p>注意，构造函数模式必须使用new关键字，虽然Car函数中没有return，但new的函数后，默认返回的就是Car对应的this对象。</p>
+<hr>
+<p>##关键字this<br>关键字 this 总是指向调用该方法的对象（当前的作用域）。</p>
+<p>上述代码能正确显示red和blue，就是因为this关键字的“功劳”。</p>
+<hr>
+<p>##*Prototype<br>Prototype（原形），是ECMAScript中的一个重要学科，它是对象中的一个成员变量，默认对象的prototype对象就是Object。</p>
+<p>我们再来看一下上面的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function Car(color) &#123;&#10;&#9;this.color = color;&#10;&#9;this.door = 4;&#10;&#10;&#9;this.showColor = function() &#123;&#10;&#9;&#9;alert(this.color);&#10;&#9;&#125;;&#10;&#125;&#10;&#10;var car1 = new Car(&#39;red&#39;);&#10;var car2 = new Car(&#39;blue&#39;);&#10;&#10;alert(car1.showColor());&#9;&#9;// red&#10;alert(car2.showColor());&#9;&#9;// blue</span><br></pre></td></tr></table></figure></p>
+<p>每一次调用new Car，实际上都会开辟一块内存空间来存储属性color和door，还有方法showColor，对于Car来说，color是变化的，而door和showColor是固定的，如果每一个new Car都生成这些固定的变量和方法，将会大大的消耗内存，那么ECMAScript如何解决这样的问题呢？</p>
+<p>答案就是通过prototype，先看以下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function Car(color) &#123;&#10;&#9;this.color = color;&#10;&#125;&#10;&#10;Car.prototype.door = 4;&#10;Car.prototype.showColor = function() &#123;&#10;&#9;alert(this.color);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>prototype对于Car函数只会初始化一次，无论new Car多少次，它也只有会初始化一次，那么将会大大的降低了内存的消耗。</p>
+<p>prototype另外的一个关键就是原型链，通过强大的原型链实现继承，结合作用域链实现强大的功能。关于原型链将会在下面继承中整理。</p>
+<hr>
+<p>##类的继承<br>要用 ECMAScript 实现继承机制，您可以从要继承的基类入手。所有开发者定义的类都可作为基类。出于安全原因，本地类和宿主类不能作为基类，这样可以防止公用访问编译过的浏览器级的代码，因为这些代码可以被用于恶意攻击。</p>
+<p>ECMAScript 实现继承的方式不止一种。这是因为 JavaScript 中的继承机制并不是明确规定的，而是通过模仿实现的。这意味着所有的继承细节并非完全由解释程序处理。</p>
+<hr>
+<p>###对象冒充（经典的继承方法，但已过时）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function ClassA(color) &#123;&#10;&#9;this.color = color;&#10;&#9;this.showColor = function() &#123;&#10;&#9;&#9;alert(this.color);&#10;&#9;&#125;;&#10;&#125;&#10;&#10;function ClassB(color, name) &#123;&#10;&#9;//&#20851;&#38190;&#20195;&#30721;&#24320;&#22987;&#10;&#9;//&#25226;ClassA&#30340;&#20989;&#25968;&#25351;&#21521;&#26412;&#22320;&#30340;&#19968;&#20010;newMethod&#21464;&#37327;&#12290;&#10;&#9;this.newMethod = ClassA;&#10;&#10;&#9;//&#25191;&#34892;&#26412;&#22320;newMethod&#20989;&#25968;&#65292;&#20256;&#36882;color&#21442;&#25968;&#12290;&#10;&#9;//&#25191;&#34892;&#23436;&#25104;&#21518;&#65292;this&#20013;&#22810;&#20986;ClassA&#20013;&#23450;&#20041;&#30340;color&#23646;&#24615;&#21644;showColor&#26041;&#27861;&#12290;&#10;&#9;this.newMethod(color);&#10;&#9;&#10;&#9;//&#25191;&#34892;&#23436;&#25104;&#21518;&#65292;&#21024;&#38500;&#24341;&#29992;newMethod&#12290;&#10;&#9;delete this.newMethod;&#10;&#9;//&#20851;&#38190;&#20195;&#30721;&#32467;&#26463;&#10;&#9;&#10;&#9;this.name = name;&#10;&#9;this.showName = function() &#123;&#10;&#9;&#9;alert(this.name);&#10;&#9;&#125;&#10;&#125;&#10;&#10;&#10;var ca = new ClassA(&#39;red&#39;);&#10;var cb = new ClassB(&#39;blue&#39;, &#39;yjj&#39;);&#10;&#10;ca.showColor();&#9;&#9;&#9;&#9;// red&#10;cb.showColor();&#9;&#9;&#9;&#9;// blue&#10;cb.showName();&#9;&#9;&#9;&#9;// yjj</span><br></pre></td></tr></table></figure></p>
+<p>上述代码，ClassA作为基类，ClassB通过“对象冒充”继承基类ClassA，使ClassB类生成的对象带有ClassA的属性和方法。</p>
+<p><strong>由于这种继承方法的流行，ECMAScript 的第三版为 Function 对象加入了两个方法，即 call() 和 apply()。</strong></p>
+<hr>
+<p>###call<br>call() 方法是与经典的对象冒充方法最相似的方法。它的第一个参数用作 this 的对象。其他参数都直接传递给函数自身。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function ClassA(color) &#123;&#10;&#9;this.color = color;&#10;&#9;this.showColor = function() &#123;&#10;&#9;&#9;alert(this.color);&#10;&#9;&#125;;&#10;&#125;&#10;&#10;function ClassB(color, name) &#123;&#10;&#9;//this.newMethod = ClassA;&#10;&#9;//this.newMethod(color);&#10;&#9;//delete this.newMethod;&#10;&#9;ClassA.call(this, color);&#10;&#9;&#10;&#9;this.name = name;&#10;&#9;this.showName = function() &#123;&#10;&#9;&#9;alert(this.name);&#10;&#9;&#125;&#10;&#125;&#10;&#10;&#10;var ca = new ClassA(&#39;red&#39;);&#10;var cb = new ClassB(&#39;blue&#39;, &#39;yjj&#39;);&#10;&#10;ca.showColor();&#9;&#9;&#9;&#9;// red&#10;cb.showColor();&#9;&#9;&#9;&#9;// blue&#10;cb.showName();&#9;&#9;&#9;&#9;// yjj</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>###apply<br>apply与call方法基本相同，但第二个参数传递的是数组。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function ClassA(color) &#123;&#10;&#9;this.color = color;&#10;&#9;this.showColor = function() &#123;&#10;&#9;&#9;alert(this.color);&#10;&#9;&#125;;&#10;&#125;&#10;&#10;function ClassB(color, name) &#123;&#10;&#9;ClassA.apply(this, [color]);&#10;&#9;// or&#10;&#9;// ClassA.apply(this, arguments);&#10;&#9;&#10;&#9;this.name = name;&#10;&#9;this.showName = function() &#123;&#10;&#9;&#9;alert(this.name);&#10;&#9;&#125;&#10;&#125;&#10;&#10;&#10;var ca = new ClassA(&#39;red&#39;);&#10;var cb = new ClassB(&#39;blue&#39;, &#39;yjj&#39;);&#10;&#10;ca.showColor();&#9;&#9;&#9;&#9;// red&#10;cb.showColor();&#9;&#9;&#9;&#9;// blue&#10;cb.showName();&#9;&#9;&#9;&#9;// yjj</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>###apply的小技巧<br>通过apply的第二个参数是一个数组的特性，我们可以利用此特性完成一些小功能。<br>如找出一个数组中最小的数字，Math的min方法通过传递0……n个参数，从中找出最小的数字，但不支持数组的参数，这样子很不方便，但我们可以利用apply来这样子实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arr = [3, 1, 5, 99];&#10;Math.min.apply(null, arr);&#9;&#9;// 1</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>###原型链继承<br>假设，上述代码中，ClassA的showColor方法属于固定的，那么根据代码优化原则，应该定义到prototype中，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function ClassA(color) &#123;&#10;&#9;this.color = color;&#10;&#125;&#10;&#10;ClassA.prototype.showColor = function() &#123;&#10;&#9;alert(this.color);&#10;&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>那么<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function ClassB(color, name) &#123;&#10;&#9;ClassA.call(this, [color]);&#10;&#9;&#10;&#9;this.name = name;&#10;&#9;this.showName = function() &#123;&#10;&#9;&#9;alert(this.name);&#10;&#9;&#125;&#10;&#125;&#10;&#10;&#10;var ca = new ClassA(&#39;red&#39;);&#10;var cb = new ClassB(&#39;blue&#39;, &#39;yjj&#39;);&#10;&#10;ca.showColor();&#9;&#9;&#9;&#9;// red&#10;cb.showColor();&#9;&#9;&#9;&#9;// error&#65292;showColor&#26041;&#27861;&#26410;&#23450;&#20041;&#65292;&#19979;&#38754;&#20195;&#30721;&#19981;&#25191;&#34892;&#12290;&#10;cb.showName();&#9;&#9;&#9;&#9;//</span><br></pre></td></tr></table></figure></p>
+<p>为什么报错，这是因为无论对象冒充、还是call或者apply，都只是针对本作用域，而不会继承prototype的原型链，所以导致没有找到ClassA原形里面的showColor方法，我们可以通过原型链进行解决。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function ClassA(color) &#123;&#10;&#9;this.color = color;&#10;&#125;&#10;&#10;ClassA.prototype.showColor = function() &#123;&#10;&#9;alert(this.color);&#10;&#125;;&#10;&#10;function ClassB(color, name) &#123;&#10;&#9;ClassA.call(this, [color]);&#10;&#9;&#10;&#9;this.name = name;&#10;&#9;this.showName = function() &#123;&#10;&#9;&#9;alert(this.name);&#10;&#9;&#125;&#10;&#125;&#10;&#10;//&#35774;&#32622;&#21407;&#22411;&#20026;ClassA&#23545;&#35937;&#65292;&#20351;ClassB&#31867;&#20855;&#26377;ClassA&#21450;&#20854;&#21407;&#22411;&#38142;&#19978;&#30340;&#25152;&#26377;&#23646;&#24615;&#21644;&#26041;&#27861;&#12290;&#10;ClassB.prototype = new ClassA();&#10;&#10;var ca = new ClassA(&#39;red&#39;);&#10;var cb = new ClassB(&#39;blue&#39;, &#39;yjj&#39;);&#10;&#10;ca.showColor();&#9;&#9;&#9;&#9;// red&#10;cb.showColor();&#9;&#9;&#9;&#9;// blue&#10;cb.showName();&#9;&#9;&#9;&#9;// yjj</span><br></pre></td></tr></table></figure></p>
+<p>通过这种混合的处理方式，就可以轻松在ECMAScript中实现继承。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>##基本概念</p>
+<p>###对象<br>ECMAScript中，把对象（object）定义为“属性的无序集合，每个属性存放一个原始值、对象或函数”。严格来说，这意味着对象是无特定顺序的值的数组。</p>
+<p>###类<br>每个对象都由类定义，可以把类看做对象的配方。类不仅要定义对象的接口（interface）（开发者访问的属性和方法），还要定义对象的内部工作（使属性和方法发挥作用的代码）。编译器和解释程序都根据类的说明构建对象。</p>
+<p>###实例<br>程序使用类创建对象时，生成的对象叫作类的实例（instance）。对类生成的对象的个数的唯一限制来自于运行代码的机器的物理内存。每个实例的行为相同，但实例处理一组独立的数据。由类创建对象实例的过程叫做实例化（instantiation）。</p>
+<p>###面向对象语言的要求<br>一种面向对象语言需要向开发者提供四种基本能力：<br>1、封装 - 把相关的信息（无论数据或方法）存储在对象中的能力<br>2、聚集 - 把一个对象存储在另一个对象内的能力<br>3、继承 - 由另一个类（或多个类）得来类的属性和方法的能力<br>4、多态 - 编写能以多种方法运行的函数或方法的能力</p>
+<p>ECMAScript 支持这些要求，因此可被是看做面向对象的。<br>]]>
+    
+    </summary>
+    
+      <category term="ECMA-262" scheme="http://junozero.github.io/tags/ECMA-262/"/>
+    
+      <category term="ECMAScript" scheme="http://junozero.github.io/tags/ECMAScript/"/>
+    
+      <category term="javascript" scheme="http://junozero.github.io/tags/javascript/"/>
+    
+      <category term="学习" scheme="http://junozero.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="教程" scheme="http://junozero.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="w3c基础整理" scheme="http://junozero.github.io/categories/w3c%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[w3c基础整理之ECMAScript（二）]]></title>
+    <link href="http://junozero.github.io/2014/12/29/w3c%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86%E4%B9%8BECMAScript%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
+    <id>http://junozero.github.io/2014/12/29/w3c基础整理之ECMAScript（二）/</id>
+    <published>2014-12-29T01:23:00.000Z</published>
+    <updated>2014-12-30T07:05:02.181Z</updated>
+    <content type="html"><![CDATA[<p>##什么是函数<br>函数是一组可以随时随地运行的语句。<br>函数是 ECMAScript 的核心。<br>函数是由这样的方式进行声明的：关键字 function、函数名、一组参数，以及置于括号中的待执行代码。<br>函数的基本语法是这样的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function functionName(arg0, arg1, ... argN) &#123;&#10;  statements&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function sayHi(sName, sMessage) &#123;&#10;  alert(&#34;Hello &#34; + sName + sMessage);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p> 这样子调用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sayHi(&#39;test&#39;, &#39; Nice to meet you!&#39;);</span><br></pre></td></tr></table></figure></p>
+<p>这样子返回：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function sayHi(sName, sMessage) &#123;&#10;  return &#34;Hello &#34; + sName + sMessage;&#10;&#125;&#10;&#10;alert(sayHi(&#39;test&#39;, &#39; Nice to meet you!&#39;));</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<hr>
+<p>##Function定义<br>可以看到，函数是通过function关键字进行声明的。</p>
+<p>接下来我们看看几种函数的声明方式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#26368;&#26222;&#36890;&#30340;&#22768;&#26126;&#26041;&#24335;&#10;function sayHi(name) &#123;&#10;&#9;alert(&#39;Hello &#39; + name);&#10;&#125;&#10;&#10;//&#25928;&#26524;&#21516;&#19978;&#65292;&#20294;&#27880;&#24847;&#21518;&#38754;&#38656;&#35201;&#34;;&#34;&#10;var sayHi = function(name) &#123;&#10;&#9;alert(&#39;Hello &#39; + name);&#10;&#125;;&#10;&#10;//&#36890;&#36807;Function&#31867;&#36827;&#34892;&#23450;&#20041;&#65292;&#23383;&#31526;&#20018;&#22768;&#26126;&#24335;&#10;var sayHi = new Function(&#34;name&#34;, &#34;alert(&#39;Hello &#39; + name);&#34;);</span><br></pre></td></tr></table></figure></p>
+<p>通过Function.lenght可以获取到该function定义所需要的参数数量.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function test() &#123;&#125;&#10;function test2(name) &#123;&#125;&#10;&#10;alert(test.length);&#9;&#9;&#9;&#9;// 0&#10;alert(test2.length);&#9;&#9;&#9;// 1</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>##arguments对象<br>在函数代码中，使用特殊对象 arguments，开发者无需明确指出参数名，就能访问它，它是一个对象，但可以像数组一样访问。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function sayHi() &#123;&#10;&#9;alert(&#39;Hello &#39; + arguments[0]);&#10;&#125;&#10;&#10;sayHi(&#39;test&#39;);</span><br></pre></td></tr></table></figure></p>
+<p>可以看到，函数没有声明任何的参数，但通过arguments对象就能获取到调用这个函数多传递的参数集合。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function sayHi() &#123;&#10;&#9;alert(arguments.length);&#10;&#125;&#10;&#10;sayHi(&#39;test&#39;, 1, 2);&#9;&#9;&#9;// 3&#10;sayHi(&#39;test&#39;);&#9;&#9;&#9;&#9;&#9;// 1&#10;sayHi();&#9;&#9;&#9;&#9;&#9;&#9;// 0</span><br></pre></td></tr></table></figure>
+<p>通过arguments.length可以获取到调用函数时传递的参数数量。</p>
+<hr>
+<p>##*闭包<br>闭包，的确是一个比较让人费解，难以入门的名词。</p>
+<p>而ECMAScript中却支持闭包，所以作为JS的码农，必须要理解清楚什么是闭包，什么情况下需要使用闭包，因为很多高级应用都要依靠闭包实现。</p>
+<p>首先，我对闭包的理解是，函数可以使用函数以外定义的变量。<br>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var v = 100;&#10;function test() &#123;&#10;&#9;alert(v);&#10;&#125;&#10;test();&#9;&#9;// 100</span><br></pre></td></tr></table></figure></p>
+<p>上述代码在test函数中并没有定义v变量，但最终却能正常运行，这里面涉及到两个知识点，一个是JS的作用域链，在JS中，主要分为全局变量和局部变量，调用一个变量时，会从函数的作用域开始找，如果没找到就一级一级的往上找，找到就返回，最后找到全局中，当全局也没有定义时，返回error；另外一个知识点就是闭包，通过作用域链，可以使函数引用到函数以外所定义的变量。<br>如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function test() &#123;&#10;&#9;var n = 100;&#10;&#125;&#10;alert(n); &#9;// error</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>###闭包的用途一（读取函数内部/外部变量）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function f1() &#123;&#10;&#9;var n = 100;&#10;&#9;function f2() &#123;&#10;&#9;&#9;alert(n);&#10;&#9;&#125;&#10;&#9;return f2;&#10;&#125;&#10;&#10;var f = f1();&#10;f();&#9;&#9;&#9;// 100</span><br></pre></td></tr></table></figure></p>
+<p>以上代码中，f2就属于闭包，通过返回f2，使原本外部无法调用的变量n在外部中可以调用。</p>
+<hr>
+<p>###闭包的用途二（常驻内存）<br>常驻内存怎么理解？我们先看一个案例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var aFn = [];&#10;for(var i=0; i&#60;5; i++) &#123;&#10;&#9;aFn.push(function() &#123;&#10;&#9;&#9;alert(i);&#10;&#9;&#125;);&#10;&#125;&#10;aFn[0]();&#9;&#9;&#9;// 5&#10;aFn[1]();&#9;&#9;&#9;// 5&#10;aFn[2]();&#9;&#9;&#9;// 5&#10;aFn[3]();&#9;&#9;&#9;// 5&#10;aFn[4]();&#9;&#9;&#9;// 5</span><br></pre></td></tr></table></figure></p>
+<p>结果并不是期望的0、1、2、3、4，而是全部都是5，为什么这样子呢，这是因为i只是一个引用类型，它指向的是变量，调用aFn<a href="">0</a>时，i已经跑完循环，只为5，所以alert(i)全部都是5，而并不是我们所期望的，这里我们可以通过闭包的第二个用途来实现。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var aFn = [];&#10;for(var i=0; i&#60;5; i++) &#123;&#10;&#9;aFn.push(function(j) &#123;&#10;&#9;&#9;return function() &#123;&#10;&#9;&#9;&#9;alert(j);&#10;&#9;&#9;&#125;&#10;&#9;&#125;(i));&#10;&#125;&#10;aFn[0]();&#9;&#9;&#9;// 0&#10;aFn[1]();&#9;&#9;&#9;// 1&#10;aFn[2]();&#9;&#9;&#9;// 2&#10;aFn[3]();&#9;&#9;&#9;// 3&#10;aFn[4]();&#9;&#9;&#9;// 4</span><br></pre></td></tr></table></figure></p>
+<p>上面的代码运行后就是我们期望的效果，我们来看看做了什么改变：<br>1、先讲解一个概念 - 匿名函数，function可以不赋予名称，直接以变量形式存储在数组或对应的参数中，如aFn[0]就是一个匿名函数（这个概念在第一个案例中也存在）。<br>2、引入了立即执行，如functino(j) {}(i);，这里运用了立即执行匿名函数，在调用的参数中，我们传递了需要保存在内存中的变量i，匿名函数中拥有一个参数j，对应当前执行作用域的变量i，如第一次循环i=1，第二次循环i=2。<br>3、在立即执行的函数中返回一个匿名函数，这个匿名函数就是闭包，因为其中代码涉及到了引用变量j，而变量j是父级变量所定义的，符合闭包的定义。<br>4、整个代码的关键点在于，匿名函数传递的参数i被闭包所引用，而闭包又通过return插入到全局变量aFn数组中，所以无法被垃圾回收机制（garbage collection）回收，就形成了闭包的第二个用途，<strong>常驻内存</strong>。</p>
+<hr>
+<p>###闭包的注意点<br>从上面的代码可以基本了解到闭包的用途可以很广泛，可以解决很多很多的问题，但也存在较为明显的问题：闭包内部的变量都会保存在内存中，如果引用没用delete或者null，那么闭包就会一直存在内存当中，如上面的代码可分解如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aFn[0] = function() &#123;&#10;&#9;var i = 0;&#10;&#9;alert(i);&#10;&#125;&#10;&#10;aFn[1] = function() &#123;&#10;&#9;var i = 1;&#10;&#9;alert(i);&#10;&#125;&#10;&#10;aFn[2] = function() &#123;&#10;&#9;var i = 2;&#10;&#9;alert(i);&#10;&#125;&#10;&#10;&#8230;&#8230;&#10;&#10;aFn[4] = function() &#123;&#10;&#9;var i = 4;&#10;&#9;alert(i);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>可以看出，每一个闭包的内部变量都是不同的，需要分别存储，对于泛滥使用闭包会导致内存消耗过大，内存溢出等问题出现，<strong>所以建议，能不使用闭包的地方，尽可能的不用闭包，采用其余方法进行规避。</strong></p>
+<p>本篇主要对ECMAScript的函数和闭包进行整理，下一篇将会对ECMAScript的对象和继承进行整理。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>##什么是函数<br>函数是一组可以随时随地运行的语句。<br>函数是 ECMAScript 的核心。<br>函数是由这样的方式进行声明的：关键字 function、函数名、一组参数，以及置于括号中的待执行代码。<br>函数的基本语法是这样的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function functionName(arg0, arg1, ... argN) &#123;&#10;  statements&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function sayHi(sName, sMessage) &#123;&#10;  alert(&#34;Hello &#34; + sName + sMessage);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p> 这样子调用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sayHi(&#39;test&#39;, &#39; Nice to meet you!&#39;);</span><br></pre></td></tr></table></figure></p>
+<p>这样子返回：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function sayHi(sName, sMessage) &#123;&#10;  return &#34;Hello &#34; + sName + sMessage;&#10;&#125;&#10;&#10;alert(sayHi(&#39;test&#39;, &#39; Nice to meet you!&#39;));</span><br></pre></td></tr></table></figure></p>]]>
+    
+    </summary>
+    
+      <category term="ECMA-262" scheme="http://junozero.github.io/tags/ECMA-262/"/>
+    
+      <category term="ECMAScript" scheme="http://junozero.github.io/tags/ECMAScript/"/>
+    
+      <category term="javascript" scheme="http://junozero.github.io/tags/javascript/"/>
+    
+      <category term="学习" scheme="http://junozero.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="教程" scheme="http://junozero.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="w3c基础整理" scheme="http://junozero.github.io/categories/w3c%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[w3c基础整理之ECMAScript（一）]]></title>
+    <link href="http://junozero.github.io/2014/12/26/w3c%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86%E4%B9%8BECMAScript%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <id>http://junozero.github.io/2014/12/26/w3c基础整理之ECMAScript（一）/</id>
+    <published>2014-12-26T01:55:00.000Z</published>
+    <updated>2014-12-29T01:22:29.903Z</updated>
+    <content type="html"><![CDATA[<p>##什么是ECMAScript<br>一句话，ECMAScript是一套标准，是JavaScript的核心部分，JavaScript实现了ECMAScript的 标准并作出扩展，实现对网页控制的相关动作。</p>
+<hr>
+<p>##语法<br>熟悉 Java、C 和 Perl 这些语言的开发者会发现 ECMAScript 的语法很容易掌握，因为它借用了这些语言的语法。<br>Java 和 ECMAScript 有一些关键的语法特性相同，也有一些完全不同。</p>
+<hr>
+<p>###区分大小写<br>与 Java 一样，变量、函数名、运算符以及其他一切东西都是区分大小写的。<br>比如：<br>变量 test 与变量 TEST 是不同的。</p>
+<hr>
+<p>###弱类型变量<br>与 Java 和 C 不同，ECMAScript 中的变量无特定的类型，定义变量时只用 var 运算符，可以将它初始化为任意值。<br>因此，可以随时改变变量所存数据的类型（尽量避免这样做）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var color = &#34;red&#34;;&#10;var num = 25;&#10;var visible = true;</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<hr>
+<p>##变量<br>请使用 var 运算符声明变量。<br>变量名需要遵守一些简单的规则。</p>
+<hr>
+<p>###声明变量<br>ECMAScript 中的变量是用 var 运算符（variable 的缩写）加变量名定义的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#23450;&#20041;&#19968;&#20010;test&#21464;&#37327;&#20026;hi&#12290;&#10;var test = &#39;hi&#39;;&#10;&#10;//&#21516;&#26102;&#23450;&#20041;test2&#21644;age&#21464;&#37327;&#65292;&#24182;&#20998;&#21035;&#36171;&#20540;&#23383;&#31526;&#20018;&#21644;&#25968;&#23383;&#31867;&#22411;&#12290;&#10;var test2 = &#39;hello&#39;, age = 25;&#10;//or&#10;var test2 = &#39;hello&#39;,&#10;&#9;age = 25;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>###不声明等于全局（严禁模式下报错）<br>ECMAScript 另一个有趣的方面（也是与大多数程序设计语言的主要区别），是在使用变量之前可以不必声明。如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var test1 = &#39;hello&#39;;&#10;test2 = &#39;world&#39;;&#10;&#10;alert(test1 + &#39; &#39; + test2);</span><br></pre></td></tr></table></figure></p>
+<p>上面的代码可以正常实行，就像test2已被声明一样。ECMAScript的解释程序遇到未声明过的标识符时，用该变量名创建一个<strong>全局变量</strong>，并将其初始化为指定的值。<br>这是该语言的便利之处，不过如果不能紧密跟踪变量，这样做也很危险。最好的习惯是像使用其他程序设计语言一样，<strong>总是声明所有变量</strong>。</p>
+<hr>
+<p>###命名规范（建议）<br>1、”_”下划线用于描述私有变量，如：_age = 27;<br>2、采用统一的命名规范，如Camel 标记法，首字母是小写的，接下来的字母都以大写字符开头。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var myTestValue = 0, mySecondValue = &#34;hi&#34;;</span><br></pre></td></tr></table></figure></p>
+<p>3、规范的变量命名前缀<br><img src="http://images.54646a963df08.d01.nanoyun.com/QQ20141226101923.png" alt=""></p>
+<hr>
+<p>##关键字<br>ECMA-262 定义了 ECMAScript 支持的一套关键字（keyword）。<br>这些关键字标识了 ECMAScript 语句的开头和/或结尾。根据规定，关键字是保留的，不能用作变量名或函数名。<br>下面是 ECMAScript 关键字的完整列表：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">break&#10;case&#10;catch&#10;continue&#10;default&#10;delete&#10;do&#10;else&#10;finally&#10;for&#10;function&#10;if&#10;in&#10;instanceof&#10;new&#10;return&#10;switch&#10;this&#10;throw&#10;try&#10;typeof&#10;var&#10;void&#10;while&#10;with&#10;``` &#10;&#10;&#10;---&#10;##&#20445;&#30041;&#23383;&#10;ECMA-262 &#23450;&#20041;&#20102; ECMAScript &#25903;&#25345;&#30340;&#19968;&#22871;&#20445;&#30041;&#23383;&#65288;reserved word&#65289;&#12290;&#10;&#20445;&#30041;&#23383;&#22312;&#26576;&#31181;&#24847;&#24605;&#19978;&#26159;&#20026;&#23558;&#26469;&#30340;&#20851;&#38190;&#23383;&#32780;&#20445;&#30041;&#30340;&#21333;&#35789;&#12290;&#22240;&#27492;&#20445;&#30041;&#23383;&#19981;&#33021;&#34987;&#29992;&#20316;&#21464;&#37327;&#21517;&#25110;&#20989;&#25968;&#21517;&#12290;&#10;ECMA-262 &#31532;&#19977;&#29256;&#20013;&#20445;&#30041;&#23383;&#30340;&#23436;&#25972;&#21015;&#34920;&#22914;&#19979;&#65306;</span><br></pre></td></tr></table></figure></p>
+<p>abstract<br>boolean<br>byte<br>char<br>class<br>const<br>debugger<br>double<br>enum<br>export<br>extends<br>final<br>float<br>goto<br>implements<br>import<br>int<br>interface<br>long<br>native<br>package<br>private<br>protected<br>public<br>short<br>static<br>super<br>synchronized<br>throws<br>transient<br>volatile<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;&#10;##*&#25968;&#25454;&#32467;&#26500;&#10;###&#20540;&#10;**&#22312; ECMAScript &#20013;&#65292;&#21464;&#37327;&#21487;&#20197;&#23384;&#22312;&#20004;&#31181;&#31867;&#22411;&#30340;&#20540;&#65292;&#21363;&#21407;&#22987;&#20540;&#21644;&#24341;&#29992;&#20540;&#12290;**&#10;1&#12289;&#21407;&#22987;&#20540;&#65306;&#10;&#23384;&#20648;&#22312;&#26632;&#65288;stack&#65289;&#20013;&#30340;&#31616;&#21333;&#25968;&#25454;&#27573;&#65292;&#20063;&#23601;&#26159;&#35828;&#65292;&#23427;&#20204;&#30340;&#20540;&#30452;&#25509;&#23384;&#20648;&#22312;&#21464;&#37327;&#35775;&#38382;&#30340;&#20301;&#32622;&#12290;&#10;&#10;2&#12289;&#24341;&#29992;&#20540;&#65306;&#10;&#23384;&#20648;&#22312;&#22534;&#65288;heap&#65289;&#20013;&#30340;&#23545;&#35937;&#65292;&#20063;&#23601;&#26159;&#35828;&#65292;&#23384;&#20648;&#22312;&#21464;&#37327;&#22788;&#30340;&#20540;&#26159;&#19968;&#20010;&#25351;&#38024;&#65288;point&#65289;&#65292;&#25351;&#21521;&#23384;&#20648;&#23545;&#35937;&#30340;&#20869;&#23384;&#22788;&#12290;&#10;&#10;&#20026;&#21464;&#37327;&#36171;&#20540;&#26102;&#65292;ECMAScript &#30340;&#35299;&#37322;&#31243;&#24207;&#24517;&#39035;&#21028;&#26029;&#35813;&#20540;&#26159;&#21407;&#22987;&#31867;&#22411;&#65292;&#36824;&#26159;&#24341;&#29992;&#31867;&#22411;&#12290;&#35201;&#23454;&#29616;&#36825;&#19968;&#28857;&#65292;&#35299;&#37322;&#31243;&#24207;&#21017;&#38656;&#23581;&#35797;&#21028;&#26029;&#35813;&#20540;&#26159;&#21542;&#20026; ECMAScript &#30340;&#21407;&#22987;&#31867;&#22411;&#20043;&#19968;&#65292;&#21363; Undefined&#12289;Null&#12289;Boolean&#12289;Number &#21644; String &#22411;&#12290;&#30001;&#20110;&#36825;&#20123;&#21407;&#22987;&#31867;&#22411;&#21344;&#25454;&#30340;&#31354;&#38388;&#26159;&#22266;&#23450;&#30340;&#65292;&#25152;&#20197;&#21487;&#23558;&#20182;&#20204;&#23384;&#20648;&#22312;&#36739;&#23567;&#30340;&#20869;&#23384;&#21306;&#22495; - &#26632;&#20013;&#12290;&#36825;&#26679;&#23384;&#20648;&#20415;&#20110;&#36805;&#36895;&#26597;&#23547;&#21464;&#37327;&#30340;&#20540;&#12290;&#10;&#22914;&#26524;&#19968;&#20010;&#20540;&#26159;&#24341;&#29992;&#31867;&#22411;&#30340;&#65292;&#37027;&#20040;&#23427;&#30340;&#23384;&#20648;&#31354;&#38388;&#23558;&#20174;&#22534;&#20013;&#20998;&#37197;&#12290;&#30001;&#20110;&#24341;&#29992;&#20540;&#30340;&#22823;&#23567;&#20250;&#25913;&#21464;&#65292;&#25152;&#20197;&#19981;&#33021;&#25226;&#23427;&#25918;&#22312;&#26632;&#20013;&#65292;&#21542;&#21017;&#20250;&#38477;&#20302;&#21464;&#37327;&#26597;&#23547;&#30340;&#36895;&#24230;&#12290;&#30456;&#21453;&#65292;&#25918;&#22312;&#21464;&#37327;&#30340;&#26632;&#31354;&#38388;&#20013;&#30340;&#20540;&#26159;&#35813;&#23545;&#35937;&#23384;&#20648;&#22312;&#22534;&#20013;&#30340;&#22320;&#22336;&#12290;&#22320;&#22336;&#30340;&#22823;&#23567;&#26159;&#22266;&#23450;&#30340;&#65292;&#25152;&#20197;&#25226;&#23427;&#23384;&#20648;&#22312;&#26632;&#20013;&#23545;&#21464;&#37327;&#24615;&#33021;&#26080;&#20219;&#20309;&#36127;&#38754;&#24433;&#21709;&#12290;&#22914;&#19979;&#22270;&#25152;&#31034;&#65306;&#10;![](http://images.54646a963df08.d01.nanoyun.com/ct_js_value.gif)&#10;&#10;&#10;---&#10;###&#21407;&#22987;&#31867;&#22411;&#10;**ECMAScript &#26377; 5 &#31181;&#21407;&#22987;&#31867;&#22411;&#65288;primitive type&#65289;&#65292;&#21363; Undefined&#12289;Null&#12289;Boolean&#12289;Number &#21644; String**&#10;&#10;---&#10;####1&#12289;undefined&#20027;&#35201;&#29992;&#20110;&#22768;&#26126;&#21464;&#37327;&#27809;&#26377;&#21021;&#22987;&#21270;&#12290;</span><br></pre></td></tr></table></figure></p>
+<p>var test;<br>alert(test);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#20197;&#19978;&#20195;&#30721;&#36755;&#20986;undefined&#65307;&#10;&#10;&#10;---&#10;####2&#12289;null&#20027;&#35201;&#29992;&#20110;&#21464;&#37327;&#27809;&#26377;&#22768;&#26126;&#12290;&#10;&#20294;&#23454;&#38469;&#19978;&#20540; undefined &#23454;&#38469;&#19978;&#26159;&#20174;&#20540; null &#27966;&#29983;&#26469;&#30340;&#65292;&#22240;&#27492; ECMAScript &#25226;&#23427;&#20204;&#23450;&#20041;&#20026;&#30456;&#31561;&#30340;&#12290;</span><br></pre></td></tr></table></figure></p>
+<p>alert(null == undefined);  //输出 true<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;&#10;---&#10;####3&#12289;Number&#31867;&#22411;&#26082;&#21487;&#20197;&#34920;&#31034; 32 &#20301;&#30340;&#25972;&#25968;&#65292;&#36824;&#21487;&#20197;&#34920;&#31034; 64 &#20301;&#30340;&#28014;&#28857;&#25968;</span><br></pre></td></tr></table></figure></p>
+<p>var nNum = 86;     //整数<br>var nNum2 = 86.6;  //浮点数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;&#10;---&#10;####4&#12289;&#22768;&#26126;&#20843;&#36827;&#21046;&#21644;&#21313;&#20845;&#36827;&#21046;&#25968;&#10;&#20843;&#36827;&#21046;&#23383;&#38754;&#37327;&#30340;&#39318;&#25968;&#23383;&#24517;&#39035;&#26159; 0&#65292;&#20854;&#21518;&#30340;&#25968;&#23383;&#21487;&#20197;&#26159;&#20219;&#20309;&#20843;&#36827;&#21046;&#25968;&#23383;&#65288;0-7&#65289;&#65307;&#10;&#20845;&#36827;&#21046;&#30340;&#23383;&#38754;&#37327;&#65292;&#39318;&#20301;&#25968;&#23383;&#24517;&#39035;&#20026; 0&#65292;&#21518;&#38754;&#25509;&#23383;&#27597; x&#65292;&#28982;&#21518;&#26159;&#20219;&#24847;&#30340;&#21313;&#20845;&#36827;&#21046;&#25968;&#23383;&#65288;0 &#21040; 9 &#21644; A &#21040; F&#65289;&#65292;&#36825;&#20123;&#23383;&#27597;&#21487;&#20197;&#26159;&#22823;&#20889;&#30340;&#65292;&#20063;&#21487;&#20197;&#26159;&#23567;&#20889;&#30340;&#12290;</span><br></pre></td></tr></table></figure></p>
+<p>//八进制<br>var iNum = 070;  //八进制070 等于十进制的 56</p>
+<p>//十六进制<br>var iNum = 0x1f;  //0x1f 等于十进制的 31<br>var iNum = 0xAB;  //0xAB 等于十进制的 171<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**&#27880;&#24847;&#65306;&#23613;&#31649;&#25152;&#26377;&#25972;&#25968;&#37117;&#21487;&#20197;&#34920;&#31034;&#20026;&#20843;&#36827;&#21046;&#25110;&#21313;&#20845;&#36827;&#21046;&#30340;&#23383;&#38754;&#37327;&#65292;&#20294;&#25152;&#26377;&#25968;&#23398;&#36816;&#31639;&#36820;&#22238;&#30340;&#37117;&#26159;&#21313;&#36827;&#21046;&#32467;&#26524;&#12290;**&#10;&#10;&#10;---&#10;####5&#12289;&#31185;&#23398;&#35745;&#25968;&#27861;&#10;ECMAScript &#40664;&#35748;&#25226;&#20855;&#26377; 6 &#20010;&#25110; 6 &#20010;&#20197;&#19978;&#21069;&#23548; 0 &#30340;&#28014;&#28857;&#25968;&#36716;&#25442;&#25104;&#31185;&#23398;&#35745;&#25968;&#27861;&#12290;</span><br></pre></td></tr></table></figure></p>
+<p>var fNum = 5.618e7        //56180000<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;&#10;---&#10;####6&#12289;&#23383;&#31526;&#23383;&#38754;&#37327;&#10;![](http://images.54646a963df08.d01.nanoyun.com/QQ20141226110601.png)&#10;&#10;&#10;---&#10;####7&#12289;&#36827;&#21046;&#36716;&#25442;</span><br></pre></td></tr></table></figure></p>
+<p>var v = 10;<br>//注意，返回的是字符串，建议运算只在十进制下进行，再转换结果。<br>//十进制转二进制<br>v.toString(2);            //输出 “1010”<br>//十进制转八进制<br>v.toString(8);            //输出 “12”<br>//十进制转十六进制<br>v.toString(16);            //输出 “A”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;</span><br></pre></td></tr></table></figure></p>
+<p>//十六进制转十进制<br>parseInt(“AF”, 16);        //返回 175<br>//二进制转十进制<br>parseInt(“10”, 2);        //返回 2<br>//八进制转十进制<br>parseInt(“10”, 8);        //返回 8<br>//十进制转十进制<br>parseInt(“10”, 10);        //返回 10<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;&#10;---&#10;####8&#12289;parseInf&#21644;parseFloat&#24517;&#39035;&#27880;&#24847;&#30340;&#22353;&#10;&#20197;&#19979;&#26696;&#20363;&#20197;parseInt&#20026;&#20363;&#23376;&#65292;parseFloat&#30456;&#21516;&#12290;&#10;&#10;parseInt&#39318;&#20808;&#26597;&#30475;&#20301;&#32622; 0 &#22788;&#30340;&#23383;&#31526;&#65292;&#21028;&#26029;&#23427;&#26159;&#21542;&#26159;&#20010;&#26377;&#25928;&#25968;&#23383;&#65307;&#22914;&#26524;&#19981;&#26159;&#65292;&#35813;&#26041;&#27861;&#23558;&#36820;&#22238; NaN&#65292;&#19981;&#20877;&#32487;&#32493;&#25191;&#34892;&#20854;&#20182;&#25805;&#20316;&#12290;&#20294;&#22914;&#26524;&#35813;&#23383;&#31526;&#26159;&#26377;&#25928;&#25968;&#23383;&#65292;&#35813;&#26041;&#27861;&#23558;&#26597;&#30475;&#20301;&#32622; 1 &#22788;&#30340;&#23383;&#31526;&#65292;&#36827;&#34892;&#21516;&#26679;&#30340;&#27979;&#35797;&#12290;&#36825;&#19968;&#36807;&#31243;&#23558;&#25345;&#32493;&#21040;&#21457;&#29616;&#38750;&#26377;&#25928;&#25968;&#23383;&#30340;&#23383;&#31526;&#20026;&#27490;&#65292;&#27492;&#26102; parseInt() &#23558;&#25226;&#35813;&#23383;&#31526;&#20043;&#21069;&#30340;&#23383;&#31526;&#20018;&#36716;&#25442;&#25104;&#25968;&#23383;&#12290;</span><br></pre></td></tr></table></figure></p>
+<p>parseInt(“123num”)            // 123<br>parseInt(“n123num”)            // NaN<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;&#10;---&#10;###&#24341;&#29992;&#31867;&#22411;&#10;**&#24341;&#29992;&#31867;&#22411;&#36890;&#24120;&#21483;&#20570;&#31867;&#65288;class&#65289;&#12290;**&#10;&#10;&#23601;&#26159;&#35828;&#65292;&#36935;&#21040;&#24341;&#29992;&#20540;&#65292;&#25152;&#22788;&#29702;&#30340;&#23601;&#26159;&#23545;&#35937;&#12290;&#10;&#10;&#24341;&#29992;&#31867;&#22411;&#21253;&#25324;&#20102;&#22823;&#37327;ECMAScript &#39044;&#23450;&#20041;&#22914;Object&#12289;Number&#21644;String&#31561;&#31867;&#21644;&#33258;&#23450;&#20041;&#30340;&#31867;&#12290;&#10;&#10;&#27880;&#24847;&#65306;&#20174;&#20256;&#32479;&#24847;&#20041;&#19978;&#26469;&#35828;&#65292;ECMAScript &#24182;&#19981;&#30495;&#27491;&#20855;&#26377;&#31867;&#12290;&#20107;&#23454;&#19978;&#65292;&#38500;&#20102;&#35828;&#26126;&#19981;&#23384;&#22312;&#31867;&#65292;&#22312; ECMA-262 &#20013;&#26681;&#26412;&#27809;&#26377;&#20986;&#29616;&#8220;&#31867;&#8221;&#36825;&#20010;&#35789;&#12290;ECMAScript &#23450;&#20041;&#20102;&#8220;&#23545;&#35937;&#23450;&#20041;&#8221;&#65292;&#36923;&#36753;&#19978;&#31561;&#20215;&#20110;&#20854;&#20182;&#31243;&#24207;&#35774;&#35745;&#35821;&#35328;&#20013;&#30340;&#31867;&#12290;&#10;&#10;&#10;---&#10;####Object&#23545;&#35937;&#10;Object &#23545;&#35937;&#33258;&#36523;&#29992;&#22788;&#19981;&#22823;&#65292;&#19981;&#36807;&#22312;&#20102;&#35299;&#20854;&#20182;&#31867;&#20043;&#21069;&#65292;&#36824;&#26159;&#24212;&#35813;&#20102;&#35299;&#23427;&#12290;&#22240;&#20026; ECMAScript &#20013;&#30340; Object &#23545;&#35937;&#19982; Java &#20013;&#30340; java.lang.Object &#30456;&#20284;&#65292;ECMAScript &#20013;&#30340;&#25152;&#26377;&#23545;&#35937;&#37117;&#30001;&#36825;&#20010;&#23545;&#35937;&#32487;&#25215;&#32780;&#26469;&#65292;Object &#23545;&#35937;&#20013;&#30340;&#25152;&#26377;&#23646;&#24615;&#21644;&#26041;&#27861;&#37117;&#20250;&#20986;&#29616;&#22312;&#20854;&#20182;&#23545;&#35937;&#20013;&#65292;&#25152;&#20197;&#29702;&#35299;&#20102; Object &#23545;&#35937;&#65292;&#23601;&#21487;&#20197;&#26356;&#22909;&#22320;&#29702;&#35299;&#20854;&#20182;&#23545;&#35937;&#12290;&#10;&#10;&#23646;&#24615;&#65306;&#10;1&#12289;constructor&#10;&#23545;&#21019;&#24314;&#23545;&#35937;&#30340;&#20989;&#25968;&#30340;&#24341;&#29992;&#65288;&#25351;&#38024;&#65289;&#12290;&#23545;&#20110; Object &#23545;&#35937;&#65292;&#35813;&#25351;&#38024;&#25351;&#21521;&#21407;&#22987;&#30340; Object() &#20989;&#25968;&#12290;&#10;&#10;2&#12289;prototype&#10;&#23545;&#35813;&#23545;&#35937;&#30340;&#23545;&#35937;&#21407;&#22411;&#30340;&#24341;&#29992;&#12290;&#23545;&#20110;&#25152;&#26377;&#30340;&#23545;&#35937;&#65292;&#23427;&#40664;&#35748;&#36820;&#22238; Object &#23545;&#35937;&#30340;&#19968;&#20010;&#23454;&#20363;&#12290;&#10;&#10;&#26041;&#27861;&#65306;&#10;1&#12289;hasOwnProperty(property)&#10;&#21028;&#26029;&#23545;&#35937;&#26159;&#21542;&#26377;&#26576;&#20010;&#29305;&#23450;&#30340;&#23646;&#24615;&#12290;&#24517;&#39035;&#29992;&#23383;&#31526;&#20018;&#25351;&#23450;&#35813;&#23646;&#24615;&#12290;&#65288;&#20363;&#22914;&#65292;o.hasOwnProperty(&#34;name&#34;)&#65289;&#10;&#10;2&#12289;isPrototypeOf(object)&#10;&#21028;&#26029;&#35813;&#23545;&#35937;&#26159;&#21542;&#20026;&#21478;&#19968;&#20010;&#23545;&#35937;&#30340;&#21407;&#22411;&#12290;&#10;&#10;3&#12289;propertyIsEnumerable&#10;&#21028;&#26029;&#32473;&#23450;&#30340;&#23646;&#24615;&#26159;&#21542;&#21487;&#20197;&#29992; for...in &#35821;&#21477;&#36827;&#34892;&#26522;&#20030;&#12290;&#10;&#10;4&#12289;valueOf()&#10;&#36820;&#22238;&#26368;&#36866;&#21512;&#35813;&#23545;&#35937;&#30340;&#21407;&#22987;&#20540;&#12290;&#23545;&#20110;&#35768;&#22810;&#23545;&#35937;&#65292;&#35813;&#26041;&#27861;&#36820;&#22238;&#30340;&#20540;&#37117;&#19982;toString() &#30340;&#36820;&#22238;&#20540;&#30456;&#21516;&#12290;&#10;&#10;5&#12289;toString()&#10;&#36820;&#22238;&#23545;&#35937;&#30340;&#21407;&#22987;&#23383;&#31526;&#20018;&#34920;&#31034;&#12290;&#23545;&#20110; Object &#23545;&#35937;&#65292;ECMA-262 &#27809;&#26377;&#23450;&#20041;&#36825;&#20010;&#20540;&#65292;&#25152;&#20197;&#19981;&#21516;&#30340; ECMAScript &#23454;&#29616;&#20855;&#26377;&#19981;&#21516;&#30340;&#20540;&#12290;&#10;&#10;&#10;---&#10;####&#39044;&#23450;&#20041;&#31867;&#65288;&#39044;&#23450;&#20041;&#24341;&#29992;&#31867;&#22411;&#65289;&#19982;&#21407;&#31867;&#22411;&#10;ECMAScript&#39044;&#23450;&#20041;&#30340;&#31867;&#21253;&#25324;&#65306;&#10;1&#12289;Array&#10;2&#12289;Boolean&#10;3&#12289;Date&#10;4&#12289;Math&#10;5&#12289;Number&#10;6&#12289;String&#10;7&#12289;RegExp&#10;8&#12289;Global&#10;&#10;&#10;Number&#31867;&#19982;Number&#30340;&#21306;&#21035;&#65306;</span><br></pre></td></tr></table></figure></p>
+<p>var v1 = 10;<br>var v2 = new Number(10);</p>
+<p>alert(v1);                // 10<br>alert(v2);                // 10</p>
+<p>alert(typeof v1);        // number<br>alert(typeof v2);        // object<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#19978;&#38754;&#30340;&#20195;&#30721;&#65292;v1&#23646;&#20110;&#21407;&#31867;&#22411;&#65292;&#32780;v2&#23646;&#20110;&#24341;&#29992;&#31867;&#22411;&#65292;&#34429;&#28982;&#23427;&#20204;&#36820;&#22238;&#30340;&#37117;&#26159;10&#65292;&#20294;&#23427;&#20204;&#30340;&#31867;&#22411;&#21364;&#19981;&#19968;&#33268;&#65292;v1&#30340;typeof&#20540;&#26159;number&#65292;v2&#26159;object&#12290;&#10;&#10;&#10;**&#27880;&#24847;&#65306;&#21407;&#22987;&#24341;&#29992;&#23545;&#35937;&#30340;&#25152;&#26377;&#23646;&#24615;&#21644;&#26041;&#27861;&#37117;&#21487;&#24212;&#29992;&#20110;&#21407;&#22987;&#20540;&#65288;&#21407;&#31867;&#22411;&#65289;&#19978;&#65292;&#22240;&#20026;&#23427;&#20204;&#26159;&#20266;&#23545;&#35937;&#12290;**&#10;&#10;&#10;---&#10;####instanceof&#36816;&#31639;&#31526;&#10;&#20808;&#19981;&#30475;&#20160;&#20040;&#26159;instanceof&#36816;&#31639;&#31526;&#65292;&#25105;&#20204;&#20808;&#20551;&#35774;&#19968;&#20010;&#38382;&#39064;&#65292;&#19978;&#36848;&#20195;&#30721;v2&#23454;&#38469;&#19978;&#37117;&#26159;number&#31867;&#22411;&#65292;&#20294;typeof&#21482;&#36820;&#22238;object&#65292;&#37027;&#26159;&#22240;&#20026;&#29992;typeof&#36816;&#31639;&#31526;&#37319;&#29992;&#24341;&#29992;&#31867;&#22411;&#23384;&#20648;&#20540;&#20250;&#20986;&#29616;&#19968;&#20010;&#38382;&#39064;&#65292;&#26080;&#35770;&#24341;&#29992;&#30340;&#26159;&#20160;&#20040;&#31867;&#22411;&#30340;&#23545;&#35937;&#65292;&#23427;&#37117;&#36820;&#22238; &#34;object&#34;&#65292;&#37027;&#20040;&#22914;&#20309;&#21028;&#26029;v2&#26159;&#19968;&#20010;Number&#21602;&#65311;&#36825;&#37324;&#23601;&#38656;&#35201;&#20511;&#21161;**instanceof**&#36816;&#31639;&#31526;&#20102;&#12290;</span><br></pre></td></tr></table></figure></p>
+<p>var v2 = new Number(10);</p>
+<p>alert(type v2 == ‘Number’);            // false<br>alert(v2 instanceof Number);        // true<br>```</p>
+<hr>
+<p>因ECMAScript内容过多，所以需要分开几篇进行整理，本篇主要对ECMAScript的简介和数据结构进行了整理，而下一篇将会对ECMAScript的函数和对象进行整理。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>##什么是ECMAScript<br>一句话，ECMAScript是一套标准，是JavaScript的核心部分，JavaScript实现了ECMAScript的 标准并作出扩展，实现对网页控制的相关动作。</p>
+<hr>
+<p>##语法<br>熟悉 Java、C 和 Perl 这些语言的开发者会发现 ECMAScript 的语法很容易掌握，因为它借用了这些语言的语法。<br>Java 和 ECMAScript 有一些关键的语法特性相同，也有一些完全不同。</p>
+<hr>
+<p>###区分大小写<br>与 Java 一样，变量、函数名、运算符以及其他一切东西都是区分大小写的。<br>比如：<br>变量 test 与变量 TEST 是不同的。</p>
+<hr>
+<p>###弱类型变量<br>与 Java 和 C 不同，ECMAScript 中的变量无特定的类型，定义变量时只用 var 运算符，可以将它初始化为任意值。<br>因此，可以随时改变变量所存数据的类型（尽量避免这样做）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var color = &#34;red&#34;;&#10;var num = 25;&#10;var visible = true;</span><br></pre></td></tr></table></figure></p>]]>
+    
+    </summary>
+    
+      <category term="ECMA-262" scheme="http://junozero.github.io/tags/ECMA-262/"/>
+    
+      <category term="ECMAScript" scheme="http://junozero.github.io/tags/ECMAScript/"/>
+    
+      <category term="javascript" scheme="http://junozero.github.io/tags/javascript/"/>
+    
+      <category term="学习" scheme="http://junozero.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="教程" scheme="http://junozero.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="w3c基础整理" scheme="http://junozero.github.io/categories/w3c%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[w3c基础整理之javascript]]></title>
+    <link href="http://junozero.github.io/2014/12/24/w3c%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86%E4%B9%8Bjavascript/"/>
+    <id>http://junozero.github.io/2014/12/24/w3c基础整理之javascript/</id>
+    <published>2014-12-24T06:45:00.000Z</published>
+    <updated>2014-12-24T10:22:27.953Z</updated>
+    <content type="html"><![CDATA[<p>##什么是JavaScript<br>在介绍什么是JavaScript前，首先不得不提一些它的历史帐。</p>
+<hr>
+<p>###历史<br>它最初由Netscape的Brendan Eich设计，Netscape在最初将其脚本语言命名为LiveScript，后来Netscape在与Sun合作之后将其改名为JavaScript。JavaScript最初受Java启发而开始设计的，目的之一就是“看上去像Java”，因此语法上有类似之处，一些名称和命名规范也借自Java。但JavaScript的主要设计原则源自Self和Scheme。JavaScript与Java名称上的近似，是当时Netscape为了营销考虑与Sun的微系统达成协议的结果，实际上Javascript与JAVA完全搭不上边，是两种完全不同的语言，无论在概念还是设计上。</p>
+<p>1996年11月Netscape将JavaScript提交给欧洲计算机制造商协会（ECMA国际前身）进行标准化。ECMA-262的第一个版本于1997年6月被Ecma组织采纳。ECMAScript是由ECMA-262标准化的脚本语言的名称，往往ECMAScript被称为JavaScript，实际上JavaScript是ECMAScript的实现和扩展。</p>
+<p>目前广泛使用的是ECMAScript 5，ECMAScript 6已计划在2015年6月份正式定版，目前部分浏览器已对ECMA6的某些特性进行支持。</p>
+<hr>
+<p>###JavaScript<br>JavaScript （简称JS）是一种轻量级的编程语言，是一种动态类型、弱类型、基于原型的语言。其源代码在发往客户端运行之前不需经过编译，而是将文本格式的字符代码发送给浏览器由浏览器解释运行。</p>
+<hr>
+<p>###组成<br>1、ECMAScript，描述了该语言的语法和基本对象，是JavaScript的核心。<br>2、文档对象模型（DOM），描述处理网页内容的方法和接口。<br>3、浏览器对象模型（BOM），描述与浏览器进行交互的方法和接口。<br><a id="more"></a></p>
+<hr>
+<p>###日常用途<br>1、嵌入动态文本于HTML页面。<br>2、对浏览器事件做出响应。<br>3、读写HTML元素。<br>4、在数据被提交到服务器之前验证数据。<br>5、检测访客的浏览器信息。<br>6、控制cookies，包括创建和修改等。<br>7、基于Node.js技术进行服务器端编程。</p>
+<hr>
+<p>##ECMAScript<br>ECMAScript 仅仅是一个描述，是一个标准，定义了脚本语言的所有属性、方法和对象，每个浏览器都有它自己的 ECMAScript 接口的实现，然后这个实现又被扩展，包含了 DOM 和 BOM。</p>
+<p>ECMAScript5规范中文版<a href="http://lzw.me/pages/ecmascript/" target="_blank" rel="external">点我查看</a></p>
+<p>ECMAScript6入门<a href="http://es6.ruanyifeng.com/#docs/intro" target="_blank" rel="external">点我查看</a></p>
+<hr>
+<p>##DOM<br>DOM 是 W3C（万维网联盟）的标准。</p>
+<p>DOM 定义了访问 HTML 和 XML 文档的标准：“W3C 文档对象模型 （DOM） 是中立于平台和语言的接口，它允许程序和脚本动态地访问和更新文档的内容、结构和样式。”</p>
+<p>W3C DOM 标准被分为 3 个不同的部分：<br>1、核心 DOM - 针对任何结构化文档的标准模型；<br>2、HTML DOM - 针对 HTML 文档的标准模型；<br>3、XML DOM - 针对 XML 文档的标准模型；</p>
+<p>备注：DOM 是 Document Object Model（文档对象模型）的缩写。</p>
+<hr>
+<p>###DOM与JS的关系<br>上面也提到了，DOM 定义了访问 HTML 和 XML 文档的标准，它允许程序和脚本（JavaScript）动态地访问和更新文档的内容、结构和样式。</p>
+<hr>
+<p>###典型案例<br>DOM的典型案例就是document对象，通过document.getElementById(id)就可以获取到对应元素的对象，通过dom提供的接口就可以改变对象的内容和样式。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;!DOCTYPE html&#62;&#10;&#60;html&#62;&#10;&#60;head&#62;&#10;  &#60;meta charset=&#34;UTF-8&#34;&#62;&#10;  &#60;title&#62;Dom&#60;/title&#62;&#10;  &#60;script type=&#34;text/javascript&#34;&#62;&#10;    function test () &#123;&#10;      //&#36890;&#36807;dom&#25552;&#20379;&#30340;document&#23545;&#35937;&#30340;getElementById&#26041;&#27861;&#33719;&#21462;id&#20026;mytext&#30340;dom&#23545;&#35937;&#12290;&#10;      var oDiv = document.getElementById(&#39;mytext&#39;);&#10;&#10;      //&#36890;&#36807;&#25913;&#21464;dom&#23545;&#35937;&#25552;&#20379;&#30340;innerHTML&#23646;&#24615;&#65292;&#25913;&#21464;&#39029;&#38754;&#30340;&#20869;&#23481;&#12290;&#10;      oDiv.innerHTML = &#39;&#25105;&#21482;&#19968;&#20010;&#26080;&#22788;&#19981;&#22312;&#30340;&#23567;&#24191;&#21578;&#39;;&#10;&#10;      //&#36890;&#36807;&#25913;&#21464;dom&#23545;&#35937;&#25552;&#20379;&#30340;style&#23646;&#24615;&#65292;&#25913;&#21464;&#20803;&#32032;&#30340;&#25991;&#23383;&#39068;&#33394;&#12290;&#10;      oDiv.style.color = &#39;blue&#39;;&#10;    &#125;&#10;  &#60;/script&#62;&#10;&#60;/head&#62;&#10;&#60;body&#62;&#10;  &#60;button onclick=&#34;test()&#34;&#62;dom test&#60;/button&#62;&#10;  &#60;div id=&#34;mytext&#34;&#62;&#25105;&#26159;&#25991;&#26412;&#60;/div&#62;&#10;&#60;/body&#62;&#10;&#60;/html&#62;</span><br></pre></td></tr></table></figure></p>
+<iframe src="http://codepen.io/junozero/full/xbEgKr/" width="100%" height="300px" frameborder="0" scrolling="no"> </iframe>
+
+<p>上面一个小案例说明了如何通过js去控制dom，使页面“动”起来，这也是常常提到的DHTML。</p>
+<hr>
+<p>##BOM<br>BOM（浏览器对象模型），BOM 主要处理浏览器窗口和框架，不过通常浏览器特定的 JavaScript 扩展都被看做 BOM 的一部分。这些扩展包括：<br>1、弹出新的浏览器窗口<br>2、移动、关闭浏览器窗口以及调整窗口大小<br>3、提供 Web 浏览器详细信息的定位对象<br>4、提供用户屏幕分辨率详细信息的屏幕对象<br>5、对 cookie 的支持<br>6、IE 扩展了 BOM，加入了 ActiveXObject 类，可以通过 JavaScript 实例化 ActiveX 对象。</p>
+<p>由于没有相关的 BOM 标准，每种浏览器都有自己的 BOM 实现。有一些事实上的标准，如具有一个窗口对象和一个导航对象，不过每种浏览器可以为这些对象或其他对象定义自己的属性和方法。</p>
+<hr>
+<p>###典型案例<br>BOM的典型案例就是window对象，通过window对象的alert方法可以弹出一个对话框。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;!DOCTYPE html&#62;&#10;&#60;html&#62;&#10;&#60;head&#62;&#10;  &#60;meta charset=&#34;UTF-8&#34;&#62;&#10;  &#60;title&#62;Bom&#60;/title&#62;&#10;  &#60;script type=&#34;text/javascript&#34;&#62;&#10;    function test () &#123;&#10;      //&#36890;&#36807;BOM&#25552;&#20379;&#30340;window&#23545;&#35937;&#30340;alert&#26041;&#27861;&#24377;&#20986;&#19968;&#20010;&#23567;&#23545;&#35805;&#26694;&#12290;&#10;      window.alert(&#39;&#36825;&#26159;&#19968;&#20010;&#26080;&#22788;&#19981;&#22312;&#30340;&#23567;&#24191;&#21578;&#39;);&#10;    &#125;&#10;  &#60;/script&#62;&#10;&#60;/head&#62;&#10;&#60;body&#62;&#10;  &#60;button onclick=&#34;test()&#34;&#62;bom test&#60;/button&#62;&#10;&#60;/body&#62;&#10;&#60;/html&#62;</span><br></pre></td></tr></table></figure></p>
+<iframe src="http://codepen.io/junozero/full/RNGKNY/" width="100%" height="300px" frameborder="0" scrolling="no"> </iframe>
+
+
+<hr>
+<p>##总结<br>一句话，在浏览器中，如果缺少JS，即使有华丽的html和css，也就是一辆缺少了轮子的豪华跑车，只能看，不能用。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>##什么是JavaScript<br>在介绍什么是JavaScript前，首先不得不提一些它的历史帐。</p>
+<hr>
+<p>###历史<br>它最初由Netscape的Brendan Eich设计，Netscape在最初将其脚本语言命名为LiveScript，后来Netscape在与Sun合作之后将其改名为JavaScript。JavaScript最初受Java启发而开始设计的，目的之一就是“看上去像Java”，因此语法上有类似之处，一些名称和命名规范也借自Java。但JavaScript的主要设计原则源自Self和Scheme。JavaScript与Java名称上的近似，是当时Netscape为了营销考虑与Sun的微系统达成协议的结果，实际上Javascript与JAVA完全搭不上边，是两种完全不同的语言，无论在概念还是设计上。</p>
+<p>1996年11月Netscape将JavaScript提交给欧洲计算机制造商协会（ECMA国际前身）进行标准化。ECMA-262的第一个版本于1997年6月被Ecma组织采纳。ECMAScript是由ECMA-262标准化的脚本语言的名称，往往ECMAScript被称为JavaScript，实际上JavaScript是ECMAScript的实现和扩展。</p>
+<p>目前广泛使用的是ECMAScript 5，ECMAScript 6已计划在2015年6月份正式定版，目前部分浏览器已对ECMA6的某些特性进行支持。</p>
+<hr>
+<p>###JavaScript<br>JavaScript （简称JS）是一种轻量级的编程语言，是一种动态类型、弱类型、基于原型的语言。其源代码在发往客户端运行之前不需经过编译，而是将文本格式的字符代码发送给浏览器由浏览器解释运行。</p>
+<hr>
+<p>###组成<br>1、ECMAScript，描述了该语言的语法和基本对象，是JavaScript的核心。<br>2、文档对象模型（DOM），描述处理网页内容的方法和接口。<br>3、浏览器对象模型（BOM），描述与浏览器进行交互的方法和接口。<br>]]>
+    
+    </summary>
+    
+      <category term="ECMA-262" scheme="http://junozero.github.io/tags/ECMA-262/"/>
+    
+      <category term="ECMAScript" scheme="http://junozero.github.io/tags/ECMAScript/"/>
+    
+      <category term="javascript" scheme="http://junozero.github.io/tags/javascript/"/>
+    
+      <category term="学习" scheme="http://junozero.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="教程" scheme="http://junozero.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="w3c基础整理" scheme="http://junozero.github.io/categories/w3c%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[css使未知高度的div内容垂直居中]]></title>
+    <link href="http://junozero.github.io/2014/12/24/css%E4%BD%BF%E6%9C%AA%E7%9F%A5%E9%AB%98%E5%BA%A6%E7%9A%84div%E5%86%85%E5%AE%B9%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/"/>
+    <id>http://junozero.github.io/2014/12/24/css使未知高度的div内容垂直居中/</id>
+    <published>2014-12-24T01:20:00.000Z</published>
+    <updated>2014-12-24T03:58:55.206Z</updated>
+    <content type="html"><![CDATA[<p>今天总结一个比较简单，却也比较坑的问题，如何在只使用css的情况下，使一个未知高度的div内容垂直居中。通过一个简单的案例，逐步分析一些日常使用的问题。</p>
+<p>##如何建立一个全屏的div</p>
+<p>###一个空白的DIV<br>当一个div在没有设置任何数值的情况下，它的宽度高度和位置到底是怎样的呢？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;!DOCTYPE html&#62;&#10;&#60;html&#62;&#10;&#60;head&#62;&#10;  &#60;meta charset=&#34;UTF-8&#34;&#62;&#10;  &#60;title&#62;Css Auto Height Valign Middle&#60;/title&#62;&#10;  &#60;style type=&#34;text/css&#34;&#62;&#10;    div &#123;&#10;      background-color: green;&#10;    &#125;&#10;  &#60;/style&#62;&#10;&#60;/head&#62;&#10;&#60;body&#62;&#10;  &#60;div&#62;&#60;/div&#62;&#10;&#60;/body&#62;&#10;&#60;/html&#62;</span><br></pre></td></tr></table></figure></p>
+<iframe src="http://codepen.io/junozero/full/ogzzyg" width="100%" height="300px" frameborder="0" scrolling="no"> </iframe>
+
+<p>↑点击Edit this Pan可以查看代码。</p>
+<p>可以看到，一遍空白，通过调试工具可以看到宽度为浏览器的宽度，高度为0。<br><img src="http://images.54646a963df08.d01.nanoyun.com/QQ20141224093522.png" alt=""><br><a id="more"></a></p>
+<hr>
+<p>###一个有默认文字的DIV<br>在div中，加入一段文字。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;div&#62;&#36825;&#26159;&#19968;&#20010;&#26080;&#22788;&#19981;&#22312;&#30340;&#23567;&#24191;&#21578;&#60;/div&#62;</span><br></pre></td></tr></table></figure></p>
+<iframe src="http://codepen.io/junozero/full/ByLLPZ" width="100%" height="300px" frameborder="0" scrolling="no"> </iframe>
+
+
+<p>可以看到，当输入文字信息后，div的高度不再是0，而是文字的高度18，绿色的背景是为了方便查看调试结果，绿色的区域就是div了。<br><img src="http://images.54646a963df08.d01.nanoyun.com/QQ20141224095707.png" alt=""></p>
+<hr>
+<p>###一个只适应浏览器高度的DIV<br>是否通过设置div的高度为100%就能成功呢？我们来试试！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;!DOCTYPE html&#62;&#10;&#60;html&#62;&#10;&#60;head&#62;&#10;  &#60;meta charset=&#34;UTF-8&#34;&#62;&#10;  &#60;title&#62;Css Auto Height Valign Middle&#60;/title&#62;&#10;  &#60;style type=&#34;text/css&#34;&#62;&#10;    div &#123;&#10;      background-color: green;&#10;      height: 100%;&#10;    &#125;&#10;  &#60;/style&#62;&#10;&#60;/head&#62;&#10;&#60;body&#62;&#10;  &#60;div&#62;&#36825;&#26159;&#19968;&#20010;&#26080;&#22788;&#19981;&#22312;&#30340;&#23567;&#24191;&#21578;&#60;/div&#62;&#10;&#60;/body&#62;&#10;&#60;/html&#62;</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://images.54646a963df08.d01.nanoyun.com/QQ20141224100142.png" alt=""><br>从调试界面可以看出，将div的高度设置为100%，但实际div的高度还是18。</p>
+<p>那么如何将div的高度设置为浏览器的高度，可以随着浏览器的大小变化而变化呢？</p>
+<p>其实很简单，我们只需要在css中声明html和body的高度为100%即可。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;!DOCTYPE html&#62;&#10;&#60;html&#62;&#10;&#60;head&#62;&#10;  &#60;meta charset=&#34;UTF-8&#34;&#62;&#10;  &#60;title&#62;Css Auto Height Valign Middle&#60;/title&#62;&#10;  &#60;style type=&#34;text/css&#34;&#62;&#10;    html, body &#123;&#10;      height: 100%;&#10;    &#125;&#10;    div &#123;&#10;      background-color: green;&#10;      height: 100%;&#10;    &#125;&#10;  &#60;/style&#62;&#10;&#60;/head&#62;&#10;&#60;body&#62;&#10;  &#60;div&#62;&#36825;&#26159;&#19968;&#20010;&#26080;&#22788;&#19981;&#22312;&#30340;&#23567;&#24191;&#21578;&#60;/div&#62;&#10;&#60;/body&#62;&#10;&#60;/html&#62;</span><br></pre></td></tr></table></figure></p>
+<iframe src="http://codepen.io/junozero/full/ZYppqm/" width="100%" height="500px" frameborder="0" scrolling="no"> </iframe>
+
+<p>可以看到，绿色背景已经覆盖了整个屏幕，证明div已经全屏了，并且可以随着浏览器的大小而改变。</p>
+<hr>
+<p>##如何使文字垂直居中</p>
+<p>###一些常用的垂直居中手法</p>
+<p>####line-height<br>在知道div的高度情况下，通过设置line-height=height就可以使内容垂直居中了，比较常用的一种解决方案，但问题也很明显：<br>1、必须明确知道div的高度，才能正确的设置line-height，否则无法正常的垂直居中。<br>2、因为设置了line-height，所以当内容需要换行的时候会出现无法正常显示的问题。</p>
+<hr>
+<p>####使用table代替div，使用td居中的特性<br>这种方式也可以正常的使内容垂直居中，但实际由于已经从div变化为table，在使用场景上会受到很多限制，这里并不是说talbe就不要使用，而是需要看实际场景，如果是列表或者表格的地方就应该用table而不是div。</p>
+<hr>
+<p>还有一些垂直居中的方法就不一一列举了，百度也很多。</p>
+<hr>
+<p>###适合现代浏览器的css垂直居中方法<br>上面也介绍过，通过table的td可以实现垂直居中，那么css中有一个display属性可以把元素变为块状元素的表格显示，那么通过一些css属性的定义，就可以实现div在未知高度的情况下内容垂直居中了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;!DOCTYPE html&#62;&#10;&#60;html&#62;&#10;&#60;head&#62;&#10;  &#60;meta charset=&#34;UTF-8&#34;&#62;&#10;  &#60;title&#62;Css Auto Height Valign Middle&#60;/title&#62;&#10;  &#60;style type=&#34;text/css&#34;&#62;&#10;    html, body &#123;&#10;      height: 100%;&#10;    &#125;&#10;    .dTable &#123;&#10;      background-color: green;&#10;      width: 100%;&#10;      height: 100%;&#10;      display: table;&#10;      text-align: center;&#10;    &#125;&#10;    .dCell &#123;&#10;      display: table-cell;&#10;      vertical-align: middle;&#10;    &#125;&#10;&#10;  &#60;/style&#62;&#10;&#60;/head&#62;&#10;&#60;body&#62;&#10;  &#60;div class=&#34;dTable&#34;&#62;&#10;    &#60;div class=&#34;dCell&#34;&#62;&#10;      &#60;div&#62;&#36825;&#26159;&#19968;&#20010;&#26080;&#22788;&#19981;&#22312;&#30340;&#23567;&#24191;&#21578;&#60;/div&#62;&#10;    &#60;/div&#62;&#10;  &#60;/div&#62;&#10;&#60;/body&#62;&#10;&#60;/html&#62;</span><br></pre></td></tr></table></figure></p>
+<iframe src="http://codepen.io/junozero/full/RNGGEo/" width="100%" height="500px" frameborder="0" scrolling="no"> </iframe>
+
+<p>通过以上代码，就可以实现未知高度内容的垂直居中了，这里唯一的不好就是改变了div的结构，增加了一些内容。下面来描述一下几个实现的关键点：<br>1、把内容顶级的div添加css属性display=table，把div转为块状元素的表格。<br>2、当display=table后，div的宽度不在是默认的100%了，而是变为auto，根据内容自适应，所以需要把宽度设置为100%。<br>3、定级div下面添加一个div，用于模拟table里面的单元格，并设置css属性display=table-cell和vertical-align=middle，这样子就可以描述为这个单元格内容垂直居中了。</p>
+<hr>
+<p>###兼容ie6的垂直居中方法<br>虽然上面的方法比较简单，而且可以在未知高度情况下使用，并且支持自动换行，但它无法运行在ie8以下的浏览器，因为这些ie不支持display=table属性。所以，只能利用一些css hack的手段和另外的途径去解决了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;!DOCTYPE html&#62;&#10;&#60;html&#62;&#10;&#60;head&#62;&#10;  &#60;meta charset=&#34;UTF-8&#34;&#62;&#10;  &#60;title&#62;Css Auto Height Valign Middle&#60;/title&#62;&#10;  &#60;style type=&#34;text/css&#34;&#62;&#10;    html, body &#123;&#10;      height: 100%;&#10;    &#125;&#10;    .dTable &#123;&#10;      background-color: green;&#10;      width: 100%;&#10;      height: 100%;&#10;      text-align: center;&#10;      position: relative; /* IE Only Setting */&#10;    &#125;&#10;    /* default Setting */&#10;    .dTable[class] &#123;&#10;      position: static;&#10;      display: table;&#10;    &#125;&#10;    /* IE Only Setting */&#10;    .dCell &#123;&#10;      position: absolute;&#10;      width: 100%;&#10;      top: 50%;&#10;      left: 0px;&#10;    &#125;&#10;    /* default Setting */&#10;    .dCell[class] &#123;&#10;      position: static;&#10;      display: table-cell;&#10;      vertical-align: middle;&#10;    &#125;&#10;    .dContext &#123;&#10;      position: relative\9;&#10;      top: -50%\9;&#10;    &#125;&#10;&#10;  &#60;/style&#62;&#10;&#60;/head&#62;&#10;&#60;body&#62;&#10;  &#60;div class=&#34;dTable&#34;&#62;&#10;    &#60;div class=&#34;dCell&#34;&#62;&#10;      &#60;div class=&#34;dContext&#34;&#62;&#36825;&#26159;&#19968;&#20010;&#26080;&#22788;&#19981;&#22312;&#30340;&#23567;&#24191;&#21578;&#60;/div&#62;&#10;    &#60;/div&#62;&#10;  &#60;/div&#62;&#10;&#60;/body&#62;&#10;&#60;/html&#62;</span><br></pre></td></tr></table></figure></p>
+<iframe src="http://codepen.io/junozero/full/LERRaV/" width="100%" height="500px" frameborder="0" scrolling="no"> </iframe>
+
+
+<p>这种方法可以正常运行在ie8和新的浏览器上面，但是，这种方法对结构的修改更加深入，除了加了一个div外，还修改了定位的特性和使用了css hack，那么在真实编码布局的环境下可能会遇到很多不可预知的情况，所以不是为了兼容ie6，建议不要使用该方法。</p>
+<p>接下来还是简单分解一下：<br>1、首先在顶级的div dTable中设置position=relative，设置这个css属性是为下级的定位所需要。<br>2、然后利用css hack，ie6、7无法识别css 的属性选择器特性，设置新的浏览器还是使用display=table的方法。<br>3、通过dCell的top=50%偏移和dContext的top=-50%偏移使内容刚好垂直居中。</p>
+<p>##总结<br>其实，没有通用的解决方案，只有合适的解决方案，line-height是不改变结构下的最好方法，也是最简单的，但限制也很明显，其余方法都会改变结构并且需要设置一定的css属性，但好处是适用范围广，没有通用的解决方案，只有合适的解决方案。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>今天总结一个比较简单，却也比较坑的问题，如何在只使用css的情况下，使一个未知高度的div内容垂直居中。通过一个简单的案例，逐步分析一些日常使用的问题。</p>
+<p>##如何建立一个全屏的div</p>
+<p>###一个空白的DIV<br>当一个div在没有设置任何数值的情况下，它的宽度高度和位置到底是怎样的呢？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;!DOCTYPE html&#62;&#10;&#60;html&#62;&#10;&#60;head&#62;&#10;  &#60;meta charset=&#34;UTF-8&#34;&#62;&#10;  &#60;title&#62;Css Auto Height Valign Middle&#60;/title&#62;&#10;  &#60;style type=&#34;text/css&#34;&#62;&#10;    div &#123;&#10;      background-color: green;&#10;    &#125;&#10;  &#60;/style&#62;&#10;&#60;/head&#62;&#10;&#60;body&#62;&#10;  &#60;div&#62;&#60;/div&#62;&#10;&#60;/body&#62;&#10;&#60;/html&#62;</span><br></pre></td></tr></table></figure></p>
+<iframe src="http://codepen.io/junozero/full/ogzzyg" width="100%" height="300px" frameborder="0" scrolling="no"> </iframe>
+
+<p>↑点击Edit this Pan可以查看代码。</p>
+<p>可以看到，一遍空白，通过调试工具可以看到宽度为浏览器的宽度，高度为0。<br><img src="http://images.54646a963df08.d01.nanoyun.com/QQ20141224093522.png" alt=""><br>]]>
+    
+    </summary>
+    
+      <category term="css" scheme="http://junozero.github.io/tags/css/"/>
+    
+      <category term="css hack" scheme="http://junozero.github.io/tags/css-hack/"/>
+    
+      <category term="div" scheme="http://junozero.github.io/tags/div/"/>
+    
+      <category term="学习" scheme="http://junozero.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="教程" scheme="http://junozero.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="css" scheme="http://junozero.github.io/categories/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[w3c基础整理之CSS hack]]></title>
+    <link href="http://junozero.github.io/2014/12/23/w3c%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86%E4%B9%8BCSS%20hack/"/>
+    <id>http://junozero.github.io/2014/12/23/w3c基础整理之CSS hack/</id>
+    <published>2014-12-23T05:55:50.000Z</published>
+    <updated>2014-12-23T08:11:18.153Z</updated>
+    <content type="html"><![CDATA[<p>##什么是CSS hack<br>由于不同厂商的流览器或某浏览器的不同版本（如IE6-IE11,Firefox/Safari/Opera/Chrome等），对CSS的支持、解析不一样，导致在不同浏览器的环境中呈现出不一致的页面展现效果。这时，我们为了获得统一的页面效果，就需要针对不同的浏览器或不同版本写特定的CSS样式，我们把这个针对不同的浏览器/不同版本写相应的CSS code的过程，叫做CSS hack!</p>
+<hr>
+<p>##分类<br>CSS Hack大致有3种表现形式，CSS属性前缀法、选择器前缀法以及IE条件注释法（IE专用）Hack，实际项目中CSS Hack大部分是针对IE浏览器不同版本之间的表现差异而引入的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1&#12289;&#23646;&#24615;&#21069;&#32512;&#27861;(&#21363;&#31867;&#20869;&#37096;Hack)&#65306;&#20363;&#22914; IE6&#33021;&#35782;&#21035;&#19979;&#21010;&#32447;&#34;_&#34;&#21644;&#26143;&#21495;&#34; * &#34;&#65292;IE7&#33021;&#35782;&#21035;&#26143;&#21495;&#34; * &#34;&#65292;&#20294;&#19981;&#33021;&#35782;&#21035;&#19979;&#21010;&#32447;&#34;_&#34;&#65292;IE6~IE10&#37117;&#35748;&#35782;&#34;\9&#34;&#65292;&#20294;firefox&#21069;&#36848;&#19977;&#20010;&#37117;&#19981;&#33021;&#35748;&#35782;&#12290;&#10;&#10;2&#12289;&#36873;&#25321;&#22120;&#21069;&#32512;&#27861;(&#21363;&#36873;&#25321;&#22120;Hack)&#65306;&#20363;&#22914; IE6&#33021;&#35782;&#21035;*html .class&#123;&#125;&#65292;IE7&#33021;&#35782;&#21035;*+html .class&#123;&#125;&#25110;&#32773;*:first-child+html .class&#123;&#125;&#12290;&#10;&#10;3&#12289;IE&#26465;&#20214;&#27880;&#37322;&#27861;(&#21363;HTML&#26465;&#20214;&#27880;&#37322;Hack)&#65306;&#38024;&#23545;&#25152;&#26377;IE(&#27880;&#65306;IE10+&#24050;&#32463;&#19981;&#20877;&#25903;&#25345;&#26465;&#20214;&#27880;&#37322;)&#65306; &#60;!--[if IE]&#62;IE&#27983;&#35272;&#22120;&#26174;&#31034;&#30340;&#20869;&#23481; &#60;![endif]--&#62;&#65292;&#38024;&#23545;IE6&#21450;&#20197;&#19979;&#29256;&#26412;&#65306; &#60;!--[if lt IE 6]&#62;&#21482;&#22312;IE6-&#26174;&#31034;&#30340;&#20869;&#23481; &#60;![endif]--&#62;&#12290;&#36825;&#31867;Hack&#19981;&#20165;&#23545;CSS&#29983;&#25928;&#65292;&#23545;&#20889;&#22312;&#21028;&#26029;&#35821;&#21477;&#37324;&#38754;&#30340;&#25152;&#26377;&#20195;&#30721;&#37117;&#20250;&#29983;&#25928;&#12290;</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<hr>
+<p>##css中hack的应用<br>这里的应用指的前两种方式：css属性和css的选择器，一张图说明白，如何针对不同的浏览器做适当的hack。</p>
+<p>图中左边第一列的s、p、m分别是选择器hack、属性hack和Query Hack。<br><img src="http://images.54646a963df08.d01.nanoyun.com/QQ20141223145616.png" alt=""></p>
+<p>引用原文地址<a href="http://swordair.com/tools/css-hack-table/" target="_blank" rel="external">点我查看</a></p>
+<hr>
+<p>##html中hack的应用（IE）<br>这种方式是IE浏览器专有的Hack方式，微软官方推荐使用的hack方式。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#21482;&#22312;IE&#19979;&#29983;&#25928;&#10;&#60;!--[if IE]&#62;&#10;&#36825;&#27573;&#25991;&#23383;&#21482;&#22312;IE&#27983;&#35272;&#22120;&#26174;&#31034;&#10;&#60;![endif]--&#62;&#10;&#10;&#21482;&#22312;IE6&#19979;&#29983;&#25928;&#10;&#60;!--[if IE 6]&#62;&#10;&#36825;&#27573;&#25991;&#23383;&#21482;&#22312;IE6&#27983;&#35272;&#22120;&#26174;&#31034;&#10;&#60;![endif]--&#62;&#10;&#10;&#21482;&#22312;IE6&#20197;&#19978;&#29256;&#26412;&#29983;&#25928;&#10;&#60;!--[if gte IE 6]&#62;&#10;&#36825;&#27573;&#25991;&#23383;&#21482;&#22312;IE6&#20197;&#19978;(&#21253;&#25324;)&#29256;&#26412;IE&#27983;&#35272;&#22120;&#26174;&#31034;&#10;&#60;![endif]--&#62;&#10;&#10;&#21482;&#22312;IE8&#19978;&#19981;&#29983;&#25928;&#10;&#60;!--[if ! IE 8]&#62;&#10;&#36825;&#27573;&#25991;&#23383;&#22312;&#38750;IE8&#27983;&#35272;&#22120;&#26174;&#31034;&#10;&#60;![endif]--&#62;&#10;&#10;&#38750;IE&#27983;&#35272;&#22120;&#29983;&#25928;&#10;&#60;!--[if !IE]&#62;&#10;&#36825;&#27573;&#25991;&#23383;&#21482;&#22312;&#38750;IE&#27983;&#35272;&#22120;&#26174;&#31034;&#10;&#60;![endif]--&#62;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>##总结<br>由于本人的工作关系，做的是局域网内应用，基本无需处理hack，所以处理hack的经验少之又少，当对css hack整理一遍后，发现很痛心，本不应该存在的东西缺真真实实的存在着，它在污染着我们的代码，很多整理css hack的大师都希望不要再写hack、不需要hack、抵制hack。不过，到今天为止，如果不是为了兼容旧的浏览器，在新版本的浏览器中基本无需关注hack了，这是由于w3c与各浏览器厂商终于走向了“一致的标准” ，再过几年，相信hack就会慢慢的登上历史的舞台，成为过去。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>##什么是CSS hack<br>由于不同厂商的流览器或某浏览器的不同版本（如IE6-IE11,Firefox/Safari/Opera/Chrome等），对CSS的支持、解析不一样，导致在不同浏览器的环境中呈现出不一致的页面展现效果。这时，我们为了获得统一的页面效果，就需要针对不同的浏览器或不同版本写特定的CSS样式，我们把这个针对不同的浏览器/不同版本写相应的CSS code的过程，叫做CSS hack!</p>
+<hr>
+<p>##分类<br>CSS Hack大致有3种表现形式，CSS属性前缀法、选择器前缀法以及IE条件注释法（IE专用）Hack，实际项目中CSS Hack大部分是针对IE浏览器不同版本之间的表现差异而引入的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1&#12289;&#23646;&#24615;&#21069;&#32512;&#27861;(&#21363;&#31867;&#20869;&#37096;Hack)&#65306;&#20363;&#22914; IE6&#33021;&#35782;&#21035;&#19979;&#21010;&#32447;&#34;_&#34;&#21644;&#26143;&#21495;&#34; * &#34;&#65292;IE7&#33021;&#35782;&#21035;&#26143;&#21495;&#34; * &#34;&#65292;&#20294;&#19981;&#33021;&#35782;&#21035;&#19979;&#21010;&#32447;&#34;_&#34;&#65292;IE6~IE10&#37117;&#35748;&#35782;&#34;\9&#34;&#65292;&#20294;firefox&#21069;&#36848;&#19977;&#20010;&#37117;&#19981;&#33021;&#35748;&#35782;&#12290;&#10;&#10;2&#12289;&#36873;&#25321;&#22120;&#21069;&#32512;&#27861;(&#21363;&#36873;&#25321;&#22120;Hack)&#65306;&#20363;&#22914; IE6&#33021;&#35782;&#21035;*html .class&#123;&#125;&#65292;IE7&#33021;&#35782;&#21035;*+html .class&#123;&#125;&#25110;&#32773;*:first-child+html .class&#123;&#125;&#12290;&#10;&#10;3&#12289;IE&#26465;&#20214;&#27880;&#37322;&#27861;(&#21363;HTML&#26465;&#20214;&#27880;&#37322;Hack)&#65306;&#38024;&#23545;&#25152;&#26377;IE(&#27880;&#65306;IE10+&#24050;&#32463;&#19981;&#20877;&#25903;&#25345;&#26465;&#20214;&#27880;&#37322;)&#65306; &#60;!--[if IE]&#62;IE&#27983;&#35272;&#22120;&#26174;&#31034;&#30340;&#20869;&#23481; &#60;![endif]--&#62;&#65292;&#38024;&#23545;IE6&#21450;&#20197;&#19979;&#29256;&#26412;&#65306; &#60;!--[if lt IE 6]&#62;&#21482;&#22312;IE6-&#26174;&#31034;&#30340;&#20869;&#23481; &#60;![endif]--&#62;&#12290;&#36825;&#31867;Hack&#19981;&#20165;&#23545;CSS&#29983;&#25928;&#65292;&#23545;&#20889;&#22312;&#21028;&#26029;&#35821;&#21477;&#37324;&#38754;&#30340;&#25152;&#26377;&#20195;&#30721;&#37117;&#20250;&#29983;&#25928;&#12290;</span><br></pre></td></tr></table></figure></p>]]>
+    
+    </summary>
+    
+      <category term="css" scheme="http://junozero.github.io/tags/css/"/>
+    
+      <category term="css hack" scheme="http://junozero.github.io/tags/css-hack/"/>
+    
+      <category term="学习" scheme="http://junozero.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="教程" scheme="http://junozero.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="w3c基础整理" scheme="http://junozero.github.io/categories/w3c%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[w3c基础整理之float与clear]]></title>
+    <link href="http://junozero.github.io/2014/12/22/w3c%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86%E4%B9%8Bfloat%E4%B8%8Eclear/"/>
+    <id>http://junozero.github.io/2014/12/22/w3c基础整理之float与clear/</id>
+    <published>2014-12-22T06:46:50.000Z</published>
+    <updated>2014-12-22T07:43:06.471Z</updated>
+    <content type="html"><![CDATA[<p>##float与clear<br>float与clear是属于css的一个属性，但因为其一些特性涉及到了块状元素和内联元素，并且也作为布局页面的基础知识点，所以归纳在基础整理当中。</p>
+<p>##什么是float<br>float指定了元素是否浮动及如何浮动，首先我们来看一下float有哪一些参数：<br>1、none：对象不浮动（默认值）；<br>2、left：对象浮在左边；<br>3、right：对象浮在右边；</p>
+<p>当元素指定了float属性且值不为none时，那么可认为元素已浮动，浮动的元素带有一下特性：<br>1、<strong>自动变为块状元素（block-level），既display属性设置为block。</strong><br>2、块元素的同行排斥其它元素限制解除，既同一行可以存在多个浮动的块状元素。<br>3、通过设置外边距、元素的宽度高度和floatLeft、floatRight可以完成多种页面布局，也是我们常用的页面布局手段。<br><a id="more"></a></p>
+<hr>
+<p>###float:left<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;!DOCTYPE html&#62;&#10;&#60;html&#62;&#10;&#60;head&#62;&#10;  &#60;meta charset=&#34;UTF-8&#34;&#62;&#10;  &#60;title&#62;Box&#60;/title&#62;&#10;  &#60;style type=&#34;text/css&#34;&#62;&#10;    * &#123;&#10;      margin: 0;&#10;      padding: 0;&#10;    &#125;&#10;&#10;    .box &#123;&#10;      width: 150px;&#10;      height: 150px;&#10;      float: left;&#10;    &#125;&#10;&#10;    .gbox &#123;&#10;      background-color: green;&#10;    &#125;&#10;&#10;    .rbox &#123;&#10;      background-color: red;&#10;    &#125;&#10;  &#60;/style&#62;&#10;&#60;/head&#62;&#10;&#60;body&#62;&#10;  &#60;div class=&#34;box gbox&#34;&#62;&#60;/div&#62;&#10;  &#60;div class=&#34;box rbox&#34;&#62;&#60;/div&#62;&#10;&#60;/body&#62;&#10;&#60;/html&#62;</span><br></pre></td></tr></table></figure></p>
+<p>效果：<br><img src="http://images.54646a963df08.d01.nanoyun.com/QQ20141222145819.png" alt=""></p>
+<p>div属于块状元素，并应该一行只能存在一个，但通过float，浮动起来后，同一行排斥的限制解除了，所以绿色与红色的div在同一行中。</p>
+<hr>
+<p>###float:right<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;!DOCTYPE html&#62;&#10;&#60;html&#62;&#10;&#60;head&#62;&#10;  &#60;meta charset=&#34;UTF-8&#34;&#62;&#10;  &#60;title&#62;Box&#60;/title&#62;&#10;  &#60;style type=&#34;text/css&#34;&#62;&#10;    * &#123;&#10;      margin: 0;&#10;      padding: 0;&#10;    &#125;&#10;&#10;    .box &#123;&#10;      width: 150px;&#10;      height: 150px;&#10;      float: right;&#10;    &#125;&#10;&#10;    .gbox &#123;&#10;      background-color: green;&#10;    &#125;&#10;&#10;    .rbox &#123;&#10;      background-color: red;&#10;    &#125;&#10;  &#60;/style&#62;&#10;&#60;/head&#62;&#10;&#60;body&#62;&#10;  &#60;div class=&#34;box gbox&#34;&#62;&#60;/div&#62;&#10;  &#60;div class=&#34;box rbox&#34;&#62;&#60;/div&#62;&#10;&#60;/body&#62;&#10;&#60;/html&#62;</span><br></pre></td></tr></table></figure></p>
+<p>效果图：<br><img src="http://images.54646a963df08.d01.nanoyun.com/QQ20141222150127.png" alt=""></p>
+<p>float right后，相信大家都注意到了，绿色去了最右边，而不是红色在最右，这是因为float right后，方向就变成从右往左了， 所以绿色的在最右、红色其次。</p>
+<hr>
+<p>###这样的效果如何实现呢？<br><img src="http://images.54646a963df08.d01.nanoyun.com/QQ20141222150749.png" alt=""></p>
+<p>在只用div的布局下，如何实现上图的效果呢？我们带着这样的疑问进入下一章节。</p>
+<hr>
+<p>##什么是clear<br>clear指定了元素哪一边不允许出现浮动。首先我们看一下clear有哪一些参数：<br>1、none（默认值）：允许两边都可以有浮动对象；<br>2、both：不允许两边有浮动对象；<br>3、left：不允许左边有浮动对象；<br>4、right：不允许右边有浮动对象；</p>
+<p>从官方的描述上来看并不那么好理解，可以先看一下作者的总结经验：<br>1、clear与float是配套出现的，如果没有float属性让元素浮动，那么claer属性也没有任何的意义，clear是用来消除元素浮动特性而使用的。<br>2、元素浮动后，解除了同行排斥的限制，但同样的也带来换行的问题，是否简单的一个br标签就可以解决问题？当然br是无法解决问题的，所以clear就出现了。<br>3、只需要在换行的元素上，加上clear:  both既可以变为另起一行的浮动元素。<br>4、那么clear: left和clear: right又是什么呢？其实就是解除对应的float:left 和float: right。<br>5、float:left使用clear:left可以解除左浮动并另起一行。<br>6、float:left使用clear:right无效。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;!DOCTYPE html&#62;&#10;&#60;html&#62;&#10;&#60;head&#62;&#10;  &#60;meta charset=&#34;UTF-8&#34;&#62;&#10;  &#60;title&#62;Box&#60;/title&#62;&#10;  &#60;style type=&#34;text/css&#34;&#62;&#10;    * &#123;&#10;      margin: 0;&#10;      padding: 0;&#10;    &#125;&#10;&#10;    .box &#123;&#10;      width: 150px;&#10;      height: 150px;&#10;      float: left;&#10;    &#125;&#10;&#10;    .gbox &#123;&#10;      background-color: green;&#10;    &#125;&#10;&#10;    .rbox &#123;&#10;      background-color: red;&#10;    &#125;&#10;&#10;    .bbox &#123;&#10;      width: 300px;&#10;      clear: both;&#10;      background-color: blue;&#10;    &#125;&#10;&#10;    .ybox &#123;&#10;      background-color: yellow;&#10;    &#125;&#10;  &#60;/style&#62;&#10;&#60;/head&#62;&#10;&#60;body&#62;&#10;  &#60;div class=&#34;box gbox&#34;&#62;&#60;/div&#62;&#10;  &#60;div class=&#34;box rbox&#34;&#62;&#60;/div&#62;&#10;  &#60;div class=&#34;box bbox&#34;&#62;&#60;/div&#62;&#10;  &#60;div class=&#34;box ybox&#34;&#62;&#60;/div&#62;&#10;&#60;/body&#62;&#10;&#60;/html&#62;</span><br></pre></td></tr></table></figure>
+<p>效果图：<br><img src="http://images.54646a963df08.d01.nanoyun.com/QQ20141222150749.png" alt=""></p>
+<p>可以看到，只需要在.bbox的属性中增加clear: both既可以实现上图的效果了。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>##float与clear<br>float与clear是属于css的一个属性，但因为其一些特性涉及到了块状元素和内联元素，并且也作为布局页面的基础知识点，所以归纳在基础整理当中。</p>
+<p>##什么是float<br>float指定了元素是否浮动及如何浮动，首先我们来看一下float有哪一些参数：<br>1、none：对象不浮动（默认值）；<br>2、left：对象浮在左边；<br>3、right：对象浮在右边；</p>
+<p>当元素指定了float属性且值不为none时，那么可认为元素已浮动，浮动的元素带有一下特性：<br>1、<strong>自动变为块状元素（block-level），既display属性设置为block。</strong><br>2、块元素的同行排斥其它元素限制解除，既同一行可以存在多个浮动的块状元素。<br>3、通过设置外边距、元素的宽度高度和floatLeft、floatRight可以完成多种页面布局，也是我们常用的页面布局手段。<br>]]>
+    
+    </summary>
+    
+      <category term="css" scheme="http://junozero.github.io/tags/css/"/>
+    
+      <category term="html" scheme="http://junozero.github.io/tags/html/"/>
+    
+      <category term="xhtml" scheme="http://junozero.github.io/tags/xhtml/"/>
+    
+      <category term="学习" scheme="http://junozero.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="教程" scheme="http://junozero.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="w3c基础整理" scheme="http://junozero.github.io/categories/w3c%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[w3c基础整理之块状元素和内联元素]]></title>
+    <link href="http://junozero.github.io/2014/12/22/w3c%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86%E4%B9%8B%E5%9D%97%E7%8A%B6%E5%85%83%E7%B4%A0%E5%92%8C%E5%86%85%E8%81%94%E5%85%83%E7%B4%A0/"/>
+    <id>http://junozero.github.io/2014/12/22/w3c基础整理之块状元素和内联元素/</id>
+    <published>2014-12-22T05:48:50.000Z</published>
+    <updated>2014-12-22T07:52:41.223Z</updated>
+    <content type="html"><![CDATA[<p>##HTML的标签分类？<br>我们在布局页面的时候，会把html标签分成两大类，一类是块状元素，另外一类是内联元素，只有掌握好了，才能合理的做出一个完整的界面。</p>
+<p>###块状元素<br>一般是其他元素的容器，可容纳内联元素和其他块状元素，块状元素<strong>排斥其他元素与其位于同一行，宽度(width)高度(height)起作用</strong>。常见块状元素为div和p。</p>
+<p>###内联元素<br>内联元素只能容纳文本或者其他内联元素，它<strong>允许其他内联元素与其位于同一行，但宽度(width)高度(height)不起作用</strong>。常见内联元素为“a”。</p>
+<p>来一个对比图清晰一下思路：<br><img src="http://images.54646a963df08.d01.nanoyun.com/blockinline.png" alt=""><br><a id="more"></a></p>
+<p>###块状元素实战<br>块状元素的三大特性：<br>1、默认情况下，在同一行内排斥其它元素。<br>2、宽度起作用。<br>3、高度起作用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;!DOCTYPE html&#62;&#10;&#60;html&#62;&#10;&#60;head&#62;&#10;  &#60;meta charset=&#34;UTF-8&#34;&#62;&#10;  &#60;title&#62;Box&#60;/title&#62;&#10;  &#60;style type=&#34;text/css&#34;&#62;&#10;    * &#123;&#10;      margin: 0;&#10;      padding: 0;&#10;    &#125;&#10;&#10;    .box &#123;&#10;      width: 150px;&#10;      height: 150px;&#10;    &#125;&#10;&#10;    .gbox &#123;&#10;      background-color: green;&#10;    &#125;&#10;&#10;    .rbox &#123;&#10;      background-color: red;&#10;    &#125;&#10;  &#60;/style&#62;&#10;&#60;/head&#62;&#10;&#60;body&#62;&#10;  &#60;div class=&#34;box gbox&#34;&#62;&#60;/div&#62;&#10;  &#60;div class=&#34;box rbox&#34;&#62;&#60;/div&#62;&#10;&#60;/body&#62;&#10;&#60;/html&#62;</span><br></pre></td></tr></table></figure>
+<p>想象中的效果（<strong>注意：这个不是实际的效果</strong>）：<br><img src="http://images.54646a963df08.d01.nanoyun.com/QQ20141222140355.png" alt=""></p>
+<p>实际效果：<br><img src="http://images.54646a963df08.d01.nanoyun.com/QQ20141222140457.png" alt=""></p>
+<p>div属于块状元素，从实际效果图中可以看出块状元素的3个特性，宽度高度可用，同一行中排斥其它元素。</p>
+<p>那么，我们怎样才能实现想象中的效果呢？其实也很简单，只要在box的css定义中加入float:left即可，关于float是什么不在本章节整理中，就不详细描述了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;&#10;&#9;width: 150px;&#10;&#9;height: 150px;&#10;&#9;float: left;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>###内联元素实战<br>内联元素的三大特性：<br>1、默认情况下，在同一行内可存在多个内联元素。<br>2、宽度不起作用。<br>3、高度不起作用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;!DOCTYPE html&#62;&#10;&#60;html&#62;&#10;&#60;head&#62;&#10;  &#60;meta charset=&#34;UTF-8&#34;&#62;&#10;  &#60;title&#62;Box&#60;/title&#62;&#10;  &#60;style type=&#34;text/css&#34;&#62;&#10;    * &#123;&#10;      margin: 0;&#10;      padding: 0;&#10;    &#125;&#10;&#10;    .box &#123;&#10;      width: 150px;&#10;      height: 150px;&#10;    &#125;&#10;&#10;    .gbox &#123;&#10;      background-color: green;&#10;    &#125;&#10;&#10;    .rbox &#123;&#10;      background-color: red;&#10;    &#125;&#10;&#10;    .mya &#123;&#10;      width: 200px;&#10;      height: 100px;&#10;    &#125;&#10;  &#60;/style&#62;&#10;&#60;/head&#62;&#10;&#60;body&#62;&#10;  &#60;div class=&#34;box gbox&#34;&#62;&#60;/div&#62;&#10;  &#60;a class=&#34;mya&#34; href=&#34;#&#34;&#62;&#36825;&#20010;&#19968;&#20010;&#26080;&#22788;&#19981;&#22312;&#30340;&#24191;&#21578;&#60;/a&#62;&#10;  &#60;a class=&#34;mya&#34; href=&#34;#&#34;&#62;&#36825;&#20010;&#19968;&#20010;&#26080;&#22788;&#19981;&#22312;&#30340;&#24191;&#21578;&#60;/a&#62;&#10;  &#60;div class=&#34;box rbox&#34;&#62;&#60;/div&#62;&#10;&#60;/body&#62;&#10;&#60;/html&#62;</span><br></pre></td></tr></table></figure>
+<p>效果：<br><img src="http://images.54646a963df08.d01.nanoyun.com/QQ20141222141328.png" alt=""></p>
+<p>a属于内联元素，具有内联元素的3个特性，宽度高度无效，同一行内可以存在多个内联元素。那个可能会提出疑问那内联元素怎样才能设置宽度高度呢？那么回答是，有两种方案：<br>1、在内联元素外面包括一层块状元素，并为块状元素设置宽度高度。<br>2、在mya的css属性里面增加display:block，通过css把内联元素声明为块状元素，那么内联元素将会变为块状元素，而具有块状元素的3个特性，不具备内联元素的特性了。</p>
+<p>注：如果在变成块状元素后，需要两个a在一行怎么处理呢？还记得之前的float吗？</p>
+<p>##常见的块状元素与内联元素<br><strong>注意：只用于参考，不是用于死记硬背！！！</strong><br><img src="http://images.54646a963df08.d01.nanoyun.com/QQ20141222143032.png" alt=""></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>##HTML的标签分类？<br>我们在布局页面的时候，会把html标签分成两大类，一类是块状元素，另外一类是内联元素，只有掌握好了，才能合理的做出一个完整的界面。</p>
+<p>###块状元素<br>一般是其他元素的容器，可容纳内联元素和其他块状元素，块状元素<strong>排斥其他元素与其位于同一行，宽度(width)高度(height)起作用</strong>。常见块状元素为div和p。</p>
+<p>###内联元素<br>内联元素只能容纳文本或者其他内联元素，它<strong>允许其他内联元素与其位于同一行，但宽度(width)高度(height)不起作用</strong>。常见内联元素为“a”。</p>
+<p>来一个对比图清晰一下思路：<br><img src="http://images.54646a963df08.d01.nanoyun.com/blockinline.png" alt=""><br>]]>
+    
+    </summary>
+    
+      <category term="css" scheme="http://junozero.github.io/tags/css/"/>
+    
+      <category term="html" scheme="http://junozero.github.io/tags/html/"/>
+    
+      <category term="xhtml" scheme="http://junozero.github.io/tags/xhtml/"/>
+    
+      <category term="学习" scheme="http://junozero.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="教程" scheme="http://junozero.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="w3c基础整理" scheme="http://junozero.github.io/categories/w3c%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[w3c基础整理之盒子模型]]></title>
+    <link href="http://junozero.github.io/2014/12/22/w3c%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86%E4%B9%8B%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/"/>
+    <id>http://junozero.github.io/2014/12/22/w3c基础整理之盒子模型/</id>
+    <published>2014-12-22T01:13:29.000Z</published>
+    <updated>2014-12-22T03:35:23.064Z</updated>
+    <content type="html"><![CDATA[<p>##什么是盒子模型<br>盒子模型概念是html+css布局的核心，理解清楚什么叫做盒子模型，才能随心所欲的做出自己所需的效果。</p>
+<p>###组成部分<br>首先，盒子模型由4个部分组成：<br>1、元素（element），如“DIV”、“TABLE”等；<br>2、边框（border）；<br>3、外边距（margin）；<br>4、内边距（padding）；</p>
+<p><img src="http://images.54646a963df08.d01.nanoyun.com/QQ20141222091217.png" alt=""></p>
+<p>###浏览器兼容性问题<br>一旦为页面设置了恰当的 DTD，大多数浏览器都会按照上面的图示来呈现内容。然而 IE 5 和 6 的呈现却是不正确的。根据 W3C 的规范，元素内容占据的空间是由 width 属性设置的，而内容周围的 padding 和 border 值是另外计算的。不幸的是，IE5.X 和 6 在怪异模式中使用自己的非标准模型。这些浏览器的 width 属性不是内容的宽度，而是内容、内边距和边框的宽度的总和。<br><strong>所以，极度的建议，不需要继续兼容ie6了。</strong><br><a id="more"></a></p>
+<p>##实战<br>先来一个简单的案例：<br>1、网页里面只有一个div；<br>2、然后宽度为300px，高度为200px；<br>3、边框为3px；<br>4、外边距为50px；<br>5、内边距为25px；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;!DOCTYPE html&#62;&#10;&#60;html&#62;&#10;&#60;head&#62;&#10;  &#60;meta charset=&#34;UTF-8&#34;&#62;&#10;  &#60;title&#62;Box&#60;/title&#62;&#10;&#10;  &#60;style type=&#34;text/css&#34;&#62;&#10;    * &#123;&#10;      margin: 0;&#10;      padding: 0;&#10;    &#125;&#10;&#10;    .box &#123;&#10;      width: 300px;&#10;      height: 200px;&#10;      border: 3px solid black;&#10;      margin: 50px;&#10;      padding: 25px;&#10;    &#125;&#10;  &#60;/style&#62;&#10;&#60;/head&#62;&#10;&#60;body&#62;&#10;  &#60;div class=&#34;box&#34;&#62;&#60;/div&#62;&#10;&#60;/body&#62;&#10;&#60;/html&#62;</span><br></pre></td></tr></table></figure>
+<p>网页效果：<br><img src="http://images.54646a963df08.d01.nanoyun.com/QQ20141222093459.png" alt=""></p>
+<p>图中黑色边框的就是我们的div了，它就是一个盒子模型，具有盒子模型的特性。接下来通过调试工具界面来详细说明一下各项参数。</p>
+<p>调试界面：<br><img src="http://images.54646a963df08.d01.nanoyun.com/QQ20141222101103.png" alt=""><br><img src="http://images.54646a963df08.d01.nanoyun.com/QQ20141222101345.png" alt=""></p>
+<p>可以看到，中间蓝色部分是div的内容区域，宽度300px，高度200px，往外一层是红色部分的内边距，25px，然后再往外面一层是3px的边框，最外一层是50px的外边距，通过以上可以看出，<strong>盒子模型的从里到外的顺序是：元素-&gt;内边距-&gt;边框-&gt;外边距</strong>。</p>
+<p>接下来我们稍微在代码里面加点内容进去：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;!DOCTYPE html&#62;&#10;&#60;html&#62;&#10;&#60;head&#62;&#10;  &#60;meta charset=&#34;UTF-8&#34;&#62;&#10;  &#60;title&#62;Box&#60;/title&#62;&#10;&#10;  &#60;style type=&#34;text/css&#34;&#62;&#10;    * &#123;&#10;      margin: 0;&#10;      padding: 0;&#10;    &#125;&#10;&#10;    .box &#123;&#10;      width: 300px;&#10;      height: 200px;&#10;      border: 3px solid black;&#10;      margin: 50px;&#10;      padding: 25px;&#10;    &#125;&#10;  &#60;/style&#62;&#10;&#60;/head&#62;&#10;&#60;body&#62;&#10;  &#60;div class=&#34;box&#34;&#62;&#36825;&#37324;&#26159;&#20803;&#32032;&#20869;&#37096;&#60;/div&#62;&#10;  &#25105;&#26159;&#26080;&#22788;&#19981;&#22312;&#30340;&#23567;&#24191;&#21578;&#12290;&#10;&#60;/body&#62;&#10;&#60;/html&#62;</span><br></pre></td></tr></table></figure></p>
+<p>效果图：<br><img src="http://images.54646a963df08.d01.nanoyun.com/QQ20141222102204.png" alt=""></p>
+<p>从效果可以看出，元素内部的内容是从蓝色区域开始的，而不是从黑色边框内部开始，这是因为内边距（红色区域）的作用，由于存在了内边距，所以内容就不会不贴在边框旁边，可以更加美观了（当然这里的事例为了更加能体现属性，所以没有考虑美观性）。</p>
+<p>另外div元素外的一段文字也不是贴在黑色边框后面继续，而是被挤出了一段距离，为什么呢？这是因为外边距的作用，有了外边距，那么所有的盒子元素与元素之间都会形成一个“无形的距离”。</p>
+<p>最后，大家可能会想，div后面的那一段话不是应该在div的右边吗？为什么会去了下面！！！这就是下一章需要总结的内容《块状元素和内联元素》。</p>
+<p>##注意：外边距之垂直合并<br>最最后，不得不提css关于外边距在垂直布局上的一个特性：合并，这也是盒子模型引申一个比较影响布局的特性。</p>
+<p><strong> 外边距合并指的是，当两个</strong>垂直外边距<strong>相遇时，它们将形成一个外边距。
+</strong> 合并后的外边距的高度等于两个发生合并的外边距的高度中的<strong>较大</strong>者。</p>
+<p>这里就直接引用w3cschool的教学<a href="http://www.w3school.com.cn/css/css_margin_collapsing.asp" target="_blank" rel="external">点我查看</a>。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>##什么是盒子模型<br>盒子模型概念是html+css布局的核心，理解清楚什么叫做盒子模型，才能随心所欲的做出自己所需的效果。</p>
+<p>###组成部分<br>首先，盒子模型由4个部分组成：<br>1、元素（element），如“DIV”、“TABLE”等；<br>2、边框（border）；<br>3、外边距（margin）；<br>4、内边距（padding）；</p>
+<p><img src="http://images.54646a963df08.d01.nanoyun.com/QQ20141222091217.png" alt=""></p>
+<p>###浏览器兼容性问题<br>一旦为页面设置了恰当的 DTD，大多数浏览器都会按照上面的图示来呈现内容。然而 IE 5 和 6 的呈现却是不正确的。根据 W3C 的规范，元素内容占据的空间是由 width 属性设置的，而内容周围的 padding 和 border 值是另外计算的。不幸的是，IE5.X 和 6 在怪异模式中使用自己的非标准模型。这些浏览器的 width 属性不是内容的宽度，而是内容、内边距和边框的宽度的总和。<br><strong>所以，极度的建议，不需要继续兼容ie6了。</strong><br>]]>
+    
+    </summary>
+    
+      <category term="css" scheme="http://junozero.github.io/tags/css/"/>
+    
+      <category term="html" scheme="http://junozero.github.io/tags/html/"/>
+    
+      <category term="xhtml" scheme="http://junozero.github.io/tags/xhtml/"/>
+    
+      <category term="学习" scheme="http://junozero.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="教程" scheme="http://junozero.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="w3c基础整理" scheme="http://junozero.github.io/categories/w3c%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[w3c基础整理之css]]></title>
+    <link href="http://junozero.github.io/2014/12/19/w3c%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86%E4%B9%8Bcss/"/>
+    <id>http://junozero.github.io/2014/12/19/w3c基础整理之css/</id>
+    <published>2014-12-19T07:45:20.000Z</published>
+    <updated>2014-12-19T08:27:19.490Z</updated>
+    <content type="html"><![CDATA[<p>##什么是CSS<br>CSS（Cascading Style Sheets），中文层叠样式表，是一种用来表现HTML样式的计算机语言。CSS能够对网页中的对象的位置排版进行像素级的精确控制，支持几乎所有的字体字号样式，拥有对网页对象和模型样式编辑的能力，并能够进行初步交互设计，是目前基于文本展示最优秀的表现设计语言。CSS能够根据不同使用者的理解能力，简化或者优化写法，针对各类人群，有较强的易读性。</p>
+<p>##CSS如何控制页面</p>
+<p>css控制页面主要有4仲途径：<br>1、行内样式<br>2、内嵌样式<br>3、链接样式<br>4、导入样式</p>
+<hr>
+<p>###行内样式<br>最简单、最直接的一种方法，直接通过style=””去控制。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;div style=&#34;color: #fff; font-size:12px;&#34;&#62;demo&#60;/div&#62;</span><br></pre></td></tr></table></figure></p>
+<p>虽然这种方法比较直接，在制作页面的时候需要为很多的标签设置style属性，所以会导致HTML页面不够纯净，文件体积过大，不利于搜索蜘蛛爬行，从而导致后期维护成本高<br><a id="more"></a></p>
+<hr>
+<p>###内嵌样式<br>内嵌样式就是将CSS代码写在head标签之间，并且用style进行声明<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;!doctype html&#62;&#10;&#60;html&#62;&#10;&#9;&#60;head&#62;&#10;&#9;&#9;&#60;style type=&#34;text/css&#34;&#62;&#10;&#9;&#9;&#9;.topTitle &#123;&#10;&#9;&#9;&#9;&#9;color: #fff;&#10;&#9;&#9;&#9;&#9;font-size: 12px;&#10;&#9;&#9;&#9;&#125;&#10;&#9;&#9;&#60;/style&#62;&#10;&#9;&#60;/head&#62;&#10;&#9;&#60;body&#62;&#10;&#9;&#9;&#60;div class=&#34;topTitle&#34;&#62;&#60;/div&#62;&#10;&#9;&#60;/body&#62;&#10;&#60;/html&#62;</span><br></pre></td></tr></table></figure></p>
+<p>内嵌样式，大家也许已经意识到，即使有公共CSS代码，也是每个页面都要定义的，如果一个网站有很多页面，每个文件都会变大，后期维护难度也大，如果文件很少，CSS代码也不多，这种样式还是很不错的。</p>
+<hr>
+<p>###链接样式<br>链接样式是使用频率最高，最实用的样式，只需要在head之间加上link标签就可以了，如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;link type=&#34;text/css&#34; rel=&#34;stylesheet&#34; href=&#34;style.css&#34; /&#62;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;!doctype html&#62;&#10;&#60;html&#62;&#10;&#9;&#60;head&#62;&#10;&#9;&#9;&#60;link href=&#34;http://cdn.bootcss.com/bootstrap/3.3.1/css/bootstrap-theme.css&#34; rel=&#34;stylesheet&#34;&#62;&#10;&#9;&#60;/head&#62;&#10;&#9;&#60;body&#62;&#10;&#9;    &#60;h3&#62;Demo&#60;/h3&#62;&#10;&#9;&#60;/body&#62;&#10;&#60;/html&#62;</span><br></pre></td></tr></table></figure>
+<p>这种样式将HTML文件和CSS文件彻底分成两个或者多个文件，实现了页面框架HTML代码与表现CSS代码的完全分离，使得前期制作和后期维护都十分方便，并且如果要保持页面风格统一，只需要把这些公共的CSS文件单独保存成一个文件，其他的页面就可以分别调用自身的CSS文件，如果需要改变网站风格，只需要修改公共CSS文件就OK了，相当的方便，这才是我们HTML+CSS制作页面提倡的样式。</p>
+<hr>
+<p>###导入样式<br>导入样式和链接样式比较相似，采用import样式导入CSS样式表，在HTML初始化时，会被导入到HTML文件中，成为文件的一部分，类似第二种内嵌样式。  具体导入样式和链接样式有什么区别，可以参看这篇文章<a href="http://www.w3cfuns.com/forum.php?mod=viewthread&amp;tid=262" target="_blank" rel="external">《CSS:@import与link的具体区别》</a>，不过我还是建议大家用链接样式！</p>
+<p>###4种css样式的优先级别<br>四种样式的优先级按照“就近原则”：<strong>行内样式</strong> &gt; <strong>内嵌样式</strong> &gt; <strong>链接样式</strong> &gt; <strong>导入样式</strong>。<br>关于css的优先级别，就不能不提一下css的权重【<a href="http://junozero.github.io/2014/10/30/css-select/">点我查看</a>】，这是一个很重要的知识点，必须要掌握。</p>
+<p>##CSS选择器<br>先整理4种最基本的css选择器<br>1、标签选择器<br>2、ID选择器<br>3、类选择器<br>4、通用选择器</p>
+<hr>
+<p>###标签选择器<br>一个完整的HTML页面是有很多不同的标签组成，而标签选择器，则是决定哪些标签采用相应的CSS样式，比如，在style.css文件中对p标签样式的声明如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p &#123;&#10;&#9;font-size: 12px;&#10;&#9;background: #900;&#10;&#9;color: #090;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这么做，会使页面中所有p标签的背景都是#900(红色)，文字大小均是12px，颜色为#090(绿色)，这在后期维护中，如果想改变整个网站中p标签背景的颜色，只需要修改background属性就可以了，就这么容易!当然你也可以设置整个页面中所有的div的属性、a链接的属性、span的属性，这么做方便是方便，但是不够灵活，如果页面中除了某个p标签背景不是红色外，其他的都是红色，就不能用这种方法定义了。</p>
+<hr>
+<p>###ID选择器<br>ID选择器在某一个HTML页面中只能使用一次，就像只有一个身份证 (ID)一样，不重复！在页面中使用ID选择器更具有针对性。<br>html：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;p id=&#34;one&#34;&#62;&#25105;&#26159;&#26080;&#22788;&#19981;&#22312;&#30340;&#23567;&#24191;&#21578;&#65281;&#60;/p&#62;</span><br></pre></td></tr></table></figure></p>
+<p>css:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#one &#123;&#10;&#9;font-size: 12px;&#10;&#9;background: #900;&#10;&#9;color: #090;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样页面中的某个p就会是CSS中定义的样式。针对“页面中除了某个p标签背景不是红色外，其他的都是红色的”情况，我们就可以用ID选择器单独定义那个背景不为红色的p标签，这样问题就解决了。</p>
+<hr>
+<p>###类选择器<br>这种选择器更容易理解了，就是使页面中的某些标签(可以是不同的标签)具有相同的样式，就像国庆某个方阵中，肯定都是不同的人，却均穿红色衣服，手中高举花环，样式都是一样的，如果想让这一类人都有共同的样式，该怎么做呢~呵呵，和ID选择器的用法类似，只不过把id换做class，如下：<br>html:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;p id=&#34;one&#34;&#62;&#25105;&#26159;&#26080;&#22788;&#19981;&#22312;&#30340;&#23567;&#24191;&#21578;&#65281;&#60;/p&#62;&#10;&#60;div id=&#34;one&#34;&#62;&#25105;&#26159;&#26080;&#22788;&#19981;&#22312;&#30340;&#23567;&#24191;&#21578;&#65281;&#60;/div&#62;</span><br></pre></td></tr></table></figure></p>
+<p>css:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.one &#123;&#10;&#9;font-size: 12px;&#10;&#9;background: #900;&#10;&#9;color: #090;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样页面中凡是加上class=”one”的标签，样式都是一样的了~<br>CSS定义的时候和ID选择器差不多，只不过把【<strong>#</strong>】换成【<strong>.</strong>】。</p>
+<hr>
+<p>###通用选择器<br>到这里，前三种基本的选择器说完了，但是还需要给大家介绍一个CSS选择器中功能最强大但是用的最少的一种选择器“通用选择器”，就是“*”星号。<br>强大之处是因为他对整个网页中所有HTML标签进行样式定义，这种功能类似“标签选择器”，覆盖的对象更加广泛，是整个HTML的所有标签，功能是强大，但是这样反而限制了它的灵活性。<br>css:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* &#123;&#10;&#9;padding: 0;&#10;&#9;margin: 0;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>通常我们会以这种方式去排除不同的浏览器而导致的外补丁和内补丁的差异，整个页面所有的元素默认的内外补丁都为0。</p>
+<hr>
+<p>##css的一些常用的通用命名<br>头：header<br>内容：content/container<br>尾：footer<br>导航：nav<br>侧栏：sidebar<br>栏目：column<br>页面外围控制整体布局宽度：wrapper<br>左右中：left right center<br> 登录条：loginbar<br>标志：logo<br>广告：banner<br>页面主体：main<br>热点：hot<br>新闻：news<br>下载：download<br>子导航：subnav<br>菜单：menu<br>子菜单：submenu<br>搜索：search<br>友情链接：friendlink<br>页脚：footer<br>版权：copyright<br>滚动：scroll<br>小技巧：tips</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>##什么是CSS<br>CSS（Cascading Style Sheets），中文层叠样式表，是一种用来表现HTML样式的计算机语言。CSS能够对网页中的对象的位置排版进行像素级的精确控制，支持几乎所有的字体字号样式，拥有对网页对象和模型样式编辑的能力，并能够进行初步交互设计，是目前基于文本展示最优秀的表现设计语言。CSS能够根据不同使用者的理解能力，简化或者优化写法，针对各类人群，有较强的易读性。</p>
+<p>##CSS如何控制页面</p>
+<p>css控制页面主要有4仲途径：<br>1、行内样式<br>2、内嵌样式<br>3、链接样式<br>4、导入样式</p>
+<hr>
+<p>###行内样式<br>最简单、最直接的一种方法，直接通过style=””去控制。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;div style=&#34;color: #fff; font-size:12px;&#34;&#62;demo&#60;/div&#62;</span><br></pre></td></tr></table></figure></p>
+<p>虽然这种方法比较直接，在制作页面的时候需要为很多的标签设置style属性，所以会导致HTML页面不够纯净，文件体积过大，不利于搜索蜘蛛爬行，从而导致后期维护成本高<br>]]>
+    
+    </summary>
+    
+      <category term="css" scheme="http://junozero.github.io/tags/css/"/>
+    
+      <category term="学习" scheme="http://junozero.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="教程" scheme="http://junozero.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="w3c基础整理" scheme="http://junozero.github.io/categories/w3c%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[w3c基础整理之html]]></title>
+    <link href="http://junozero.github.io/2014/12/19/w3c%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86%E4%B9%8Bhtml/"/>
+    <id>http://junozero.github.io/2014/12/19/w3c基础整理之html/</id>
+    <published>2014-12-19T03:50:15.000Z</published>
+    <updated>2014-12-19T08:27:51.231Z</updated>
+    <content type="html"><![CDATA[<p>##什么是html<br>超文本标记语言或超文本链接标示语言HTML（HyperText Mark-up Language）是一种制作万维网页面的标准语言，是万维网浏览器使用的一种语言，它消除了不同计算机之间信息交流的障碍。</p>
+<p>它是目前网络上应用最为广泛的语言，也是构成<strong>网页文档的主要语言</strong>（注意，html是标记语言，不是编程语言）。</p>
+<p>##xHTML与html、html5的区别<br>关于这三者的区别，网上搜索都能出一大堆，这里抽取一篇【<a href="http://blog.csdn.net/zuoluoboy/article/details/17927939" target="_blank" rel="external">点我查看</a>】。</p>
+<hr>
+<p>###HTML<br>通常指目前最为广泛、兼容性最好的html4.01。自从w3c从1999年发布html4后，web世界就开始快速的发展，直道2014年的今天，它也还在扮演着重要的角色，但是，html5标准的尘埃落定，将会使html4慢慢推出这个舞台，成为历史。</p>
+<p>下面来一段比较通用的html4的声明，通常放在html文件的开头位置，html标签的前面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;!DOCTYPE html PUBLIC &#34;-//W3C//DTD HTML 4.01 Transitional//EN&#34; &#34;http://www.w3.org/TR/html4/loose.dtd&#34;&#62;&#10;&#60;html&#62;&#10;&#60;head&#62;&#10;&#60;meta http-equiv=&#34;Content-Type&#34; content=&#34;text/html; charset=UTF-8&#34;&#62;&#10;&#60;title&#62;Insert title here&#60;/title&#62;&#10;&#60;/head&#62;&#10;&#60;body&#62;&#10;&#10;&#60;/body&#62;&#10;&#60;/html&#62;</span><br></pre></td></tr></table></figure></p>
+<p>可以看到声明中包括了“Transitional”这个单词，代表的过渡的意思，另外还有strict（严谨）和frameset（框架），因为比较少用到，所以就不详细了。<br><a id="more"></a></p>
+<hr>
+<p>###xHTML<br>那么xHTML又是什么了？严格来说，xHTML也是w3c的产物，它想通过把html结合xml的语义严格性来更加规范html的编写，但是，放纵过生活又怎么舍弃放弃自由呢，结果xhtml可以说是死在了兼容性上。出发点是好的，但结果并不一定是理想化的。简单列举一些xHTML的“特点”：<br>1、XHTML 元素必须被正确地嵌套。<br>2、XHTML 元素必须被关闭。<br>3、标签名必须用小写字母。<br>4、XHTML 文档必须拥有根元素。</p>
+<p>xHTML的声明<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; ?&#62;&#10;&#60;!DOCTYPE html PUBLIC &#34;-//W3C//DTD XHTML 1.0 Strict//EN&#34; &#34;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&#34;&#62;&#10;&#60;html xmlns=&#34;http://www.w3.org/1999/xhtml&#34;&#62;&#10;&#60;head&#62;&#10;&#60;meta http-equiv=&#34;Content-Type&#34; content=&#34;text/html; charset=UTF-8&#34; /&#62;&#10;&#60;title&#62;Insert title here&#60;/title&#62;&#10;&#60;/head&#62;&#10;&#60;body&#62;&#10;&#10;&#60;/body&#62;&#10;&#60;/html&#62;</span><br></pre></td></tr></table></figure></p>
+<p>在xHTML下报错的例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;BODY&#62;&#10;&#9;a&#60;br&#62;b&#10;&#60;/BODY&#62;</span><br></pre></td></tr></table></figure></p>
+<p>应该这样写才正确：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;body&#62;&#10;&#9;a&#60;br /&#62;b&#10;&#60;/body&#62;</span><br></pre></td></tr></table></figure></p>
+<p>通过一些简单的xHTML的案例，可以看出，w3c来一个给你们<strong>先用</strong>，再来提<strong>规范要求</strong>是行不通的，更具有兼容性的规范才能行得通。</p>
+<hr>
+<p>###HTML5<br>是新一代的html标准，目前大部分浏览器都能良好的支持，包括pc和移动端。虽然html4支持着web世界的推进，但随着不断的发展，大家已经意识到了html4的不足，于是w3c于2007年立项html5，经过了8年的长跑，终于在2014年10月底将html5规范正式定稿。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;!DOCTYPE html&#62;&#10;&#60;html&#62;&#10;&#60;head&#62;&#10;&#60;meta charset=&#34;UTF-8&#34;&#62;&#10;&#60;title&#62;Insert title here&#60;/title&#62;&#10;&#60;/head&#62;&#10;&#60;body&#62;&#10;&#10;&#60;/body&#62;&#10;&#60;/html&#62;</span><br></pre></td></tr></table></figure></p>
+<p>如果不是为了刻意的兼容，建议往后都采用html5这种声明。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>##什么是html<br>超文本标记语言或超文本链接标示语言HTML（HyperText Mark-up Language）是一种制作万维网页面的标准语言，是万维网浏览器使用的一种语言，它消除了不同计算机之间信息交流的障碍。</p>
+<p>它是目前网络上应用最为广泛的语言，也是构成<strong>网页文档的主要语言</strong>（注意，html是标记语言，不是编程语言）。</p>
+<p>##xHTML与html、html5的区别<br>关于这三者的区别，网上搜索都能出一大堆，这里抽取一篇【<a href="http://blog.csdn.net/zuoluoboy/article/details/17927939">点我查看</a>】。</p>
+<hr>
+<p>###HTML<br>通常指目前最为广泛、兼容性最好的html4.01。自从w3c从1999年发布html4后，web世界就开始快速的发展，直道2014年的今天，它也还在扮演着重要的角色，但是，html5标准的尘埃落定，将会使html4慢慢推出这个舞台，成为历史。</p>
+<p>下面来一段比较通用的html4的声明，通常放在html文件的开头位置，html标签的前面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;!DOCTYPE html PUBLIC &#34;-//W3C//DTD HTML 4.01 Transitional//EN&#34; &#34;http://www.w3.org/TR/html4/loose.dtd&#34;&#62;&#10;&#60;html&#62;&#10;&#60;head&#62;&#10;&#60;meta http-equiv=&#34;Content-Type&#34; content=&#34;text/html; charset=UTF-8&#34;&#62;&#10;&#60;title&#62;Insert title here&#60;/title&#62;&#10;&#60;/head&#62;&#10;&#60;body&#62;&#10;&#10;&#60;/body&#62;&#10;&#60;/html&#62;</span><br></pre></td></tr></table></figure></p>
+<p>可以看到声明中包括了“Transitional”这个单词，代表的过渡的意思，另外还有strict（严谨）和frameset（框架），因为比较少用到，所以就不详细了。<br>]]>
+    
+    </summary>
+    
+      <category term="html" scheme="http://junozero.github.io/tags/html/"/>
+    
+      <category term="html5" scheme="http://junozero.github.io/tags/html5/"/>
+    
+      <category term="xhtml" scheme="http://junozero.github.io/tags/xhtml/"/>
+    
+      <category term="学习" scheme="http://junozero.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="教程" scheme="http://junozero.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="w3c基础整理" scheme="http://junozero.github.io/categories/w3c%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[w3c基础整理]]></title>
+    <link href="http://junozero.github.io/2014/12/19/w3c%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86/"/>
+    <id>http://junozero.github.io/2014/12/19/w3c基础整理/</id>
+    <published>2014-12-19T01:23:15.000Z</published>
+    <updated>2014-12-30T07:07:55.426Z</updated>
+    <content type="html"><![CDATA[<p>##什么是W3C<br>首先，什么是w3c呢？我们平时说的W3C，其实是World Wide Web Consortium的缩写，中文是W3C组织或者万维网联盟，W3C这个组织做什么的呢？很简单，就是出网页标准的。那么有W3C组织出的标准就被称为W3C标准，那么符合<strong>W3C标准</strong>的页面就是标准页面了。</p>
+<p>##什么是W3C标准<br>W3C标准不是一个标准，而是一系列标准的集合，包含三部分的标准：【结构标准】、【表现标准】和【动作标准】。与结构标准对应的代表语言是【HTML】，与表现标准对应的代表语言是【CSS】，与动作标准对应的代表语言是【JavaScript】。<br>当我们将一个成品的网页设计制作成一个静态页面的时候，就要符合前面两种标准，结构标准和表现标准，那么制作出来的页面就是标准页面，用他们相对应的语言来描述这种制作标准页面的技术我们就称之为“HTML+CSS”！，加上动作标准后，我们就称之为“DHMTL”。</p>
+<p>那么，接下来就从w3c三部分的标准进行基础整理。</p>
+<p>##目录：</p>
+<p>###概念<br><a href="http://junozero.github.io/2014/12/19/w3c基础整理之html/">w3c基础整理之html</a><br><a href="http://junozero.github.io/2014/12/19/w3c基础整理之css/">w3c基础整理之css</a><br><a href="http://junozero.github.io/2014/12/24/w3c基础整理之javascript/">w3c基础整理之javascript</a></p>
+<hr>
+<p>###页面布局<br><a href="http://junozero.github.io/2014/12/22/w3c基础整理之盒子模型/">w3c基础整理之盒子模型</a><br><a href="http://junozero.github.io/2014/12/22/w3c基础整理之块状元素和内联元素/">w3c基础整理之块状元素和内联元素</a><br><a href="http://junozero.github.io/2014/12/24/css使未知高度的div内容垂直居中/">css使未知高度的div内容垂直居中</a></p>
+<hr>
+<p>###css<br><a href="http://junozero.github.io/2014/12/22/w3c基础整理之float与clear/">w3c基础整理之float与clear</a><br><a href="http://junozero.github.io/2014/12/23/w3c基础整理之CSS%20hack/">w3c基础整理之CSS hack</a></p>
+<hr>
+<p>###JavaScript<br><a href="http://junozero.github.io/2014/12/26/w3c基础整理之ECMAScript（一）">w3c基础整理之ECMAScript（一）</a><br><a href="http://junozero.github.io/2014/12/29/w3c基础整理之ECMAScript（二）">w3c基础整理之ECMAScript（二）</a><br><a href="http://junozero.github.io/2014/12/30/w3c基础整理之ECMAScript（三）">w3c基础整理之ECMAScript（三）</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>##什么是W3C<br>首先，什么是w3c呢？我们平时说的W3C，其实是World Wide Web Consortium的缩写，中文是W3C组织或者万维网联盟，W3C这个组织做什么的呢？很简单，就是出网页标准的。那么有W3C组织出的标准就被称为W3C标准，那么符合<str]]>
+    </summary>
+    
+      <category term="css" scheme="http://junozero.github.io/tags/css/"/>
+    
+      <category term="html" scheme="http://junozero.github.io/tags/html/"/>
+    
+      <category term="w3c" scheme="http://junozero.github.io/tags/w3c/"/>
+    
+      <category term="学习" scheme="http://junozero.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="教程" scheme="http://junozero.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="w3c基础整理" scheme="http://junozero.github.io/categories/w3c%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[window8下如何玩起Yeoman]]></title>
+    <link href="http://junozero.github.io/2014/11/13/yeoman/"/>
+    <id>http://junozero.github.io/2014/11/13/yeoman/</id>
+    <published>2014-11-13T06:20:40.000Z</published>
+    <updated>2014-11-24T05:53:59.771Z</updated>
+    <content type="html"><![CDATA[<hr>
+<p>##什么是Yeoman<br>首先，我是通过《用AngularJS开发下一代Web应用》中了解到yeoman，书里面介绍到：“我们推荐使用<a href="http://yeoman.io/" target="_blank" rel="external">Yeoman</a>开发项目，它可以自动创建所有必须的文件依边启动你的AngularJS应用……省略几千字”。可以了解到，yeoman提倡的是工作效率，把很多以前我们需要关注的、重复的、繁琐的（如引入的框架、目录结构的定义、测试、打包发布等）内容通通自动化处理了，通俗一点就是从构建到发布的一整套工作流，对于我来说，最吸引的是自动化的单元测试，如何引入到实际工作中是研究的重点。</p>
+<hr>
+<p>##准备工作<br>上完搜索资料，首先找到了官网，概览了<a href="http://yeoman.io/learning/index.html" target="_blank" rel="external">官方教程</a>，得出一个结论，windows下要把yeoman跑起来不那么容易，首先<a href="http://www.nodejs.org/" target="_blank" rel="external">nodejs</a>和<a href="http://git-scm.com/download/" target="_blank" rel="external">git</a>是必须的，两个工具都较容易安装，没什么坑的，接下来就是安装yeoman了。</p>
+<hr>
+<p>##安装yeoman<br>yeoman主要分为三大内容<br>1、yo<br>2、bower<br>3、grunt<br><a id="more"></a><br>以上几个东西官方教程都有说明白是什么东西，就不重复了。</p>
+<p>首先打开git<br><code>$ npm install -g yo bower</code></p>
+<p>接下来是安装grunt<br><code>$ npm install -g grunt-cli</code></p>
+<p>查看yo、bower和grunt的安装情况<br><code>$ yo --version &amp;&amp; bower --version &amp;&amp; grunt --version</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1.3.3&#10;1.3.12&#10;grunt-cli v0.1.13</span><br></pre></td></tr></table></figure></p>
+<p>看到类似以上内容的证明已经安装成功，版本号会随着时间的过去而过时，请别在意，这是定律。</p>
+<p>完成以上步骤后，yeoman的环境算是基本安装完成了。</p>
+<hr>
+<p>##hello Work<br>是程序员都知道这个代表什么。</p>
+<p>继续使用git，首先我们需要的是，下载一套模板（框架），这也是yeoman的魅力所在。</p>
+<p>首先我们来下载AngularJS的生成器<br><code>$ npm install -g generator-angular</code></p>
+<p>安装成功后，我们就可以使用AngularJS的成功器来构建我们的项目了。</p>
+<p>首先把git的目录跳转到需要项目的目录下<br><code>$ cd d:/work/yeoman</code><br>并创建项目的目录，如angular<br><code>$ mkdir angular</code><br><code>$ cd angular</code></p>
+<p>接下来，就开始构建我们的项目了。<br><code>$ yo angular</code><br>输入上述命令后，会跳出yeoman的logo小人头，但这不是我们需要关注的，我们看最下面，yeoman问是否使用sass，这里暂时不需要（原因很长，因为需要compass，而compass又需要ruby，这些东西一环扣一环，以后有机会再说），不需要，就输入“n”，下一项询问是否需要bootstrap，这东西不错，效果都靠它了，输入“Y”，接下来就会询问需要加载的Angular的模块，默认即可，按下回车后，Yeoman将会自动构建你的应用，自动下载所需的库文件，如jQuery、AngularJS等，并自动生成目录结构和文件。稍等一段时间后，我们的项目就出现了。</p>
+<p>首先来看一下目录结构<br><strong>–app/：Web应用的父级目录。</strong><br>—-index.html： Angular应用的基准HTML文件（base html file）<br>—-404.html、favicon.ico和robots.txt：通用的Web文件，Yeoman已经将它创建出来了，你不需要再手动去创建<br>—-scripts：我们的JS文件<br>——–app.js：主程序<br>——–controllers：Angular控制器<br>—-styles：我们的CSS文件<br>—-views：Angular模板<br><strong>–bower_components：存放项目相关的JavaScript或Web依赖，由bower安装的</strong><br><strong>–Gruntfile.js、package.json 以及node_modules：Grunt需要使用的依赖以及配置。</strong><br><strong>–test和karma.conf.js/karma-e2e.conf.js：测试框架以及针对这个项目的单元测试，包括了为控制器写的样板测试（boilerplate tests）。</strong></p>
+<p>引用官方的图<br><img src="http://ww4.sinaimg.cn/mw690/7cc829d3gw1ehy6vjlk0fj20g60g8gnp.jpg" alt=""></p>
+<hr>
+<p>##运行<br>运行很简单，如果上述步骤都没有错，那么我们只要输入一句简单的命令就可以AngularJS的项目了<br><code>$ grunt serve</code><br>浏览器会自动的打开<a href="http://localhost:9000/#/" target="_blank" rel="external">http://localhost:9000/#/</a><br><img src="http://ww4.sinaimg.cn/large/7cc829d3gw1ehy6vknj81j210p0rx41c.jpg" alt=""></p>
+<p>是否很简单，我们无需敲打一句的代码，就可以运行AngularJS的项目，引入Bootstrap的效果，这就是yeoman的魅力（实际，要在win下跑起来，估计会因为环境的不同而有很多的意外，自己执生）。</p>
+<p>yeoman还有另外一个优点就是livereload，什么意思呢，就是我们把代码改动了，无需刷新网页，我们修改的内容就会自动的更新到网页上，包括AngularJS的也能自动更新上去，F5拯救者啊！！！</p>
+<hr>
+<p>##CODING，真正的AngularJS的应用<br>其实也没什么，就是把官方的todos拿出来搬弄一下。<br>首先修改app/views/main.html为以下代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;div class=&#34;container&#34;&#62;&#10;&#9;&#60;h2&#62;My todos&#60;/h2&#62;&#10;&#10;&#9;&#60;!-- Todos input --&#62;&#10;&#9;&#60;form role=&#34;form&#34; ng-submit=&#34;addTodo()&#34;&#62;&#10;&#9;&#9;&#60;div class=&#34;row&#34;&#62;&#10;&#9;&#9;&#9;&#60;div class=&#34;input-group&#34;&#62;&#10;&#9;&#9;&#9;&#9;&#60;input type=&#34;text&#34; ng-model=&#34;todo&#34; placeholder=&#34;&#35831;&#36755;&#20837;&#38656;&#35201;&#20570;&#30340;&#20107;&#24773;?&#34; class=&#34;form-control&#34;&#62;&#10;&#9;&#9;&#9;&#9;&#60;span class=&#34;input-group-btn&#34;&#62; &#10;              &#60;input type=&#34;submit&#34; value=&#34;Add&#34; class=&#34;btn btn-primary&#34;&#62;&#10;             &#60;/span&#62;&#10;&#9;&#9;&#9;&#60;/div&#62;&#10;&#9;&#9;&#60;/div&#62;&#10;&#9;&#60;/form&#62;&#10;&#9;&#60;p&#62;&#60;/p&#62;&#10;&#10;&#9;&#60;!-- Todos list --&#62;&#10;&#9;&#60;p class=&#34;input-group&#34; ng-repeat=&#34;todo in todos&#34;&#62;&#10;&#9;&#9;&#60;input type=&#34;text&#34; ng-model=&#34;todo&#34; class=&#34;form-control&#34;&#62;&#10;&#9;&#9;&#60;span class=&#34;input-group-btn&#34;&#62;&#10;        &#60;button class=&#34;btn btn-danger&#34; ng-click=&#34;removeTodo($index)&#34; aria-label=&#34;Remove&#34;&#62;X&#60;/button&#62;&#10;    &#60;/span&#62;&#10;&#9;&#60;/p&#62;&#10;&#60;/div&#62;</span><br></pre></td></tr></table></figure></p>
+<p>然后修改app/scripts/controllers/main.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#39;use strict&#39;;&#10;&#10;/**&#10; * @ngdoc function&#10; * @name angularApp.controller:MainCtrl&#10; * @description&#10; * # MainCtrl&#10; * Controller of the angularApp&#10; */&#10;angular.module(&#39;angularApp&#39;)&#10;&#9;.controller(&#39;MainCtrl&#39;, function($scope) &#123;&#10;&#9;&#9;$scope.todos = [&#39;Item 1&#39;, &#39;Item 2&#39;, &#39;Item 3&#39;];&#10;&#10;&#9;&#9;$scope.addTodo = function() &#123;&#10;&#9;&#9;&#9;$scope.todos.push($scope.todo);&#10;&#9;&#9;&#9;$scope.todo = &#39;&#39;;&#10;&#9;&#9;&#125;;&#10;&#10;&#9;&#9;$scope.removeTodo = function(index) &#123;&#10;&#9;&#9;&#9;$scope.todos.splice(index, 1);&#10;&#9;&#9;&#125;;&#10;&#9;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>再返回到浏览器，是否发现不用F5，我们的todo view就展现在我们眼前了？感觉还可以吧！<br><img src="http://ww1.sinaimg.cn/mw690/7cc829d3gw1ehy6vpvgdrj20ip0jydgt.jpg" alt=""></p>
+<hr>
+<p>##测试<br>简单的双向绑定、依赖注入和路由的AnguarlJS的基本应用就这样搭建起来了，是否很简单，但还不止这些，如何自动化测试才是我试用yeoman的主要目的。</p>
+<p>回到git里面，Ctrl+c退出（现在web就无法访问了）。</p>
+<p>打开test/spec/controllers/main.js，这就是与MainCtrl对应的单元测试脚本，我们修改为以下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#39;use strict&#39;;&#10;&#10;describe(&#39;Controller: MainCtrl&#39;, function() &#123;&#10;&#10;&#9;// load the controller&#39;s module&#10;&#9;beforeEach(module(&#39;angularApp&#39;));&#10;&#10;&#9;var MainCtrl,&#10;&#9;&#9;scope;&#10;&#10;&#9;// Initialize the controller and a mock scope&#10;&#9;beforeEach(inject(function($controller, $rootScope) &#123;&#10;&#9;&#9;scope = $rootScope.$new();&#10;&#9;&#9;MainCtrl = $controller(&#39;MainCtrl&#39;, &#123;&#10;&#9;&#9;&#9;$scope: scope&#10;&#9;&#9;&#125;);&#10;&#9;&#125;));&#10;&#10;&#9;it(&#39;should have no items to start&#39;, function() &#123;&#10;&#9;&#9;expect(scope.todos.length).toBe(3);&#10;&#9;&#125;);&#10;&#10;&#9;it(&#39;should add items to the list&#39;, function() &#123;&#10;&#9;&#9;scope.todo = &#39;Test 1&#39;;&#10;&#9;&#9;scope.addTodo();&#10;&#9;&#9;expect(scope.todos.length).toBe(4);&#10;&#9;&#125;);&#10;&#10;&#9;it(&#39;should add items to the list&#39;, function() &#123;&#10;&#9;&#9;scope.todo = &#39;Test 1&#39;;&#10;&#9;&#9;scope.addTodo();&#10;&#9;&#9;scope.removeTodo(0);&#10;&#9;&#9;expect(scope.todos.length).toBe(3);&#10;&#9;&#125;);&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>接下来输入以下命令进行自动化测试<br><code>$ grunt test</code><br>环境都具备的话，出现下图就证明测试全部通过了。<br><img src="http://images.54646a963df08.d01.nanoyun.com/QQ20141113154220.png" alt=""></p>
+<p>Executed 6 of 6 SUCESS.</p>
+<hr>
+<p>##测试环境的准备<br>上面是多么美好的结果，官方等很多网上的教程都没有说明白，按照那些教程去弄，这个测试根本就跑不起来。</p>
+<p>首先，自动化测试是需要依赖到PhantomJS，请先到官方进行<a href="http://phantomjs.org/download.html" target="_blank" rel="external">下载</a>，下载成功后解压到某个目录下，并把该目录添加到系统的path环境变量中，如何添加请自行百度吧。请别用npm去安装PhantomJS，反正我是没有成功过。</p>
+<p>安装成功后，重新打开git，并进入到项目的目录中，再次敲打<br><code>$ grunt test</code><br>结果还是不成功，提示没有安装karma-phantomjs-launcher  <strong>—经过测试，这并不是每一台电脑都需要的，基本上会自动安装成功！</strong><br><code>$ npm install karma-phantomjs-launcher --save-dev</code><br>安装成功后，再次敲打<br><code>$ grunt test</code><br>期待的界面终于出现了。</p>
+<hr>
+<p>##结束<br>虽然yeoman使我对自动化构建和自动化测试有了全新的认识，但，这仅仅的根据教程触碰的皮毛而已，还有很多的知识可以学习可以运用，yeoman是一个好的东西，但它无法脱离互联网，而工作的地方在“桃花岛”，是一个与互联网隔离的网络环境，下一步将会尝试是否可以把构建好的环境迁移到内部网络去使用，虽然无法直接下载到最新的类库，但也可以把编码测试构建发布压缩等一系列的工作流规范起来。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<hr>
+<p>##什么是Yeoman<br>首先，我是通过《用AngularJS开发下一代Web应用》中了解到yeoman，书里面介绍到：“我们推荐使用<a href="http://yeoman.io/">Yeoman</a>开发项目，它可以自动创建所有必须的文件依边启动你的AngularJS应用……省略几千字”。可以了解到，yeoman提倡的是工作效率，把很多以前我们需要关注的、重复的、繁琐的（如引入的框架、目录结构的定义、测试、打包发布等）内容通通自动化处理了，通俗一点就是从构建到发布的一整套工作流，对于我来说，最吸引的是自动化的单元测试，如何引入到实际工作中是研究的重点。</p>
+<hr>
+<p>##准备工作<br>上完搜索资料，首先找到了官网，概览了<a href="http://yeoman.io/learning/index.html">官方教程</a>，得出一个结论，windows下要把yeoman跑起来不那么容易，首先<a href="http://www.nodejs.org/">nodejs</a>和<a href="http://git-scm.com/download/">git</a>是必须的，两个工具都较容易安装，没什么坑的，接下来就是安装yeoman了。</p>
+<hr>
+<p>##安装yeoman<br>yeoman主要分为三大内容<br>1、yo<br>2、bower<br>3、grunt<br>]]>
+    
+    </summary>
+    
+      <category term="yeoman" scheme="http://junozero.github.io/tags/yeoman/"/>
+    
+      <category term="yeoman" scheme="http://junozero.github.io/categories/yeoman/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[CSS选择器的权重与编写高效的选择器]]></title>
+    <link href="http://junozero.github.io/2014/10/30/css-select/"/>
+    <id>http://junozero.github.io/2014/10/30/css-select/</id>
+    <published>2014-10-30T06:57:57.000Z</published>
+    <updated>2014-10-30T07:23:48.880Z</updated>
+    <content type="html"><![CDATA[<p>##CSS选择器的权重<br>我们在使用CSS对网页元素定义样式时经常会遇到这种情况：要对一般元素应用一般样式，然后在更特殊的元素上覆盖它们。那么我们怎么样来保证我们所新定义的元素样式能覆盖目标元素上原有的样式呢？</p>
+<p>在CSS中，会根据选择器的特殊性来决定所定义的样式规则的次序，具有更特殊选择器的规则优先于具有一般选择器的规则，如果两个规则的特殊性相同，那么后定义的规则优先。</p>
+<p>那么，又怎么来计算选择器的特殊性呢？下面这张图介绍了特殊性的计算方法：<br><img src="http://www.nowamagic.net/csszone/images/priority_rules_1.jpg" alt="img"></p>
+<p>我们把特殊性分为4个等级，每个等级代表一类选择器，每个等级的值为其所代表的选择器的个数乘以这一等级的权值，最后把所有等级的值相加得出选择器的特殊值。<br>4个等级的定义如下：<br>第一等：代表内联样式，如: style=””，权值为1000。<br>第二等：代表ID选择器，如：#content，权值为100。<br>第三等：代表类，伪类和属性选择器，如.content，权值为10。<br>第四等：代表类型选择器和伪元素选择器，如div p，权值为1。<br>例如上图为例，其中#NAV为二等选择器，.ACTIVE为三等选择器，UL、LI和A为四等选择器。则整个选择器表达式的特殊性的值为1<em>100+1</em>10+3*1=113</p>
+<h2 id="<!-more->"><a id="more"></a></h2><p>##编写高效的选择器<br>CSS 选择器对我们大多数人来说并不新鲜，较基础的选择器分别是类型（如 div），ID（如#header）和类（如.tweet）。<br>较不寻常的包括基础的伪类（如:hover）和更复杂的CSS3以及 ‘正则’（‘regex’）选择器，比如：first-childor[class^=”grid-“]。<br>选择器具有固有效率，以下按照高到低进行排列：</p>
+<ol>
+<li>ID,如#header</li>
+<li>Class, 如.promo</li>
+<li>Type, 如div</li>
+<li>Adjacent sibling, 如h2 + p</li>
+<li>Child, 如li &gt; ul</li>
+<li>Descendant,如ul a</li>
+<li>Universal,即*</li>
+<li>Attribute, 如[type=”text”]</li>
+<li>Pseudo-classes/-elements, 如a:hover</li>
+</ol>
+<p>###组合选择器<br>你可以单独使用一种标准选择器，如#nav，来选择所有以”nav”为ID的元素，你也可以使用组合选择器，如#nav a，来选择任何在ID为’nav’的元素里面的链接元素。<br>现在，我们从左到右读这个组合标签。我们先找到#nav ，然后再找到里面的元素。但是我们的浏览器不是这样解析的，它是从右到左来解析这些组合选择器的。<br><strong>当我们看到#nav里面有个a，而浏览器看到的却是有个a在 #nav里面</strong>，这些细微的差异对浏览器的性能有重大影响。</p>
+<p>###关键选择器<br>这里讨论的关键选择器, 是处在复杂选择器最右端的选择器，也是浏览器最先解析的选择器。<br>让我们回到讨论开始的地方，哪种选择器最高效？哪种选择器作为关键选择器会影响选择器的性能；当我们书写CSS代码的时候，正是这个关键选择器影响选择器的效率。<br>好的关键选择器：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#content.intro&#123;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>天生高效选择器如类型选择器是不是就会有更高的性能？浏览器会寻找.Intro的所有实例（数量不会很多），然后向上查找DOM树，以确定该关键选择器是否在以“content’”为ID的元素里面。</p>
+<p>差的关键选择器：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#content*&#123;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这个选择器做的工作是这样子的，它先查找每个页面（是每个单个的页面），然后去看看它们是否有一个 #content 的父元素。这是一个非常不高效的选择器，因为它的关键选择器执行开销太大了。</p>
+<hr>
+<p><strong>运用这些知识我们就能在分类和选择元素时做更好的选择。</strong></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>##CSS选择器的权重<br>我们在使用CSS对网页元素定义样式时经常会遇到这种情况：要对一般元素应用一般样式，然后在更特殊的元素上覆盖它们。那么我们怎么样来保证我们所新定义的元素样式能覆盖目标元素上原有的样式呢？</p>
+<p>在CSS中，会根据选择器的特殊性来决定所定义的样式规则的次序，具有更特殊选择器的规则优先于具有一般选择器的规则，如果两个规则的特殊性相同，那么后定义的规则优先。</p>
+<p>那么，又怎么来计算选择器的特殊性呢？下面这张图介绍了特殊性的计算方法：<br><img src="http://www.nowamagic.net/csszone/images/priority_rules_1.jpg" alt="img"></p>
+<p>我们把特殊性分为4个等级，每个等级代表一类选择器，每个等级的值为其所代表的选择器的个数乘以这一等级的权值，最后把所有等级的值相加得出选择器的特殊值。<br>4个等级的定义如下：<br>第一等：代表内联样式，如: style=””，权值为1000。<br>第二等：代表ID选择器，如：#content，权值为100。<br>第三等：代表类，伪类和属性选择器，如.content，权值为10。<br>第四等：代表类型选择器和伪元素选择器，如div p，权值为1。<br>例如上图为例，其中#NAV为二等选择器，.ACTIVE为三等选择器，UL、LI和A为四等选择器。则整个选择器表达式的特殊性的值为1<em>100+1</em>10+3*1=113</p>
+<h2 id="<!-more->">]]>
+    
+    </summary>
+    
+      <category term="css" scheme="http://junozero.github.io/tags/css/"/>
+    
+      <category term="效率" scheme="http://junozero.github.io/tags/%E6%95%88%E7%8E%87/"/>
+    
+      <category term="css" scheme="http://junozero.github.io/categories/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[CSS的一些日常归纳]]></title>
+    <link href="http://junozero.github.io/2014/10/30/20141030-css/"/>
+    <id>http://junozero.github.io/2014/10/30/20141030-css/</id>
+    <published>2014-10-30T06:57:09.000Z</published>
+    <updated>2014-10-30T07:24:14.500Z</updated>
+    <content type="html"><![CDATA[<p>##DIV<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1&#12289;&#26032;&#24314;&#30340;DIV&#65292;&#22312;&#27809;&#26377;&#20219;&#20309;&#23646;&#24615;&#21450;&#19979;&#32423;&#20803;&#32032;&#30340;&#24773;&#20917;&#19979;&#65288;&#60;div&#62;&#60;/div&#62;&#65289;&#65292;&#23485;&#24230;&#20026;&#19978;&#32423;&#23485;&#24230;&#65288;100%&#65289;&#65292;&#39640;&#24230;&#20026;0&#65288;&#22914;&#19978;&#32423;&#20026;BODY&#26102;&#65292;&#23485;&#24230;&#20026;&#27983;&#35272;&#22120;&#23485;&#24230;&#65289;&#12290;&#10;2&#12289;&#26032;&#24314;DIV&#65292;&#19988;&#22312;&#37324;&#38754;&#20869;&#23481;&#20026;&#8220;ABCD&#8221;&#65288;&#60;div&#62;ABCD&#60;/div&#62;&#65289;&#65292;&#23485;&#24230;&#20026;&#19978;&#32423;&#23485;&#24230;&#65288;100%&#65289;&#65292;&#39640;&#24230;&#20026;19px&#65288;&#32463;&#36807;&#27979;&#35797;&#65292;&#22312;&#27809;&#26377;&#36171;&#20540;&#30340;&#24773;&#20917;&#19979;&#65292;&#23481;&#22120;&#30340;&#39640;&#24230;&#27604;&#23383;&#20307;&#20687;&#32032;&#22823;3&#20010;&#21333;&#20301;&#65289;&#12290;&#10;3&#12289;&#60;div&#62;&#60;div&#62;ABCD&#60;/div&#62;&#60;/div&#62;&#65292;&#20004;&#20010;DIV&#30340;&#23485;&#24230;&#20026;&#19978;&#32423;&#23485;&#24230;&#65288;100%&#65289;&#65292;&#39640;&#24230;&#20026;19px&#12290;&#10;4&#12289;&#60;div&#62;&#60;div style=&#34;float:left;&#34;&#62;ABCD&#60;/div&#62;&#60;/div&#62;&#65292;&#37324;&#23618;DIV&#30340;&#23485;&#24230;&#20026;&#20869;&#23481;&#30340;&#23485;&#24230;&#65288;30px&#65289;&#65292;&#39640;&#24230;&#20026;19px&#12290;&#22806;&#23618;DIV&#30340;&#23485;&#24230;&#20026;&#19978;&#32423;&#23485;&#24230;&#65288;100%&#65289;&#65292;&#39640;&#24230;&#20026;0&#12290;&#10;5&#12289;DIV&#30340;&#23485;&#24230;&#31561;&#20110;padding&#21152;border&#21152;width&#65292;&#39640;&#24230;&#19968;&#26679;&#12290;&#10;6&#12289;&#20869;&#23618;&#20869;&#23481;&#26410;&#28014;&#21160;&#65292;&#20250;&#23545;&#19978;&#23618;&#23485;&#24230;&#21450;&#39640;&#24230;&#24433;&#21709;&#65292;&#20294;&#20869;&#23618;&#28014;&#21160;&#21518;&#65292;&#19978;&#23618;&#30340;&#23485;&#24230;&#21644;&#39640;&#24230;&#23558;&#19981;&#20250;&#21463;&#20869;&#23618;&#30340;&#24433;&#21709;&#12290;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>##CSS HACK<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1&#12289;&#38024;&#23545;&#19981;&#21516;&#30340;&#27983;&#35272;&#22120;&#20889;&#19981;&#21516;&#30340;CSS CODE&#36807;&#31243;&#65292;&#23601;&#21483;&#20570;CSS HACK&#12290;&#10;2&#12289;css hack&#22823;&#33268;&#26377;&#19977;&#31181;&#34920;&#29616;&#24418;&#24335;&#65292;CSS&#31867;&#20869;&#37096;HACK&#12289;&#36873;&#25321;&#22120;HACK&#20197;&#21450;HTML&#22836;&#37096;&#24341;&#29992;HACK&#12290;&#10;3&#12289;&#21306;&#21035;IE6&#19982;FF&#65306;background:red; *background:blue;&#65292;FF&#20250;&#26174;&#31034;&#32418;&#33394;&#65292;IE6&#20250;&#26174;&#31034;&#34013;&#33394;&#12290;&#10;4&#12289;&#21306;&#21035;IE6&#19982;IE7&#65306;background:red; !important;background:blue;&#65292;IE6&#20250;&#26174;&#31034;&#32418;&#33394;&#65292;IE7&#20250;&#26174;&#31034;&#34013;&#33394;&#12290;&#10;5&#12289;&#21306;&#21035;IE7&#19982;FF&#65306;background:red; *background:blue;&#65292;FF&#20250;&#26174;&#31034;&#32418;&#33394;&#65292;IE7&#20250;&#26174;&#31034;&#34013;&#33394;&#12290;&#10;6&#12289;IE6&#12289;7&#33021;&#35782;&#21035;&#8220;*&#8221;&#12290;&#10;7&#12289;IE6&#33021;&#35782;&#21035;&#8220;_&#8221;&#12290;&#10;8&#12289;IE7&#21450;FF&#33021;&#35782;&#21035;&#8220;!importtant&#8221;&#12290;</span><br></pre></td></tr></table></figure></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>##DIV<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><p]]>
+    </summary>
+    
+      <category term="css" scheme="http://junozero.github.io/tags/css/"/>
+    
+      <category term="css" scheme="http://junozero.github.io/categories/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[JS公有和私有的一些总结]]></title>
+    <link href="http://junozero.github.io/2014/10/30/public-private/"/>
+    <id>http://junozero.github.io/2014/10/30/public-private/</id>
+    <published>2014-10-30T06:55:47.000Z</published>
+    <updated>2014-10-30T07:23:14.200Z</updated>
+    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//=========================================================================&#10;//public&#21450;private&#30340;&#23450;&#20041;&#65292;&#27880;&#65306;return&#21518;&#19981;&#33021;&#30452;&#25509;&#36890;&#36807;&#26500;&#36896;&#30340;&#23545;&#35937;&#24341;&#29992;&#26041;&#27861;&#65292;&#32780;&#38656;&#35201;&#36890;&#36807;&#36820;&#22238;&#19968;&#20010;&#21442;&#25968;&#26469;&#25351;&#21521;this&#10;function foo() &#123;&#10;&#9;this.value = &#39;name&#39;;&#9;&#9;&#9;&#9;&#9;//public&#10;&#9;&#10;&#9;var value2 = &#39;name2&#39;;&#9;&#9;&#9;&#9;&#9;//private&#10;&#9;&#10;&#9;return &#123;&#10;&#9;&#9;object: this,&#10;&#9;&#9;value2: value2&#9;&#9;&#9;&#9;&#9;&#9;//&#20844;&#24067;&#20869;&#37096;&#31169;&#26377;&#23646;&#24615;&#21644;&#26041;&#27861;&#10;&#9;&#125;&#10;&#125;&#10;&#10;alert(new foo().object.value);&#10;alert(new foo().value2);&#10;&#10;&#10;//=========================================================================&#10;//&#21407;&#22411;&#20063;&#21487;&#20197;&#36890;&#36807;&#35774;&#32622;return&#26469;&#20844;&#24067;&#22806;&#37096;&#25509;&#21475;&#10;function foo() &#123;&#10;&#9;this.value = &#39;name&#39;;&#9;&#9;&#9;&#9;&#9;//public&#10;&#9;&#10;&#9;var value2 = &#39;name2&#39;;&#9;&#9;&#9;&#9;&#9;//private&#10;&#125;&#10;&#10;foo.prototype = function() &#123;&#10;&#9;show = function() &#123; alert(this.value); &#125;//private&#10;&#9;&#10;&#9;return &#123;&#10;&#9;&#9;show: show&#9;&#9;&#9;&#9;&#9;&#9;&#9;//&#20844;&#24067;&#20869;&#37096;&#31169;&#26377;&#23646;&#24615;&#21644;&#26041;&#27861;&#10;&#9;&#125;&#10;&#125;();&#10;&#10;new foo().show();&#10;&#10;&#10;//=========================================================================&#10;//&#20316;&#29992;&#22495;&#38142;&#65292;&#31867;&#26041;&#27861;&#21487;&#20197;&#33719;&#21462;&#21407;&#22411;&#30340;&#23646;&#24615;&#21644;&#26041;&#27861;&#65292;&#20294;&#21407;&#22411;&#37324;&#38754;&#30340;&#26041;&#27861;&#21364;&#26080;&#27861;&#33719;&#21462;&#21040;&#31867;&#37324;&#38754;&#30340;&#21442;&#25968;&#12290;&#10;function foo() &#123;&#10;&#9;this.value = &#39;name&#39;;&#10;&#9;&#10;&#9;var value2 = &#39;name2&#39;;&#10;&#9;&#10;&#9;this.show3 = function() &#123;&#10;&#9;&#9;return this.value2 + &#39;:&#39; + this.value3;&#10;&#9;&#125;;&#10;&#125;&#10;&#10;foo.prototype = &#123;&#10;&#9;value3 : &#39;name3&#39;,&#10;&#9;&#10;&#9;show: function() &#123;&#10;&#9;&#9;return this.value;&#10;&#9;&#125;,&#10;&#9;&#10;&#9;show2: function() &#123;&#10;&#9;&#9;//return this.value3;&#10;&#9;&#9;return value2;&#10;&#9;&#125;&#10;&#125;;&#10;&#10;alert(new foo().show());&#10;alert(new foo().show2());&#10;alert(new foo().show3());</span><br></pre></td></tr></table></figure>]]></content>
+    <summary type="html">
+    <![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span cla]]>
+    </summary>
+    
+      <category term="javascript" scheme="http://junozero.github.io/tags/javascript/"/>
+    
+      <category term="javascript" scheme="http://junozero.github.io/categories/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[JS原型的一些总结]]></title>
+    <link href="http://junozero.github.io/2014/10/30/Prototype/"/>
+    <id>http://junozero.github.io/2014/10/30/Prototype/</id>
+    <published>2014-10-30T06:55:07.000Z</published>
+    <updated>2014-10-30T07:23:23.070Z</updated>
+    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//1&#12289;&#20351;&#29992;&#19982;&#19981;&#20351;&#29992;&#21407;&#22411;&#20043;&#38388;&#30340;&#21306;&#21035;&#65288;&#21407;&#22411;&#21482;&#26500;&#36896;&#19968;&#27425;&#65292;&#37324;&#38754;&#24102;&#26377;&#30340;&#23646;&#24615;&#21644;&#26041;&#27861;&#20063;&#21482;&#26500;&#36896;&#19968;&#27425;&#65292;&#32780;&#31867;&#26041;&#27861;&#21017;&#26159;&#27599;&#27425;&#37117;&#36827;&#34892;&#26500;&#36896;&#65289;&#12290;&#10;//2&#12289;&#21407;&#22411;&#38142;&#65292;&#24403;&#20462;&#25913;&#31867;&#21407;&#22411;&#26102;&#65292;&#20250;&#30452;&#25509;&#23545;&#24050;&#26500;&#36896;&#30340;&#31867;&#21457;&#29983;&#24433;&#21709;&#12290;&#10;&#10;&#10;//&#26041;&#27861;&#19968;&#65306;&#21019;&#24314;&#19968;&#30334;&#19975;&#20010;&#24102;&#21407;&#22411;&#26041;&#27861;&#23545;&#35937;&#65292;&#20869;&#23384;&#21344;&#29992;&#65306;597M&#12290;&#10;function foo() &#123;&#10;&#9;this.value = &#39;name&#39;;&#10;&#125;&#10;&#10;foo.prototype = &#123;&#10;&#9;show: function() &#123;&#125;,&#10;&#9;close: function() &#123;&#125;&#10;&#125;;&#10;&#10;var arr = [];&#10;&#10;for(var i = 0; i &#60; 1000000; i++) &#123;&#10;&#9;arr.push(new foo());&#10;&#125;&#10;&#10;alert(&#39;OK&#39;);&#10;&#10;//&#26041;&#27861;&#20108;&#65306;&#21019;&#24314;&#19968;&#30334;&#19975;&#20010;&#31867;&#33258;&#24102;&#26041;&#27861;&#30340;&#23545;&#35937;&#65292;&#20869;&#23384;&#21344;&#29992;&#65306;1014M&#10;function foo() &#123;&#10;&#9;this.value = &#39;name&#39;;&#10;&#9;&#10;&#9;this.show = function() &#123;&#125;;&#10;&#9;this.close2 = function() &#123;&#125;;&#10;&#125;&#10;&#10;var arr = [];&#10;&#10;for(var i = 0; i &#60; 1000000; i++) &#123;&#10;&#9;arr.push(new foo());&#10;&#125;&#10;&#10;alert(&#39;OK&#39;);</span><br></pre></td></tr></table></figure>]]></content>
+    <summary type="html">
+    <![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span cla]]>
+    </summary>
+    
+      <category term="javascript" scheme="http://junozero.github.io/tags/javascript/"/>
+    
+      <category term="javascript" scheme="http://junozero.github.io/categories/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[如何高效复制数组]]></title>
+    <link href="http://junozero.github.io/2014/10/30/arrayCopy/"/>
+    <id>http://junozero.github.io/2014/10/30/arrayCopy/</id>
+    <published>2014-10-30T06:54:05.000Z</published>
+    <updated>2014-10-30T07:24:05.570Z</updated>
+    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var CopyArray = &#123;&#10;&#9;copy: function() &#123;&#10;&#9;&#9;return arguments;&#10;&#9;&#125;&#10;&#125;;&#10;&#10;var s,e;&#10;&#10;var arr = [], newArr = [], newArr2 = [], newArr3 = [], newArr4 = [];&#10;&#10;for (var i = 0; i &#60; 1000000; i++)&#123;&#10;&#9;arr.push(i);&#10;&#125;&#10;&#10;//===========================================================&#10;//&#26041;&#27861;&#19968;&#65306;&#26368;&#24930;&#30340;&#26041;&#27861;&#65292;&#24490;&#29615;&#36880;&#19968;&#25554;&#20837;&#12290;&#10;s = (new Date()).getTime();&#10;&#10;for (var i = 0, len = arr.length; i &#60; len; i++)&#123;&#10;&#9;newArr.push(arr[i]);&#10;&#125;&#10;&#10;e = (new Date()).getTime();&#10;&#10;alert(&#39;&#38271;&#24230;&#39;+newArr.length+&#39;&#65292;&#32791;&#26102;&#65306;&#39;+(e - s));&#10;&#10;//===========================================================&#10;//&#26041;&#27861;&#20108;&#65306;&#21033;&#29992;apply&#65292;&#25226;arr&#21464;&#25104;&#21442;&#25968;&#20256;&#36882;&#21040;copy&#26041;&#27861;&#20013;&#65292;&#28982;&#21518;&#36820;&#22238;&#20316;&#29992;&#22495;&#30340;&#21442;&#25968;&#65288;&#25968;&#32452;&#65289;&#10;s = (new Date()).getTime();&#10;&#10;newArr2 = CopyArray.copy.apply(null, arr);&#10;&#10;e = (new Date()).getTime();&#10;&#10;alert(&#39;&#38271;&#24230;&#39;+newArr2.length+&#39;&#65292;&#32791;&#26102;&#65306;&#39;+(e - s));&#10;&#10;&#10;//===========================================================&#10;//&#26041;&#27861;&#19977;&#65306;&#21033;&#29992;&#21407;API&#23454;&#29616;&#65292;&#36820;&#22238;&#25968;&#32452;&#30340;&#19968;&#27573;&#12290;&#10;s = (new Date()).getTime();&#10;&#10;newArr3 = arr.slice(0);&#10;&#10;e = (new Date()).getTime();&#10;&#10;alert(&#39;&#38271;&#24230;&#39;+newArr3.length+&#39;&#65292;&#32791;&#26102;&#65306;&#39;+(e - s));&#10;&#10;&#10;//===========================================================&#10;//&#26041;&#27861;&#22235;&#65306;&#20063;&#26159;&#21033;&#29992;&#21407;API&#23454;&#29616;&#65292;&#21033;&#29992;&#19968;&#20010;&#31354;&#25968;&#32452;&#19982;&#24453;&#22797;&#21046;&#30340;&#25968;&#25454;&#21512;&#24182;&#65292;&#36820;&#22238;&#22797;&#21046;&#21518;&#30340;&#25968;&#32452;&#12290;&#10;s = (new Date()).getTime();&#10;&#10;newArr4 = [].concat(arr);&#10;&#10;e = (new Date()).getTime();&#10;&#10;alert(&#39;&#38271;&#24230;&#39;+newArr4.length+&#39;&#65292;&#32791;&#26102;&#65306;&#39;+(e - s));</span><br></pre></td></tr></table></figure>]]></content>
+    <summary type="html">
+    <![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span cla]]>
+    </summary>
+    
+      <category term="javascript" scheme="http://junozero.github.io/tags/javascript/"/>
+    
+      <category term="效率" scheme="http://junozero.github.io/tags/%E6%95%88%E7%8E%87/"/>
+    
+      <category term="javascript" scheme="http://junozero.github.io/categories/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[JS的设计模式]]></title>
+    <link href="http://junozero.github.io/2014/10/30/JS%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://junozero.github.io/2014/10/30/JS的设计模式/</id>
+    <published>2014-10-30T06:40:40.000Z</published>
+    <updated>2014-10-30T07:23:29.190Z</updated>
+    <content type="html"><![CDATA[<p>##构造器模式（Constructor）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function Foo(value) &#123;&#10;&#9;this.value = value;&#10;&#125;&#10;&#10;Foo.prototype.toString = function() &#123;&#10;&#9;return this.value;&#10;&#125;&#10;&#10;var o = new Foo(&#39;test&#39;);&#10;console.log(o.toString());</span><br></pre></td></tr></table></figure></p>
+<p>构造器会使用new来构造一个新的对象，利用原型降低重复构造所造成的内存开销（如toString）。</p>
+<hr>
+<p>##模块化模式（Modular）<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var foo = &#123;&#10;&#9;value: &#39;test&#39;,                        //public&#10;&#9;toString: function() &#123;                //public&#10;&#9;&#9;return this.value;&#10;&#9;&#125;&#10;&#125;;&#10;console.log(foo.toString());&#10;&#10;var foo = (function() &#123;&#10;&#9;var value = &#8216;test&#8217;;                   //private&#10;&#9;return &#123;&#10;&#9;&#9;toString: function() &#123;            //public&#10;&#9;&#9;&#9;return value;&#10;&#9;&#9;&#125;&#10;&#9;&#125;&#10;&#125;)());&#10;console.log(foo.toString());</span><br></pre></td></tr></table></figure></p>
+<p>利用闭包原理可实现JS的私有信息模式。</p>
+<hr>
+<p>##单例模式（Singleton）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var singleton = (function() &#123;&#10;&#9;var instance;&#10;&#9;&#10;&#9;function init() &#123;&#10;&#9;&#9;var privateNum = Math.random();&#10;&#9;&#9;return &#123;&#10;&#9;&#9;&#9;value: privateNum&#10;&#9;&#9;&#125;&#10;&#9;&#125;&#10;&#10;&#9;return &#123;&#10;&#9;&#9;getInstance: function() &#123;&#10;&#9;&#9;&#9;if(!instance) &#123;&#10;&#9;&#9;&#9;&#9;instance = init();&#10;&#9;&#9;&#9;&#125;&#10;&#9;&#9;&#9;return instance;&#10;&#9;&#9;&#125;&#10;&#9;&#125;&#10;&#125;)();&#10;&#10;var a = singleton.getInstance();&#10;var b = singleton.getInstance();&#10;console.log(a.value === b.value);              //true</span><br></pre></td></tr></table></figure></p>
+<p>单例模式与静态实例其实一样，但单例可以懒构造，在真正用到之前，单例模式不需要分配资源或者内容。</p>
+<hr>
+<p>##观察者模式（Observer）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function Subject() &#123;&#10;&#9;this.serviceList = [];&#10;&#125;&#10;&#10;Subject.prototype = (&#123;&#10;&#9;addService: function(service) &#123;&#10;&#9;&#9;this.serviceList.push(service);&#10;&#9;&#125;,&#10;&#9;&#10;&#9;removeService: function(service) &#123;&#10;&#9;&#9;var len = this.serviceList.length;&#10;&#9;&#9;for(var i=0; i&#60;len; i++) &#123;&#10;&#9;&#9;&#9;if(this.serviceList[i] === service) &#123;&#10;&#9;&#9;&#9;&#9;this.serviceList.splice(i, 1);&#10;&#9;&#9;&#9;&#125;&#10;&#9;&#9;&#125;&#10;&#9;&#125;,&#10;&#10;&#9;notify: function(message) &#123;&#10;&#9;&#9;var len = this.serviceList.length;&#10;&#9;&#9;for(var i=0; i&#60;len; i++) &#123;&#10;&#9;&#9;&#9;this.serviceList[i].update(message);&#10;&#9;&#9;&#125;&#10;&#9;&#125;&#10;&#125;);&#10;&#10;//&#26500;&#36896;&#35266;&#23519;&#32773;&#30340;&#22522;&#30784;&#31867;&#10;function Service() &#123;&#10;&#9;this.update = function() &#123;&#125;;&#10;&#125;&#10;&#10;//&#31867;&#32487;&#25215;&#26041;&#27861;&#10;function extend(baseObj, extendObj) &#123;&#10;&#9;for(var key in baseObj) &#123;&#10;&#9;&#9;extendObj[key] = baseObj[key];&#10;&#9;&#125;&#10;&#125;&#10;&#10;//html&#10;&#60;button id=&#34;addService&#34;&#62;Add New Service&#60;/button&#62;&#10;&#60;input id=&#34;mainCheckBox&#34; type=&#34;checkbox&#34;&#62;&#10;&#60;div id=&#34;panel&#34;&#62;&#60;/div&#62;&#10;&#10;//&#20855;&#20307;&#23454;&#29616;&#10;var mainCheckBox = document.getElementById(&#39;mainCheckBox&#39;);&#10;var add = document.getElementById(&#39;addService&#39;);&#10;var panel = document.getElementById(&#39;panel&#39;);&#10;&#10;//&#26500;&#36896;&#20855;&#20307;&#30340;&#34987;&#35266;&#23519;&#32773;&#10;extend(new Subject(), mainCheckBox);&#10;&#10;//&#28857;&#20987;CheckBox&#21518;&#65292;&#23558;&#20250;&#36890;&#30693;&#35266;&#23519;&#32773;&#10;mainCheckBox.onclick = new Function(&#39;mainCheckBox.notify(mainCheckBox.checked)&#39;);&#10;&#10;//&#26500;&#36896;&#20855;&#20307;&#30340;&#35266;&#23519;&#32773;&#10;add.onclick = function() &#123;&#10;&#9;var check = document.createElement(&#39;input&#39;);&#10;&#9;check.type = &#39;checkbox&#39;;&#10;&#10;&#9;extend(new Service(), check);&#10;&#10;&#9;check.update = function(value) &#123;&#10;&#9;&#9;this.checked = value;&#10;&#9;&#125;;&#10;&#10;&#9;//&#25226;&#35266;&#23519;&#32773;&#21152;&#20837;&#21040;&#34987;&#35266;&#23519;&#32773;&#30340;&#36890;&#30693;&#21015;&#34920;&#20013;&#10;&#9;mainCheckBox.addService(check);&#10;&#10;&#9;panel.appendChild(check);&#10;&#125;;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>##中介者模式（Mediator）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#30456;&#23545;&#20110;&#35266;&#23519;&#32773;&#27169;&#24335;&#65292;&#20013;&#20171;&#32773;&#27169;&#24335;&#26356;&#20026;&#20307;&#29616;&#19968;&#20010;&#38598;&#20013;&#25511;&#21046;&#30340;&#27169;&#24335;&#12290;&#10;publish&#9;&#9;//&#21457;&#24067;&#10;subscribe&#9;//&#35746;&#38405;&#10;unsubscribe&#9;//&#21462;&#28040;&#35746;&#38405;&#10;&#10;var pubsub = &#123;&#125;;&#10;&#10;(function(p) &#123;&#10;&#9;var servicesList = &#123;&#125;;&#10;&#9;var key = 0;&#10;&#9;p.publish = function(serviceName, args) &#123;&#10;&#9;&#9;if(!servicesList[serviceName]) &#123;&#10;&#9;&#9;&#9;return false;&#10;&#9;&#9;&#125;&#10;&#10;&#9;&#9;var services = servicesList[serviceName];&#10;&#9;&#9;var len = services.length;&#10;&#9;&#9;while(len--) &#123;&#10;&#9;&#9;&#9;services[len].fn(serviceName, args);&#10;&#9;&#9;&#125;&#10;&#9;&#9;return this;&#10;&#9;&#125;&#10;&#10;&#9;p.subscribe = function(serviceName, fn) &#123;&#10;&#9;&#9;if(!servicesList[serviceName]) &#123;&#10;&#9;&#9;&#9;servicesList[serviceName] = [];&#10;&#9;&#9;&#125;&#10;&#9;&#9;servicesList[serviceName].push(&#123;&#10;&#9;&#9;&#9;&#34;key&#34;: ++key,&#10;&#9;&#9;&#9;&#34;fn&#34;: fn&#10;&#9;&#9;&#125;);&#10;&#9;&#9;return key;&#10;&#9;&#125;&#10;&#10;&#9;p.unsubscribe = function(key) &#123;&#10;&#9;&#9;var services, len;&#10;&#9;&#9;for(var m in servicesList) &#123;&#10;&#9;&#9;&#9;services = servicesList[m];&#10;&#9;&#9;&#9;if(services) &#123;&#10;&#9;&#9;&#9;&#9;var len = services.length;&#10;&#9;&#9;&#9;&#9;while(len--) &#123;&#10;&#9;&#9;&#9;&#9;&#9;if(services[len].key === key) &#123;&#10;&#9;&#9;&#9;&#9;&#9;&#9;services.splice(len, 1);&#10;&#9;&#9;&#9;&#9;&#9;&#9;return key;&#10;&#9;&#9;&#9;&#9;&#9;&#125;&#10;&#9;&#9;&#9;&#9;&#125;&#10;&#9;&#9;&#9;&#125;&#10;&#9;&#9;&#125;&#10;&#9;&#125;&#10;&#125;)(pubsub);&#10;&#10;function showMessage(msg) &#123;&#10;&#9;console.log(&#39;show:&#39; + msg);&#10;&#125;&#10;&#10;function showMessage2(msg) &#123;&#10;&#9;console.log(&#39;show2:&#39; + msg);&#10;&#125;&#10;&#10;pubsub.subscribe(&#39;text/msg&#39;, showMessage);&#10;pubsub.subscribe(&#39;text/msg&#39;, showMessage2);&#10;&#10;pubsub.publish(&#39;text/msg&#39;, &#39;is test&#39;);&#9;&#9;//show: is test show2: is test</span><br></pre></td></tr></table></figure></p>
+<p>观察者模式和中介者模式总结：<br>以房东租房子为例子，观察者模式下，房东就是被观察者，而租客就是观察者，当房东说有房子出租时，所有的房客都会收到通知并且去做相关的事情；而在中介者模式下，在房东与房客中间加入了中介，房东要告诉中介有房了，再由中介告诉租客。在单个房东的情况下，观察者模式可以很好的管理，但在多个房东与交叉的房客关系中，将会异常混乱，通过中介可以有效的解决关系混乱的问题。</p>
+<hr>
+<p>##原型模式（Ptorotype）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var prototypeCar = &#123;&#10;&#9;name: &#34;prototype&#34;&#10;&#125;;&#10;&#10;//&#26041;&#24335;&#19968;&#65306;&#10;var myCar = Object.create(prototypeCar);&#10;console.log(myCar.name);&#9;&#9;//prototype&#10;&#10;//&#26041;&#24335;&#20108;&#65306;&#10;var myCar2 = Object.create(prototypeCar, &#123;name: &#34;mycar&#34;&#125;);&#10;console.log(myCar2.name);&#9;&#9;//mycar&#10;&#10;//&#26041;&#24335;&#19977;&#65306;&#10;var myCar3 = &#123;&#125;;&#10;myCar3.prototype = prototypeCar;&#10;console.log(myCar.name);&#9;&#9;//prototype</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>##命令模式（Command Pattern）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function TvCommand(receiver) &#123;&#10;&#9;this.receiver = receiver;&#10;&#10;&#9;this.execute = function() &#123;&#10;&#9;&#9;receiver.action();&#10;&#9;&#125;;&#10;&#125;&#10;&#10;function turnOn() &#123;&#10;&#9;this.action = function() &#123;&#10;&#9;&#9;console.log(&#39;tv is turn on&#39;);&#10;&#9;&#125;&#10;&#125;&#10;&#10;function turnOff() &#123;&#10;&#9;this.action = function() &#123;&#10;&#9;&#9;console.log(&#39;tv is turn off&#39;);&#10;&#9;&#125;&#10;&#125;&#10;&#10;var TvManager = &#123;&#10;&#9;turnOn: function() &#123;&#10;&#9;&#9;new TvCommand(new turnOn()).execute();&#10;&#9;&#125;,&#10;&#9;turnOff: function() &#123;&#10;&#9;&#9;new TvCommand(new turnOff()).execute();&#10;&#9;&#125;&#10;&#125;;&#10;TvManager.turnOn();&#9;&#9;&#9;//tv is turn on&#10;TvManager.turnOff();&#9;&#9;&#9;//tv is turn off</span><br></pre></td></tr></table></figure></p>
+<p>命令模式用于“行为请求者”和“行为实现者”解耦，实现二者之间的松耦合，以便适应变化（分离变化与不变的因素）。</p>
+<hr>
+<p>##门面模式（Facade）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var addMyEvent = function(el, e, fn) &#123;&#10;&#9;if(el.addEventListener) &#123;&#10;&#9;&#9;el.addEventListener(e, fn, false);&#10;&#9;&#125; else if(el.attachEvent) &#123;&#10;&#9;&#9;el.attachEvent(&#39;on&#39; + e, fn);&#10;&#9;&#125; else &#123;&#10;&#9;&#9;el[&#39;on&#39; + e] = fn;&#10;&#9;&#125;&#10;&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>以上是一个跨浏览器增加事件监听的方法，采用门面模式，addMyEvent既为门面，对于使用者来说屏蔽了逻辑处理的复杂代码，而提供一个可实现需求而更友好的接口，可看成“方法抽象封装”。jQuery的$()、$().css()、$().attr()就是门面模式的经典代表。</p>
+<hr>
+<p>##工厂模式（Factory）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function Car(values) &#123;&#10;&#9;this.doors = values.doors || 4;&#10;&#9;this.color = values.color || &#39;black&#39;;&#10;&#125;&#10;&#10;function Truck(values) &#123;&#10;&#9;this.doors = values.doors || 2;&#10;&#9;this.color = values.color || &#39;blue&#39;;&#10;&#125;&#10;&#10;//&#26500;&#24314;&#20132;&#36890;&#24037;&#20855;&#30340;&#24037;&#21378;&#26041;&#27861;&#10;function VehicleFatory() &#123;&#125;&#10;&#10;VehicleFatory.prototype = (&#123;&#10;&#9;//&#20462;&#25913;&#24037;&#21378;&#26041;&#27861;&#21407;&#22411;&#65292;&#40664;&#35748;&#30340;&#20132;&#36890;&#24037;&#20855;&#20026;&#27773;&#36710;&#10;&#9;vehiclClass : Car,&#10;&#9;&#10;&#9;//&#26681;&#25454;&#21442;&#25968;&#21019;&#24314;&#20132;&#36890;&#24037;&#20855;&#24182;&#36820;&#22238;&#19968;&#20010;&#23454;&#20307;&#12290;&#10;&#9;createVehicle = function(values) &#123;&#10;&#9;&#9;if(values.type == &#39;car&#39;) &#123;&#10;&#9;&#9;&#9;this.vehiclClass = Car;&#10;&#9;&#9;&#125; else &#123;&#10;&#9;&#9;&#9;this.vehiclClass = Truck;&#10;&#9;&#9;&#125;&#10;&#9;&#9;return new this.vehiclClass(values);&#10;&#9;&#125;&#10;&#125;);&#10;&#10;var vFactory = new VehicleFatory();&#10;&#10;//&#21033;&#29992;&#20132;&#36890;&#24037;&#20855;&#24037;&#21378;&#21019;&#24314;&#19968;&#20010;&#27773;&#36710;&#31867;&#12290;&#10;var car = vFactory.createVehicle(&#123;type: &#39;car&#39;&#125;);&#10;&#10;//&#21033;&#29992;&#20132;&#36890;&#24037;&#20855;&#24037;&#21378;&#21019;&#24314;&#19968;&#20010;&#36135;&#36710;&#31867;&#12290;&#10;var truck = vFactory.createVehicle(&#123;type: &#39;truck&#39;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>通过代码构建一个工厂，当输出不同的参数就可以构建出不同的子类。</p>
+<hr>
+<p>##装饰者模式（Decorator Pattern）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function Macbook() &#123;&#10;&#9;this.cost = function()&#123; return 50; &#125;;&#10;&#9;this.screenSize = function() &#123; return 10.5; &#125;&#10;&#125;&#10;&#10;function Memory(macbook) &#123;&#10;&#9;var v = macbook.cost();&#10;&#9;macbook.cost = function() &#123;&#10;&#9;&#9;return v + 75;&#10;&#9;&#125;;&#10;&#125;&#10;&#10;function Engraving(macbook) &#123;&#10;&#9;var v = macbook.cost();&#10;&#9;macbook.cost = function() &#123;&#10;&#9;&#9;return v + 160;&#10;&#9;&#125;;&#10;&#125;&#10;&#10;var mb = new Macbook();&#10;console.log(mb.cost());&#9;&#9;&#9;//50&#10;&#10;Memory(mb);&#10;console.log(mb.cost());&#9;&#9;&#9;//125&#10;&#10;Engraving(mb);&#10;console.log(mb.cost());&#9;&#9;&#9;//285</span><br></pre></td></tr></table></figure></p>
+<p>以上案例，Memory和Engraving就是超类Macbook的装饰者，通过重载cost方法，在原有的基础价格上加上定制升级后的价格。</p>
+<hr>
+<p>##享元模式（Flyweight）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#20808;&#30475;&#19968;&#20010;&#24120;&#35268;&#23454;&#29616;&#30340;&#26041;&#27861;&#65292;&#20197;&#20070;&#31821;&#31649;&#29702;&#31995;&#32479;&#20026;&#20363;&#23376;&#12290;&#10;function Book(id, title, pageCount, isbn, getuser, gettime) &#123;&#10;&#9;this.id = id;&#10;&#9;this.title = title;&#10;&#9;this.pageCount = pageCount;&#10;&#9;this.isbn = isbn;&#10;&#9;this.getuser = getuser;&#10;&#9;this.gettime = gettime;&#10;&#9;this.status = &#39;O&#39;;&#10;&#125;&#10;&#10;Book.prototype = (&#123;&#10;&#9;getTitle : function() &#123;&#10;&#9;&#9;return this.title;&#10;&#9;&#125;,&#10;&#10;&#9;getBook : function(getuser, gettime) &#123;&#10;&#9;&#9;if(this.status == &#39;O&#39;) &#123;&#10;&#9;&#9;&#9;this.getuser = getuser;&#10;&#9;&#9;&#9;this.gettime = gettime;&#10;&#9;&#9;&#9;this.status = &#39;P&#39;;&#10;&#9;&#9;&#9;return true;&#10;&#9;&#9;&#125; else &#123;&#10;&#9;&#9;&#9;return false;&#10;&#9;&#9;&#125;&#10;&#9;&#125;&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>以上案例可以在小规模时工作的很好，但在一本书可能存在多个版本或者多个拷贝时，那么系统将会越来越慢。而享元模式就是把公共和私有的数据区分出来，既内在状态和外在状态，通过分析把更多可公用的数据进行整理，降低内容的占用。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#20139;&#20803;&#27169;&#24335;&#10;function Book(title, pageCount, isbn) &#123;&#10;&#9;this.title = title;&#10;&#9;this.pageCount = pageCount;&#10;&#9;this.isbn = isbn;&#10;&#125;&#10;//&#22806;&#22312;&#29366;&#24577;&#24050;&#32463;&#34987;&#31227;&#38500;&#12290;&#10;&#10;var BookFactory = (function() &#123;&#10;&#9;var books = &#123;&#125;, book;&#10;&#10;&#9;return &#123;&#10;&#9;&#9;createBook: function(title, pageCount, isbn) &#123;&#10;&#9;&#9;&#9;book = books[isbn];&#10;&#9;&#9;&#9;if(!book) &#123;&#10;&#9;&#9;&#9;&#9;book = new Book(title, pageCount, isbn);&#10;&#9;&#9;&#9;&#9;books[isbn] = book;&#10;&#9;&#9;&#9;&#125;&#10;&#9;&#9;&#9;return book;&#10;&#9;&#9;&#125;&#10;&#9;&#125;&#10;&#125;);&#10;//&#26500;&#24314;&#22522;&#26412;&#30340;&#24037;&#21378;&#29992;&#20110;&#26681;&#25454;ISBN&#21019;&#24314;&#25110;&#36820;&#22238;&#19968;&#26412;&#20070;&#12290;&#10;&#10;var BookRecordManager = (function() &#123;&#10;&#9;var bookRecordDatabase = &#123;&#125;;&#10;&#9;&#10;&#9;return &#123;&#10;&#9;&#9;addBookRecord : function(id, title, pageCount, isbn, getuser, gettime) &#123;&#10;&#9;&#9;&#9;var book = BookFactory.createBook(title, pageCount, isbn);&#10;&#9;&#9;&#9;&#10;&#9;&#9;&#9;bookRecordDatabase[id] = &#123;&#10;&#9;&#9;&#9;&#9;status: &#39;O&#39;,&#10;&#9;&#9;&#9;&#9;getuser: getuser,&#10;&#9;&#9;&#9;&#9;gettime: gettime,&#10;&#9;&#9;&#9;&#9;book: book&#10;&#9;&#9;&#9;&#125;;&#10;&#9;&#9;&#125;,&#10;&#10;&#9;&#9;getBook : function(id, getuser, gettime) &#123;&#10;&#9;&#9;&#9;var book = bookRecordDatabase[id];&#10;&#9;&#9;&#9;if(book &#38;&#38; book.status == &#39;O&#39;) &#123;&#10;&#9;&#9;&#9;&#9;book.getuser = getuser;&#10;&#9;&#9;&#9;&#9;book.gettime = gettime;&#10;&#9;&#9;&#9;&#9;book.status = &#39;P&#39;;&#10;&#9;&#9;&#9;&#9;return true;&#10;&#9;&#9;&#9;&#125; else &#123;&#10;&#9;&#9;&#9;&#9;return false;&#10;&#9;&#9;&#9;&#125;&#10;&#9;&#9;&#125;&#10;&#9;&#125;&#10;&#125;);&#10;//&#26500;&#24314;&#19968;&#20010;&#21333;&#20363;&#65292;&#29992;&#20110;&#31649;&#29702;&#25152;&#26377;&#30340;&#20070;&#31821;&#20449;&#24687;&#12290;&#36890;&#36807;&#20197;&#19978;&#27169;&#24335;&#65292;&#22312;&#26377;&#30456;&#21516;&#30340;&#20070;&#31821;&#22791;&#20221;&#26102;&#65292;&#20250;&#22823;&#22823;&#30340;&#38477;&#20302;&#20869;&#23384;&#30340;&#21344;&#29992;&#12290;</span><br></pre></td></tr></table></figure></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>##构造器模式（Constructor）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function Foo(value) &#123;&#10;&#9;this.value = value;&#10;&#125;&#10;&#10;Foo.prototype.toString = function() &#123;&#10;&#9;return this.value;&#10;&#125;&#10;&#10;var o = new Foo(&#39;test&#39;);&#10;console.log(o.toString());</span><br></pre></td></tr></table></figure></p>
+<p>构造器会使用new来构造一个新的对象，利用原型降低重复构造所造成的内存开销（如toString）。</p>
+<hr>
+<p>##模块化模式（Modular）<br>]]>
+    
+    </summary>
+    
+      <category term="javascript" scheme="http://junozero.github.io/tags/javascript/"/>
+    
+      <category term="javascript" scheme="http://junozero.github.io/categories/javascript/"/>
+    
+  </entry>
+  
+</feed>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="96R33OLJDi" />
+  
+  <title>w3c基础整理之ECMAScript（一） | 【JBlog】- 生命无Take two，更新需谨慎</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="##什么是ECMAScript一句话，ECMAScript是一套标准，是JavaScript的核心部分，JavaScript实现了ECMAScript的 标准并作出扩展，实现对网页控制的相关动作。
+
+##语法熟悉 Java、C 和 Perl 这些语言的开发者会发现 ECMAScript 的语法很容易掌握，因为它借用了这些语言的语法。Java 和 ECMAScript 有一些关键的语法特性相同，也有">
+<meta property="og:type" content="article">
+<meta property="og:title" content="w3c基础整理之ECMAScript（一）">
+<meta property="og:url" content="http://junozero.github.io/2014/12/26/w3c基础整理之ECMAScript（一）/index.html">
+<meta property="og:site_name" content="【JBlog】- 生命无Take two，更新需谨慎">
+<meta property="og:description" content="##什么是ECMAScript一句话，ECMAScript是一套标准，是JavaScript的核心部分，JavaScript实现了ECMAScript的 标准并作出扩展，实现对网页控制的相关动作。
+
+##语法熟悉 Java、C 和 Perl 这些语言的开发者会发现 ECMAScript 的语法很容易掌握，因为它借用了这些语言的语法。Java 和 ECMAScript 有一些关键的语法特性相同，也有">
+<meta property="og:image" content="http://images.54646a963df08.d01.nanoyun.com/QQ20141226101923.png">
+<meta property="og:updated_time" content="2014-12-29T01:22:29.903Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="w3c基础整理之ECMAScript（一）">
+<meta name="twitter:description" content="##什么是ECMAScript一句话，ECMAScript是一套标准，是JavaScript的核心部分，JavaScript实现了ECMAScript的 标准并作出扩展，实现对网页控制的相关动作。
+
+##语法熟悉 Java、C 和 Perl 这些语言的开发者会发现 ECMAScript 的语法很容易掌握，因为它借用了这些语言的语法。Java 和 ECMAScript 有一些关键的语法特性相同，也有">
+  
+    <link rel="alternative" href="/atom.xml" title="【JBlog】- 生命无Take two，更新需谨慎" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <!-- <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css"> -->
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+  <link rel="stylesheet" href="http://animator.ringotc.net/style/animator.min.css"/>
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner LightSpeedIn">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">【JBlog】- 生命无Take two，更新需谨慎</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">To be or not to be,this is a question</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/atom.xml">RSS</a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-w3c基础整理之ECMAScript（一）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/12/26/w3c基础整理之ECMAScript（一）/" class="article-date">
+  <time datetime="2014-12-26T01:55:00.000Z" itemprop="datePublished">12月 26 2014</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/w3c基础整理/">w3c基础整理</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      w3c基础整理之ECMAScript（一）
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##什么是ECMAScript<br>一句话，ECMAScript是一套标准，是JavaScript的核心部分，JavaScript实现了ECMAScript的 标准并作出扩展，实现对网页控制的相关动作。</p>
+<hr>
+<p>##语法<br>熟悉 Java、C 和 Perl 这些语言的开发者会发现 ECMAScript 的语法很容易掌握，因为它借用了这些语言的语法。<br>Java 和 ECMAScript 有一些关键的语法特性相同，也有一些完全不同。</p>
+<hr>
+<p>###区分大小写<br>与 Java 一样，变量、函数名、运算符以及其他一切东西都是区分大小写的。<br>比如：<br>变量 test 与变量 TEST 是不同的。</p>
+<hr>
+<p>###弱类型变量<br>与 Java 和 C 不同，ECMAScript 中的变量无特定的类型，定义变量时只用 var 运算符，可以将它初始化为任意值。<br>因此，可以随时改变变量所存数据的类型（尽量避免这样做）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var color = &#34;red&#34;;&#10;var num = 25;&#10;var visible = true;</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<hr>
+<p>##变量<br>请使用 var 运算符声明变量。<br>变量名需要遵守一些简单的规则。</p>
+<hr>
+<p>###声明变量<br>ECMAScript 中的变量是用 var 运算符（variable 的缩写）加变量名定义的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#23450;&#20041;&#19968;&#20010;test&#21464;&#37327;&#20026;hi&#12290;&#10;var test = &#39;hi&#39;;&#10;&#10;//&#21516;&#26102;&#23450;&#20041;test2&#21644;age&#21464;&#37327;&#65292;&#24182;&#20998;&#21035;&#36171;&#20540;&#23383;&#31526;&#20018;&#21644;&#25968;&#23383;&#31867;&#22411;&#12290;&#10;var test2 = &#39;hello&#39;, age = 25;&#10;//or&#10;var test2 = &#39;hello&#39;,&#10;&#9;age = 25;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>###不声明等于全局（严禁模式下报错）<br>ECMAScript 另一个有趣的方面（也是与大多数程序设计语言的主要区别），是在使用变量之前可以不必声明。如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var test1 = &#39;hello&#39;;&#10;test2 = &#39;world&#39;;&#10;&#10;alert(test1 + &#39; &#39; + test2);</span><br></pre></td></tr></table></figure></p>
+<p>上面的代码可以正常实行，就像test2已被声明一样。ECMAScript的解释程序遇到未声明过的标识符时，用该变量名创建一个<strong>全局变量</strong>，并将其初始化为指定的值。<br>这是该语言的便利之处，不过如果不能紧密跟踪变量，这样做也很危险。最好的习惯是像使用其他程序设计语言一样，<strong>总是声明所有变量</strong>。</p>
+<hr>
+<p>###命名规范（建议）<br>1、”_”下划线用于描述私有变量，如：_age = 27;<br>2、采用统一的命名规范，如Camel 标记法，首字母是小写的，接下来的字母都以大写字符开头。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var myTestValue = 0, mySecondValue = &#34;hi&#34;;</span><br></pre></td></tr></table></figure></p>
+<p>3、规范的变量命名前缀<br><img src="http://images.54646a963df08.d01.nanoyun.com/QQ20141226101923.png" alt=""></p>
+<hr>
+<p>##关键字<br>ECMA-262 定义了 ECMAScript 支持的一套关键字（keyword）。<br>这些关键字标识了 ECMAScript 语句的开头和/或结尾。根据规定，关键字是保留的，不能用作变量名或函数名。<br>下面是 ECMAScript 关键字的完整列表：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">break&#10;case&#10;catch&#10;continue&#10;default&#10;delete&#10;do&#10;else&#10;finally&#10;for&#10;function&#10;if&#10;in&#10;instanceof&#10;new&#10;return&#10;switch&#10;this&#10;throw&#10;try&#10;typeof&#10;var&#10;void&#10;while&#10;with&#10;``` &#10;&#10;&#10;---&#10;##&#20445;&#30041;&#23383;&#10;ECMA-262 &#23450;&#20041;&#20102; ECMAScript &#25903;&#25345;&#30340;&#19968;&#22871;&#20445;&#30041;&#23383;&#65288;reserved word&#65289;&#12290;&#10;&#20445;&#30041;&#23383;&#22312;&#26576;&#31181;&#24847;&#24605;&#19978;&#26159;&#20026;&#23558;&#26469;&#30340;&#20851;&#38190;&#23383;&#32780;&#20445;&#30041;&#30340;&#21333;&#35789;&#12290;&#22240;&#27492;&#20445;&#30041;&#23383;&#19981;&#33021;&#34987;&#29992;&#20316;&#21464;&#37327;&#21517;&#25110;&#20989;&#25968;&#21517;&#12290;&#10;ECMA-262 &#31532;&#19977;&#29256;&#20013;&#20445;&#30041;&#23383;&#30340;&#23436;&#25972;&#21015;&#34920;&#22914;&#19979;&#65306;</span><br></pre></td></tr></table></figure></p>
+<p>abstract<br>boolean<br>byte<br>char<br>class<br>const<br>debugger<br>double<br>enum<br>export<br>extends<br>final<br>float<br>goto<br>implements<br>import<br>int<br>interface<br>long<br>native<br>package<br>private<br>protected<br>public<br>short<br>static<br>super<br>synchronized<br>throws<br>transient<br>volatile<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;&#10;##*&#25968;&#25454;&#32467;&#26500;&#10;###&#20540;&#10;**&#22312; ECMAScript &#20013;&#65292;&#21464;&#37327;&#21487;&#20197;&#23384;&#22312;&#20004;&#31181;&#31867;&#22411;&#30340;&#20540;&#65292;&#21363;&#21407;&#22987;&#20540;&#21644;&#24341;&#29992;&#20540;&#12290;**&#10;1&#12289;&#21407;&#22987;&#20540;&#65306;&#10;&#23384;&#20648;&#22312;&#26632;&#65288;stack&#65289;&#20013;&#30340;&#31616;&#21333;&#25968;&#25454;&#27573;&#65292;&#20063;&#23601;&#26159;&#35828;&#65292;&#23427;&#20204;&#30340;&#20540;&#30452;&#25509;&#23384;&#20648;&#22312;&#21464;&#37327;&#35775;&#38382;&#30340;&#20301;&#32622;&#12290;&#10;&#10;2&#12289;&#24341;&#29992;&#20540;&#65306;&#10;&#23384;&#20648;&#22312;&#22534;&#65288;heap&#65289;&#20013;&#30340;&#23545;&#35937;&#65292;&#20063;&#23601;&#26159;&#35828;&#65292;&#23384;&#20648;&#22312;&#21464;&#37327;&#22788;&#30340;&#20540;&#26159;&#19968;&#20010;&#25351;&#38024;&#65288;point&#65289;&#65292;&#25351;&#21521;&#23384;&#20648;&#23545;&#35937;&#30340;&#20869;&#23384;&#22788;&#12290;&#10;&#10;&#20026;&#21464;&#37327;&#36171;&#20540;&#26102;&#65292;ECMAScript &#30340;&#35299;&#37322;&#31243;&#24207;&#24517;&#39035;&#21028;&#26029;&#35813;&#20540;&#26159;&#21407;&#22987;&#31867;&#22411;&#65292;&#36824;&#26159;&#24341;&#29992;&#31867;&#22411;&#12290;&#35201;&#23454;&#29616;&#36825;&#19968;&#28857;&#65292;&#35299;&#37322;&#31243;&#24207;&#21017;&#38656;&#23581;&#35797;&#21028;&#26029;&#35813;&#20540;&#26159;&#21542;&#20026; ECMAScript &#30340;&#21407;&#22987;&#31867;&#22411;&#20043;&#19968;&#65292;&#21363; Undefined&#12289;Null&#12289;Boolean&#12289;Number &#21644; String &#22411;&#12290;&#30001;&#20110;&#36825;&#20123;&#21407;&#22987;&#31867;&#22411;&#21344;&#25454;&#30340;&#31354;&#38388;&#26159;&#22266;&#23450;&#30340;&#65292;&#25152;&#20197;&#21487;&#23558;&#20182;&#20204;&#23384;&#20648;&#22312;&#36739;&#23567;&#30340;&#20869;&#23384;&#21306;&#22495; - &#26632;&#20013;&#12290;&#36825;&#26679;&#23384;&#20648;&#20415;&#20110;&#36805;&#36895;&#26597;&#23547;&#21464;&#37327;&#30340;&#20540;&#12290;&#10;&#22914;&#26524;&#19968;&#20010;&#20540;&#26159;&#24341;&#29992;&#31867;&#22411;&#30340;&#65292;&#37027;&#20040;&#23427;&#30340;&#23384;&#20648;&#31354;&#38388;&#23558;&#20174;&#22534;&#20013;&#20998;&#37197;&#12290;&#30001;&#20110;&#24341;&#29992;&#20540;&#30340;&#22823;&#23567;&#20250;&#25913;&#21464;&#65292;&#25152;&#20197;&#19981;&#33021;&#25226;&#23427;&#25918;&#22312;&#26632;&#20013;&#65292;&#21542;&#21017;&#20250;&#38477;&#20302;&#21464;&#37327;&#26597;&#23547;&#30340;&#36895;&#24230;&#12290;&#30456;&#21453;&#65292;&#25918;&#22312;&#21464;&#37327;&#30340;&#26632;&#31354;&#38388;&#20013;&#30340;&#20540;&#26159;&#35813;&#23545;&#35937;&#23384;&#20648;&#22312;&#22534;&#20013;&#30340;&#22320;&#22336;&#12290;&#22320;&#22336;&#30340;&#22823;&#23567;&#26159;&#22266;&#23450;&#30340;&#65292;&#25152;&#20197;&#25226;&#23427;&#23384;&#20648;&#22312;&#26632;&#20013;&#23545;&#21464;&#37327;&#24615;&#33021;&#26080;&#20219;&#20309;&#36127;&#38754;&#24433;&#21709;&#12290;&#22914;&#19979;&#22270;&#25152;&#31034;&#65306;&#10;![](http://images.54646a963df08.d01.nanoyun.com/ct_js_value.gif)&#10;&#10;&#10;---&#10;###&#21407;&#22987;&#31867;&#22411;&#10;**ECMAScript &#26377; 5 &#31181;&#21407;&#22987;&#31867;&#22411;&#65288;primitive type&#65289;&#65292;&#21363; Undefined&#12289;Null&#12289;Boolean&#12289;Number &#21644; String**&#10;&#10;---&#10;####1&#12289;undefined&#20027;&#35201;&#29992;&#20110;&#22768;&#26126;&#21464;&#37327;&#27809;&#26377;&#21021;&#22987;&#21270;&#12290;</span><br></pre></td></tr></table></figure></p>
+<p>var test;<br>alert(test);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#20197;&#19978;&#20195;&#30721;&#36755;&#20986;undefined&#65307;&#10;&#10;&#10;---&#10;####2&#12289;null&#20027;&#35201;&#29992;&#20110;&#21464;&#37327;&#27809;&#26377;&#22768;&#26126;&#12290;&#10;&#20294;&#23454;&#38469;&#19978;&#20540; undefined &#23454;&#38469;&#19978;&#26159;&#20174;&#20540; null &#27966;&#29983;&#26469;&#30340;&#65292;&#22240;&#27492; ECMAScript &#25226;&#23427;&#20204;&#23450;&#20041;&#20026;&#30456;&#31561;&#30340;&#12290;</span><br></pre></td></tr></table></figure></p>
+<p>alert(null == undefined);  //输出 true<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;&#10;---&#10;####3&#12289;Number&#31867;&#22411;&#26082;&#21487;&#20197;&#34920;&#31034; 32 &#20301;&#30340;&#25972;&#25968;&#65292;&#36824;&#21487;&#20197;&#34920;&#31034; 64 &#20301;&#30340;&#28014;&#28857;&#25968;</span><br></pre></td></tr></table></figure></p>
+<p>var nNum = 86;     //整数<br>var nNum2 = 86.6;  //浮点数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;&#10;---&#10;####4&#12289;&#22768;&#26126;&#20843;&#36827;&#21046;&#21644;&#21313;&#20845;&#36827;&#21046;&#25968;&#10;&#20843;&#36827;&#21046;&#23383;&#38754;&#37327;&#30340;&#39318;&#25968;&#23383;&#24517;&#39035;&#26159; 0&#65292;&#20854;&#21518;&#30340;&#25968;&#23383;&#21487;&#20197;&#26159;&#20219;&#20309;&#20843;&#36827;&#21046;&#25968;&#23383;&#65288;0-7&#65289;&#65307;&#10;&#20845;&#36827;&#21046;&#30340;&#23383;&#38754;&#37327;&#65292;&#39318;&#20301;&#25968;&#23383;&#24517;&#39035;&#20026; 0&#65292;&#21518;&#38754;&#25509;&#23383;&#27597; x&#65292;&#28982;&#21518;&#26159;&#20219;&#24847;&#30340;&#21313;&#20845;&#36827;&#21046;&#25968;&#23383;&#65288;0 &#21040; 9 &#21644; A &#21040; F&#65289;&#65292;&#36825;&#20123;&#23383;&#27597;&#21487;&#20197;&#26159;&#22823;&#20889;&#30340;&#65292;&#20063;&#21487;&#20197;&#26159;&#23567;&#20889;&#30340;&#12290;</span><br></pre></td></tr></table></figure></p>
+<p>//八进制<br>var iNum = 070;  //八进制070 等于十进制的 56</p>
+<p>//十六进制<br>var iNum = 0x1f;  //0x1f 等于十进制的 31<br>var iNum = 0xAB;  //0xAB 等于十进制的 171<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**&#27880;&#24847;&#65306;&#23613;&#31649;&#25152;&#26377;&#25972;&#25968;&#37117;&#21487;&#20197;&#34920;&#31034;&#20026;&#20843;&#36827;&#21046;&#25110;&#21313;&#20845;&#36827;&#21046;&#30340;&#23383;&#38754;&#37327;&#65292;&#20294;&#25152;&#26377;&#25968;&#23398;&#36816;&#31639;&#36820;&#22238;&#30340;&#37117;&#26159;&#21313;&#36827;&#21046;&#32467;&#26524;&#12290;**&#10;&#10;&#10;---&#10;####5&#12289;&#31185;&#23398;&#35745;&#25968;&#27861;&#10;ECMAScript &#40664;&#35748;&#25226;&#20855;&#26377; 6 &#20010;&#25110; 6 &#20010;&#20197;&#19978;&#21069;&#23548; 0 &#30340;&#28014;&#28857;&#25968;&#36716;&#25442;&#25104;&#31185;&#23398;&#35745;&#25968;&#27861;&#12290;</span><br></pre></td></tr></table></figure></p>
+<p>var fNum = 5.618e7        //56180000<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;&#10;---&#10;####6&#12289;&#23383;&#31526;&#23383;&#38754;&#37327;&#10;![](http://images.54646a963df08.d01.nanoyun.com/QQ20141226110601.png)&#10;&#10;&#10;---&#10;####7&#12289;&#36827;&#21046;&#36716;&#25442;</span><br></pre></td></tr></table></figure></p>
+<p>var v = 10;<br>//注意，返回的是字符串，建议运算只在十进制下进行，再转换结果。<br>//十进制转二进制<br>v.toString(2);            //输出 “1010”<br>//十进制转八进制<br>v.toString(8);            //输出 “12”<br>//十进制转十六进制<br>v.toString(16);            //输出 “A”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;</span><br></pre></td></tr></table></figure></p>
+<p>//十六进制转十进制<br>parseInt(“AF”, 16);        //返回 175<br>//二进制转十进制<br>parseInt(“10”, 2);        //返回 2<br>//八进制转十进制<br>parseInt(“10”, 8);        //返回 8<br>//十进制转十进制<br>parseInt(“10”, 10);        //返回 10<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;&#10;---&#10;####8&#12289;parseInf&#21644;parseFloat&#24517;&#39035;&#27880;&#24847;&#30340;&#22353;&#10;&#20197;&#19979;&#26696;&#20363;&#20197;parseInt&#20026;&#20363;&#23376;&#65292;parseFloat&#30456;&#21516;&#12290;&#10;&#10;parseInt&#39318;&#20808;&#26597;&#30475;&#20301;&#32622; 0 &#22788;&#30340;&#23383;&#31526;&#65292;&#21028;&#26029;&#23427;&#26159;&#21542;&#26159;&#20010;&#26377;&#25928;&#25968;&#23383;&#65307;&#22914;&#26524;&#19981;&#26159;&#65292;&#35813;&#26041;&#27861;&#23558;&#36820;&#22238; NaN&#65292;&#19981;&#20877;&#32487;&#32493;&#25191;&#34892;&#20854;&#20182;&#25805;&#20316;&#12290;&#20294;&#22914;&#26524;&#35813;&#23383;&#31526;&#26159;&#26377;&#25928;&#25968;&#23383;&#65292;&#35813;&#26041;&#27861;&#23558;&#26597;&#30475;&#20301;&#32622; 1 &#22788;&#30340;&#23383;&#31526;&#65292;&#36827;&#34892;&#21516;&#26679;&#30340;&#27979;&#35797;&#12290;&#36825;&#19968;&#36807;&#31243;&#23558;&#25345;&#32493;&#21040;&#21457;&#29616;&#38750;&#26377;&#25928;&#25968;&#23383;&#30340;&#23383;&#31526;&#20026;&#27490;&#65292;&#27492;&#26102; parseInt() &#23558;&#25226;&#35813;&#23383;&#31526;&#20043;&#21069;&#30340;&#23383;&#31526;&#20018;&#36716;&#25442;&#25104;&#25968;&#23383;&#12290;</span><br></pre></td></tr></table></figure></p>
+<p>parseInt(“123num”)            // 123<br>parseInt(“n123num”)            // NaN<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;&#10;---&#10;###&#24341;&#29992;&#31867;&#22411;&#10;**&#24341;&#29992;&#31867;&#22411;&#36890;&#24120;&#21483;&#20570;&#31867;&#65288;class&#65289;&#12290;**&#10;&#10;&#23601;&#26159;&#35828;&#65292;&#36935;&#21040;&#24341;&#29992;&#20540;&#65292;&#25152;&#22788;&#29702;&#30340;&#23601;&#26159;&#23545;&#35937;&#12290;&#10;&#10;&#24341;&#29992;&#31867;&#22411;&#21253;&#25324;&#20102;&#22823;&#37327;ECMAScript &#39044;&#23450;&#20041;&#22914;Object&#12289;Number&#21644;String&#31561;&#31867;&#21644;&#33258;&#23450;&#20041;&#30340;&#31867;&#12290;&#10;&#10;&#27880;&#24847;&#65306;&#20174;&#20256;&#32479;&#24847;&#20041;&#19978;&#26469;&#35828;&#65292;ECMAScript &#24182;&#19981;&#30495;&#27491;&#20855;&#26377;&#31867;&#12290;&#20107;&#23454;&#19978;&#65292;&#38500;&#20102;&#35828;&#26126;&#19981;&#23384;&#22312;&#31867;&#65292;&#22312; ECMA-262 &#20013;&#26681;&#26412;&#27809;&#26377;&#20986;&#29616;&#8220;&#31867;&#8221;&#36825;&#20010;&#35789;&#12290;ECMAScript &#23450;&#20041;&#20102;&#8220;&#23545;&#35937;&#23450;&#20041;&#8221;&#65292;&#36923;&#36753;&#19978;&#31561;&#20215;&#20110;&#20854;&#20182;&#31243;&#24207;&#35774;&#35745;&#35821;&#35328;&#20013;&#30340;&#31867;&#12290;&#10;&#10;&#10;---&#10;####Object&#23545;&#35937;&#10;Object &#23545;&#35937;&#33258;&#36523;&#29992;&#22788;&#19981;&#22823;&#65292;&#19981;&#36807;&#22312;&#20102;&#35299;&#20854;&#20182;&#31867;&#20043;&#21069;&#65292;&#36824;&#26159;&#24212;&#35813;&#20102;&#35299;&#23427;&#12290;&#22240;&#20026; ECMAScript &#20013;&#30340; Object &#23545;&#35937;&#19982; Java &#20013;&#30340; java.lang.Object &#30456;&#20284;&#65292;ECMAScript &#20013;&#30340;&#25152;&#26377;&#23545;&#35937;&#37117;&#30001;&#36825;&#20010;&#23545;&#35937;&#32487;&#25215;&#32780;&#26469;&#65292;Object &#23545;&#35937;&#20013;&#30340;&#25152;&#26377;&#23646;&#24615;&#21644;&#26041;&#27861;&#37117;&#20250;&#20986;&#29616;&#22312;&#20854;&#20182;&#23545;&#35937;&#20013;&#65292;&#25152;&#20197;&#29702;&#35299;&#20102; Object &#23545;&#35937;&#65292;&#23601;&#21487;&#20197;&#26356;&#22909;&#22320;&#29702;&#35299;&#20854;&#20182;&#23545;&#35937;&#12290;&#10;&#10;&#23646;&#24615;&#65306;&#10;1&#12289;constructor&#10;&#23545;&#21019;&#24314;&#23545;&#35937;&#30340;&#20989;&#25968;&#30340;&#24341;&#29992;&#65288;&#25351;&#38024;&#65289;&#12290;&#23545;&#20110; Object &#23545;&#35937;&#65292;&#35813;&#25351;&#38024;&#25351;&#21521;&#21407;&#22987;&#30340; Object() &#20989;&#25968;&#12290;&#10;&#10;2&#12289;prototype&#10;&#23545;&#35813;&#23545;&#35937;&#30340;&#23545;&#35937;&#21407;&#22411;&#30340;&#24341;&#29992;&#12290;&#23545;&#20110;&#25152;&#26377;&#30340;&#23545;&#35937;&#65292;&#23427;&#40664;&#35748;&#36820;&#22238; Object &#23545;&#35937;&#30340;&#19968;&#20010;&#23454;&#20363;&#12290;&#10;&#10;&#26041;&#27861;&#65306;&#10;1&#12289;hasOwnProperty(property)&#10;&#21028;&#26029;&#23545;&#35937;&#26159;&#21542;&#26377;&#26576;&#20010;&#29305;&#23450;&#30340;&#23646;&#24615;&#12290;&#24517;&#39035;&#29992;&#23383;&#31526;&#20018;&#25351;&#23450;&#35813;&#23646;&#24615;&#12290;&#65288;&#20363;&#22914;&#65292;o.hasOwnProperty(&#34;name&#34;)&#65289;&#10;&#10;2&#12289;isPrototypeOf(object)&#10;&#21028;&#26029;&#35813;&#23545;&#35937;&#26159;&#21542;&#20026;&#21478;&#19968;&#20010;&#23545;&#35937;&#30340;&#21407;&#22411;&#12290;&#10;&#10;3&#12289;propertyIsEnumerable&#10;&#21028;&#26029;&#32473;&#23450;&#30340;&#23646;&#24615;&#26159;&#21542;&#21487;&#20197;&#29992; for...in &#35821;&#21477;&#36827;&#34892;&#26522;&#20030;&#12290;&#10;&#10;4&#12289;valueOf()&#10;&#36820;&#22238;&#26368;&#36866;&#21512;&#35813;&#23545;&#35937;&#30340;&#21407;&#22987;&#20540;&#12290;&#23545;&#20110;&#35768;&#22810;&#23545;&#35937;&#65292;&#35813;&#26041;&#27861;&#36820;&#22238;&#30340;&#20540;&#37117;&#19982;toString() &#30340;&#36820;&#22238;&#20540;&#30456;&#21516;&#12290;&#10;&#10;5&#12289;toString()&#10;&#36820;&#22238;&#23545;&#35937;&#30340;&#21407;&#22987;&#23383;&#31526;&#20018;&#34920;&#31034;&#12290;&#23545;&#20110; Object &#23545;&#35937;&#65292;ECMA-262 &#27809;&#26377;&#23450;&#20041;&#36825;&#20010;&#20540;&#65292;&#25152;&#20197;&#19981;&#21516;&#30340; ECMAScript &#23454;&#29616;&#20855;&#26377;&#19981;&#21516;&#30340;&#20540;&#12290;&#10;&#10;&#10;---&#10;####&#39044;&#23450;&#20041;&#31867;&#65288;&#39044;&#23450;&#20041;&#24341;&#29992;&#31867;&#22411;&#65289;&#19982;&#21407;&#31867;&#22411;&#10;ECMAScript&#39044;&#23450;&#20041;&#30340;&#31867;&#21253;&#25324;&#65306;&#10;1&#12289;Array&#10;2&#12289;Boolean&#10;3&#12289;Date&#10;4&#12289;Math&#10;5&#12289;Number&#10;6&#12289;String&#10;7&#12289;RegExp&#10;8&#12289;Global&#10;&#10;&#10;Number&#31867;&#19982;Number&#30340;&#21306;&#21035;&#65306;</span><br></pre></td></tr></table></figure></p>
+<p>var v1 = 10;<br>var v2 = new Number(10);</p>
+<p>alert(v1);                // 10<br>alert(v2);                // 10</p>
+<p>alert(typeof v1);        // number<br>alert(typeof v2);        // object<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#19978;&#38754;&#30340;&#20195;&#30721;&#65292;v1&#23646;&#20110;&#21407;&#31867;&#22411;&#65292;&#32780;v2&#23646;&#20110;&#24341;&#29992;&#31867;&#22411;&#65292;&#34429;&#28982;&#23427;&#20204;&#36820;&#22238;&#30340;&#37117;&#26159;10&#65292;&#20294;&#23427;&#20204;&#30340;&#31867;&#22411;&#21364;&#19981;&#19968;&#33268;&#65292;v1&#30340;typeof&#20540;&#26159;number&#65292;v2&#26159;object&#12290;&#10;&#10;&#10;**&#27880;&#24847;&#65306;&#21407;&#22987;&#24341;&#29992;&#23545;&#35937;&#30340;&#25152;&#26377;&#23646;&#24615;&#21644;&#26041;&#27861;&#37117;&#21487;&#24212;&#29992;&#20110;&#21407;&#22987;&#20540;&#65288;&#21407;&#31867;&#22411;&#65289;&#19978;&#65292;&#22240;&#20026;&#23427;&#20204;&#26159;&#20266;&#23545;&#35937;&#12290;**&#10;&#10;&#10;---&#10;####instanceof&#36816;&#31639;&#31526;&#10;&#20808;&#19981;&#30475;&#20160;&#20040;&#26159;instanceof&#36816;&#31639;&#31526;&#65292;&#25105;&#20204;&#20808;&#20551;&#35774;&#19968;&#20010;&#38382;&#39064;&#65292;&#19978;&#36848;&#20195;&#30721;v2&#23454;&#38469;&#19978;&#37117;&#26159;number&#31867;&#22411;&#65292;&#20294;typeof&#21482;&#36820;&#22238;object&#65292;&#37027;&#26159;&#22240;&#20026;&#29992;typeof&#36816;&#31639;&#31526;&#37319;&#29992;&#24341;&#29992;&#31867;&#22411;&#23384;&#20648;&#20540;&#20250;&#20986;&#29616;&#19968;&#20010;&#38382;&#39064;&#65292;&#26080;&#35770;&#24341;&#29992;&#30340;&#26159;&#20160;&#20040;&#31867;&#22411;&#30340;&#23545;&#35937;&#65292;&#23427;&#37117;&#36820;&#22238; &#34;object&#34;&#65292;&#37027;&#20040;&#22914;&#20309;&#21028;&#26029;v2&#26159;&#19968;&#20010;Number&#21602;&#65311;&#36825;&#37324;&#23601;&#38656;&#35201;&#20511;&#21161;**instanceof**&#36816;&#31639;&#31526;&#20102;&#12290;</span><br></pre></td></tr></table></figure></p>
+<p>var v2 = new Number(10);</p>
+<p>alert(type v2 == ‘Number’);            // false<br>alert(v2 instanceof Number);        // true<br>```</p>
+<hr>
+<p>因ECMAScript内容过多，所以需要分开几篇进行整理，本篇主要对ECMAScript的简介和数据结构进行了整理，而下一篇将会对ECMAScript的函数和对象进行整理。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+	  
+		<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+		<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"32"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+	  
+	  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ECMA-262/">ECMA-262</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ECMAScript/">ECMAScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/教程/">教程</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/12/29/w3c基础整理之ECMAScript（二）/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          w3c基础整理之ECMAScript（二）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/12/24/w3c基础整理之javascript/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">w3c基础整理之javascript</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-w3c基础整理之ECMAScript（一）" data-title="w3c基础整理之ECMAScript（一）" data-url="http://junozero.github.io/2014/12/26/w3c基础整理之ECMAScript（一）/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'junozero'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap" style="margin-top: 80px;">
+<h3 class="widget-title"></h3>
+<script type="text/javascript">document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E%3Cscript charset="utf-8" src="http://rp.baidu.com/rp3w/3w.js?sid=1517466735662991446') + '&t=' + (Math.ceil(new Date()/3600000)) + unescape('"%3E%3C/script%3E'));</script>
+</div>
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分　类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/w3c基础整理/">w3c基础整理</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/yeoman/">yeoman</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端面试题/">前端面试题</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随心/">随心</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标　签</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ECMA-262/" style="font-size: 14.29px;">ECMA-262</a> <a href="/tags/ECMAScript/" style="font-size: 14.29px;">ECMAScript</a> <a href="/tags/css/" style="font-size: 18.57px;">css</a> <a href="/tags/css-hack/" style="font-size: 11.43px;">css hack</a> <a href="/tags/div/" style="font-size: 10px;">div</a> <a href="/tags/html/" style="font-size: 15.71px;">html</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/javascript/" style="font-size: 17.14px;">javascript</a> <a href="/tags/w3c/" style="font-size: 10px;">w3c</a> <a href="/tags/xhtml/" style="font-size: 12.86px;">xhtml</a> <a href="/tags/yeoman/" style="font-size: 10px;">yeoman</a> <a href="/tags/学习/" style="font-size: 20px;">学习</a> <a href="/tags/效率/" style="font-size: 11.43px;">效率</a> <a href="/tags/教程/" style="font-size: 20px;">教程</a> <a href="/tags/随心/" style="font-size: 10px;">随心</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最　新</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2014/12/30/前端奇奇怪怪的面试题集合一/">前端奇奇怪怪的面试题集合一</a>
+          </li>
+        
+          <li>
+            <a href="/2014/12/30/w3c基础整理之ECMAScript（三）/">w3c基础整理之ECMAScript（三）</a>
+          </li>
+        
+          <li>
+            <a href="/2014/12/29/w3c基础整理之ECMAScript（二）/">w3c基础整理之ECMAScript（二）</a>
+          </li>
+        
+          <li>
+            <a href="/2014/12/26/w3c基础整理之ECMAScript（一）/">w3c基础整理之ECMAScript（一）</a>
+          </li>
+        
+          <li>
+            <a href="/2014/12/24/w3c基础整理之javascript/">w3c基础整理之javascript</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=1&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=1974917765&verifier=b3036f78&dpc=1"></iframe>
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 JuNoZero<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+	
+  <script type="text/javascript">
+	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Feaf367df663ef6379476299331002ff8' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/atom.xml" class="mobile-nav-link">RSS</a>
+  
+</nav>
+    
+
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> -->
+<script src="http://cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+  
+  <a href="https://github.com/junozero"><img style="position: absolute; top: 0; left: 0; border: 0; z-index: 1;" src="https://camo.githubusercontent.com/c6286ade715e9bea433b4705870de482a654f78a/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_white_ffffff.png"></a>
+</body>
+</html>

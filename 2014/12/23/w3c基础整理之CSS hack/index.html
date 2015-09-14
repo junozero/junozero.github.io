@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="96R33OLJDi" />
+  
+  <title>w3c基础整理之CSS hack | 【JBlog】- 生命无Take two，更新需谨慎</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="##什么是CSS hack由于不同厂商的流览器或某浏览器的不同版本（如IE6-IE11,Firefox/Safari/Opera/Chrome等），对CSS的支持、解析不一样，导致在不同浏览器的环境中呈现出不一致的页面展现效果。这时，我们为了获得统一的页面效果，就需要针对不同的浏览器或不同版本写特定的CSS样式，我们把这个针对不同的浏览器/不同版本写相应的CSS code的过程，叫做CSS hac">
+<meta property="og:type" content="article">
+<meta property="og:title" content="w3c基础整理之CSS hack">
+<meta property="og:url" content="http://junozero.github.io/2014/12/23/w3c基础整理之CSS hack/index.html">
+<meta property="og:site_name" content="【JBlog】- 生命无Take two，更新需谨慎">
+<meta property="og:description" content="##什么是CSS hack由于不同厂商的流览器或某浏览器的不同版本（如IE6-IE11,Firefox/Safari/Opera/Chrome等），对CSS的支持、解析不一样，导致在不同浏览器的环境中呈现出不一致的页面展现效果。这时，我们为了获得统一的页面效果，就需要针对不同的浏览器或不同版本写特定的CSS样式，我们把这个针对不同的浏览器/不同版本写相应的CSS code的过程，叫做CSS hac">
+<meta property="og:image" content="http://images.54646a963df08.d01.nanoyun.com/QQ20141223145616.png">
+<meta property="og:updated_time" content="2014-12-23T08:11:18.153Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="w3c基础整理之CSS hack">
+<meta name="twitter:description" content="##什么是CSS hack由于不同厂商的流览器或某浏览器的不同版本（如IE6-IE11,Firefox/Safari/Opera/Chrome等），对CSS的支持、解析不一样，导致在不同浏览器的环境中呈现出不一致的页面展现效果。这时，我们为了获得统一的页面效果，就需要针对不同的浏览器或不同版本写特定的CSS样式，我们把这个针对不同的浏览器/不同版本写相应的CSS code的过程，叫做CSS hac">
+  
+    <link rel="alternative" href="/atom.xml" title="【JBlog】- 生命无Take two，更新需谨慎" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <!-- <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css"> -->
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+  <link rel="stylesheet" href="http://animator.ringotc.net/style/animator.min.css"/>
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner LightSpeedIn">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">【JBlog】- 生命无Take two，更新需谨慎</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">To be or not to be,this is a question</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/atom.xml">RSS</a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-w3c基础整理之CSS hack" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/12/23/w3c基础整理之CSS hack/" class="article-date">
+  <time datetime="2014-12-23T05:55:50.000Z" itemprop="datePublished">12月 23 2014</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/w3c基础整理/">w3c基础整理</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      w3c基础整理之CSS hack
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##什么是CSS hack<br>由于不同厂商的流览器或某浏览器的不同版本（如IE6-IE11,Firefox/Safari/Opera/Chrome等），对CSS的支持、解析不一样，导致在不同浏览器的环境中呈现出不一致的页面展现效果。这时，我们为了获得统一的页面效果，就需要针对不同的浏览器或不同版本写特定的CSS样式，我们把这个针对不同的浏览器/不同版本写相应的CSS code的过程，叫做CSS hack!</p>
+<hr>
+<p>##分类<br>CSS Hack大致有3种表现形式，CSS属性前缀法、选择器前缀法以及IE条件注释法（IE专用）Hack，实际项目中CSS Hack大部分是针对IE浏览器不同版本之间的表现差异而引入的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1&#12289;&#23646;&#24615;&#21069;&#32512;&#27861;(&#21363;&#31867;&#20869;&#37096;Hack)&#65306;&#20363;&#22914; IE6&#33021;&#35782;&#21035;&#19979;&#21010;&#32447;&#34;_&#34;&#21644;&#26143;&#21495;&#34; * &#34;&#65292;IE7&#33021;&#35782;&#21035;&#26143;&#21495;&#34; * &#34;&#65292;&#20294;&#19981;&#33021;&#35782;&#21035;&#19979;&#21010;&#32447;&#34;_&#34;&#65292;IE6~IE10&#37117;&#35748;&#35782;&#34;\9&#34;&#65292;&#20294;firefox&#21069;&#36848;&#19977;&#20010;&#37117;&#19981;&#33021;&#35748;&#35782;&#12290;&#10;&#10;2&#12289;&#36873;&#25321;&#22120;&#21069;&#32512;&#27861;(&#21363;&#36873;&#25321;&#22120;Hack)&#65306;&#20363;&#22914; IE6&#33021;&#35782;&#21035;*html .class&#123;&#125;&#65292;IE7&#33021;&#35782;&#21035;*+html .class&#123;&#125;&#25110;&#32773;*:first-child+html .class&#123;&#125;&#12290;&#10;&#10;3&#12289;IE&#26465;&#20214;&#27880;&#37322;&#27861;(&#21363;HTML&#26465;&#20214;&#27880;&#37322;Hack)&#65306;&#38024;&#23545;&#25152;&#26377;IE(&#27880;&#65306;IE10+&#24050;&#32463;&#19981;&#20877;&#25903;&#25345;&#26465;&#20214;&#27880;&#37322;)&#65306; &#60;!--[if IE]&#62;IE&#27983;&#35272;&#22120;&#26174;&#31034;&#30340;&#20869;&#23481; &#60;![endif]--&#62;&#65292;&#38024;&#23545;IE6&#21450;&#20197;&#19979;&#29256;&#26412;&#65306; &#60;!--[if lt IE 6]&#62;&#21482;&#22312;IE6-&#26174;&#31034;&#30340;&#20869;&#23481; &#60;![endif]--&#62;&#12290;&#36825;&#31867;Hack&#19981;&#20165;&#23545;CSS&#29983;&#25928;&#65292;&#23545;&#20889;&#22312;&#21028;&#26029;&#35821;&#21477;&#37324;&#38754;&#30340;&#25152;&#26377;&#20195;&#30721;&#37117;&#20250;&#29983;&#25928;&#12290;</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<hr>
+<p>##css中hack的应用<br>这里的应用指的前两种方式：css属性和css的选择器，一张图说明白，如何针对不同的浏览器做适当的hack。</p>
+<p>图中左边第一列的s、p、m分别是选择器hack、属性hack和Query Hack。<br><img src="http://images.54646a963df08.d01.nanoyun.com/QQ20141223145616.png" alt=""></p>
+<p>引用原文地址<a href="http://swordair.com/tools/css-hack-table/" target="_blank" rel="external">点我查看</a></p>
+<hr>
+<p>##html中hack的应用（IE）<br>这种方式是IE浏览器专有的Hack方式，微软官方推荐使用的hack方式。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#21482;&#22312;IE&#19979;&#29983;&#25928;&#10;&#60;!--[if IE]&#62;&#10;&#36825;&#27573;&#25991;&#23383;&#21482;&#22312;IE&#27983;&#35272;&#22120;&#26174;&#31034;&#10;&#60;![endif]--&#62;&#10;&#10;&#21482;&#22312;IE6&#19979;&#29983;&#25928;&#10;&#60;!--[if IE 6]&#62;&#10;&#36825;&#27573;&#25991;&#23383;&#21482;&#22312;IE6&#27983;&#35272;&#22120;&#26174;&#31034;&#10;&#60;![endif]--&#62;&#10;&#10;&#21482;&#22312;IE6&#20197;&#19978;&#29256;&#26412;&#29983;&#25928;&#10;&#60;!--[if gte IE 6]&#62;&#10;&#36825;&#27573;&#25991;&#23383;&#21482;&#22312;IE6&#20197;&#19978;(&#21253;&#25324;)&#29256;&#26412;IE&#27983;&#35272;&#22120;&#26174;&#31034;&#10;&#60;![endif]--&#62;&#10;&#10;&#21482;&#22312;IE8&#19978;&#19981;&#29983;&#25928;&#10;&#60;!--[if ! IE 8]&#62;&#10;&#36825;&#27573;&#25991;&#23383;&#22312;&#38750;IE8&#27983;&#35272;&#22120;&#26174;&#31034;&#10;&#60;![endif]--&#62;&#10;&#10;&#38750;IE&#27983;&#35272;&#22120;&#29983;&#25928;&#10;&#60;!--[if !IE]&#62;&#10;&#36825;&#27573;&#25991;&#23383;&#21482;&#22312;&#38750;IE&#27983;&#35272;&#22120;&#26174;&#31034;&#10;&#60;![endif]--&#62;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>##总结<br>由于本人的工作关系，做的是局域网内应用，基本无需处理hack，所以处理hack的经验少之又少，当对css hack整理一遍后，发现很痛心，本不应该存在的东西缺真真实实的存在着，它在污染着我们的代码，很多整理css hack的大师都希望不要再写hack、不需要hack、抵制hack。不过，到今天为止，如果不是为了兼容旧的浏览器，在新版本的浏览器中基本无需关注hack了，这是由于w3c与各浏览器厂商终于走向了“一致的标准” ，再过几年，相信hack就会慢慢的登上历史的舞台，成为过去。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+	  
+		<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+		<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"32"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+	  
+	  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css-hack/">css hack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/教程/">教程</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/12/24/css使未知高度的div内容垂直居中/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          css使未知高度的div内容垂直居中
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/12/22/w3c基础整理之float与clear/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">w3c基础整理之float与clear</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-w3c基础整理之CSS hack" data-title="w3c基础整理之CSS hack" data-url="http://junozero.github.io/2014/12/23/w3c基础整理之CSS hack/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'junozero'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap" style="margin-top: 80px;">
+<h3 class="widget-title"></h3>
+<script type="text/javascript">document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E%3Cscript charset="utf-8" src="http://rp.baidu.com/rp3w/3w.js?sid=1517466735662991446') + '&t=' + (Math.ceil(new Date()/3600000)) + unescape('"%3E%3C/script%3E'));</script>
+</div>
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分　类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/w3c基础整理/">w3c基础整理</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/yeoman/">yeoman</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端面试题/">前端面试题</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随心/">随心</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标　签</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ECMA-262/" style="font-size: 14.29px;">ECMA-262</a> <a href="/tags/ECMAScript/" style="font-size: 14.29px;">ECMAScript</a> <a href="/tags/css/" style="font-size: 18.57px;">css</a> <a href="/tags/css-hack/" style="font-size: 11.43px;">css hack</a> <a href="/tags/div/" style="font-size: 10px;">div</a> <a href="/tags/html/" style="font-size: 15.71px;">html</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/javascript/" style="font-size: 17.14px;">javascript</a> <a href="/tags/w3c/" style="font-size: 10px;">w3c</a> <a href="/tags/xhtml/" style="font-size: 12.86px;">xhtml</a> <a href="/tags/yeoman/" style="font-size: 10px;">yeoman</a> <a href="/tags/学习/" style="font-size: 20px;">学习</a> <a href="/tags/效率/" style="font-size: 11.43px;">效率</a> <a href="/tags/教程/" style="font-size: 20px;">教程</a> <a href="/tags/随心/" style="font-size: 10px;">随心</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最　新</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2014/12/30/前端奇奇怪怪的面试题集合一/">前端奇奇怪怪的面试题集合一</a>
+          </li>
+        
+          <li>
+            <a href="/2014/12/30/w3c基础整理之ECMAScript（三）/">w3c基础整理之ECMAScript（三）</a>
+          </li>
+        
+          <li>
+            <a href="/2014/12/29/w3c基础整理之ECMAScript（二）/">w3c基础整理之ECMAScript（二）</a>
+          </li>
+        
+          <li>
+            <a href="/2014/12/26/w3c基础整理之ECMAScript（一）/">w3c基础整理之ECMAScript（一）</a>
+          </li>
+        
+          <li>
+            <a href="/2014/12/24/w3c基础整理之javascript/">w3c基础整理之javascript</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=1&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=1974917765&verifier=b3036f78&dpc=1"></iframe>
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 JuNoZero<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+	
+  <script type="text/javascript">
+	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Feaf367df663ef6379476299331002ff8' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/atom.xml" class="mobile-nav-link">RSS</a>
+  
+</nav>
+    
+
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> -->
+<script src="http://cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+  
+  <a href="https://github.com/junozero"><img style="position: absolute; top: 0; left: 0; border: 0; z-index: 1;" src="https://camo.githubusercontent.com/c6286ade715e9bea433b4705870de482a654f78a/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_white_ffffff.png"></a>
+</body>
+</html>

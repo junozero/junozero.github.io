@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="96R33OLJDi" />
+  
+  <title>JS的设计模式 | 【JBlog】- 生命无Take two，更新需谨慎</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="##构造器模式（Constructor）1function Foo(value) &amp;#123;&amp;#10;&amp;#9;this.value = value;&amp;#10;&amp;#125;&amp;#10;&amp;#10;Foo.prototype.toString = function() &amp;#123;&amp;#10;&amp;#9;return this.value;&amp;#10;&amp;#125;&amp;#10;&amp;#10;var o = new Fo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS的设计模式">
+<meta property="og:url" content="http://junozero.github.io/2014/10/30/JS的设计模式/index.html">
+<meta property="og:site_name" content="【JBlog】- 生命无Take two，更新需谨慎">
+<meta property="og:description" content="##构造器模式（Constructor）1function Foo(value) &amp;#123;&amp;#10;&amp;#9;this.value = value;&amp;#10;&amp;#125;&amp;#10;&amp;#10;Foo.prototype.toString = function() &amp;#123;&amp;#10;&amp;#9;return this.value;&amp;#10;&amp;#125;&amp;#10;&amp;#10;var o = new Fo">
+<meta property="og:updated_time" content="2014-10-30T07:23:29.190Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS的设计模式">
+<meta name="twitter:description" content="##构造器模式（Constructor）1function Foo(value) &amp;#123;&amp;#10;&amp;#9;this.value = value;&amp;#10;&amp;#125;&amp;#10;&amp;#10;Foo.prototype.toString = function() &amp;#123;&amp;#10;&amp;#9;return this.value;&amp;#10;&amp;#125;&amp;#10;&amp;#10;var o = new Fo">
+  
+    <link rel="alternative" href="/atom.xml" title="【JBlog】- 生命无Take two，更新需谨慎" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <!-- <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css"> -->
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+  <link rel="stylesheet" href="http://animator.ringotc.net/style/animator.min.css"/>
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner LightSpeedIn">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">【JBlog】- 生命无Take two，更新需谨慎</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">To be or not to be,this is a question</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/atom.xml">RSS</a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-JS的设计模式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/30/JS的设计模式/" class="article-date">
+  <time datetime="2014-10-30T06:40:40.000Z" itemprop="datePublished">10月 30 2014</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JS的设计模式
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##构造器模式（Constructor）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function Foo(value) &#123;&#10;&#9;this.value = value;&#10;&#125;&#10;&#10;Foo.prototype.toString = function() &#123;&#10;&#9;return this.value;&#10;&#125;&#10;&#10;var o = new Foo(&#39;test&#39;);&#10;console.log(o.toString());</span><br></pre></td></tr></table></figure></p>
+<p>构造器会使用new来构造一个新的对象，利用原型降低重复构造所造成的内存开销（如toString）。</p>
+<hr>
+<p>##模块化模式（Modular）<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var foo = &#123;&#10;&#9;value: &#39;test&#39;,                        //public&#10;&#9;toString: function() &#123;                //public&#10;&#9;&#9;return this.value;&#10;&#9;&#125;&#10;&#125;;&#10;console.log(foo.toString());&#10;&#10;var foo = (function() &#123;&#10;&#9;var value = &#8216;test&#8217;;                   //private&#10;&#9;return &#123;&#10;&#9;&#9;toString: function() &#123;            //public&#10;&#9;&#9;&#9;return value;&#10;&#9;&#9;&#125;&#10;&#9;&#125;&#10;&#125;)());&#10;console.log(foo.toString());</span><br></pre></td></tr></table></figure></p>
+<p>利用闭包原理可实现JS的私有信息模式。</p>
+<hr>
+<p>##单例模式（Singleton）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var singleton = (function() &#123;&#10;&#9;var instance;&#10;&#9;&#10;&#9;function init() &#123;&#10;&#9;&#9;var privateNum = Math.random();&#10;&#9;&#9;return &#123;&#10;&#9;&#9;&#9;value: privateNum&#10;&#9;&#9;&#125;&#10;&#9;&#125;&#10;&#10;&#9;return &#123;&#10;&#9;&#9;getInstance: function() &#123;&#10;&#9;&#9;&#9;if(!instance) &#123;&#10;&#9;&#9;&#9;&#9;instance = init();&#10;&#9;&#9;&#9;&#125;&#10;&#9;&#9;&#9;return instance;&#10;&#9;&#9;&#125;&#10;&#9;&#125;&#10;&#125;)();&#10;&#10;var a = singleton.getInstance();&#10;var b = singleton.getInstance();&#10;console.log(a.value === b.value);              //true</span><br></pre></td></tr></table></figure></p>
+<p>单例模式与静态实例其实一样，但单例可以懒构造，在真正用到之前，单例模式不需要分配资源或者内容。</p>
+<hr>
+<p>##观察者模式（Observer）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function Subject() &#123;&#10;&#9;this.serviceList = [];&#10;&#125;&#10;&#10;Subject.prototype = (&#123;&#10;&#9;addService: function(service) &#123;&#10;&#9;&#9;this.serviceList.push(service);&#10;&#9;&#125;,&#10;&#9;&#10;&#9;removeService: function(service) &#123;&#10;&#9;&#9;var len = this.serviceList.length;&#10;&#9;&#9;for(var i=0; i&#60;len; i++) &#123;&#10;&#9;&#9;&#9;if(this.serviceList[i] === service) &#123;&#10;&#9;&#9;&#9;&#9;this.serviceList.splice(i, 1);&#10;&#9;&#9;&#9;&#125;&#10;&#9;&#9;&#125;&#10;&#9;&#125;,&#10;&#10;&#9;notify: function(message) &#123;&#10;&#9;&#9;var len = this.serviceList.length;&#10;&#9;&#9;for(var i=0; i&#60;len; i++) &#123;&#10;&#9;&#9;&#9;this.serviceList[i].update(message);&#10;&#9;&#9;&#125;&#10;&#9;&#125;&#10;&#125;);&#10;&#10;//&#26500;&#36896;&#35266;&#23519;&#32773;&#30340;&#22522;&#30784;&#31867;&#10;function Service() &#123;&#10;&#9;this.update = function() &#123;&#125;;&#10;&#125;&#10;&#10;//&#31867;&#32487;&#25215;&#26041;&#27861;&#10;function extend(baseObj, extendObj) &#123;&#10;&#9;for(var key in baseObj) &#123;&#10;&#9;&#9;extendObj[key] = baseObj[key];&#10;&#9;&#125;&#10;&#125;&#10;&#10;//html&#10;&#60;button id=&#34;addService&#34;&#62;Add New Service&#60;/button&#62;&#10;&#60;input id=&#34;mainCheckBox&#34; type=&#34;checkbox&#34;&#62;&#10;&#60;div id=&#34;panel&#34;&#62;&#60;/div&#62;&#10;&#10;//&#20855;&#20307;&#23454;&#29616;&#10;var mainCheckBox = document.getElementById(&#39;mainCheckBox&#39;);&#10;var add = document.getElementById(&#39;addService&#39;);&#10;var panel = document.getElementById(&#39;panel&#39;);&#10;&#10;//&#26500;&#36896;&#20855;&#20307;&#30340;&#34987;&#35266;&#23519;&#32773;&#10;extend(new Subject(), mainCheckBox);&#10;&#10;//&#28857;&#20987;CheckBox&#21518;&#65292;&#23558;&#20250;&#36890;&#30693;&#35266;&#23519;&#32773;&#10;mainCheckBox.onclick = new Function(&#39;mainCheckBox.notify(mainCheckBox.checked)&#39;);&#10;&#10;//&#26500;&#36896;&#20855;&#20307;&#30340;&#35266;&#23519;&#32773;&#10;add.onclick = function() &#123;&#10;&#9;var check = document.createElement(&#39;input&#39;);&#10;&#9;check.type = &#39;checkbox&#39;;&#10;&#10;&#9;extend(new Service(), check);&#10;&#10;&#9;check.update = function(value) &#123;&#10;&#9;&#9;this.checked = value;&#10;&#9;&#125;;&#10;&#10;&#9;//&#25226;&#35266;&#23519;&#32773;&#21152;&#20837;&#21040;&#34987;&#35266;&#23519;&#32773;&#30340;&#36890;&#30693;&#21015;&#34920;&#20013;&#10;&#9;mainCheckBox.addService(check);&#10;&#10;&#9;panel.appendChild(check);&#10;&#125;;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>##中介者模式（Mediator）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#30456;&#23545;&#20110;&#35266;&#23519;&#32773;&#27169;&#24335;&#65292;&#20013;&#20171;&#32773;&#27169;&#24335;&#26356;&#20026;&#20307;&#29616;&#19968;&#20010;&#38598;&#20013;&#25511;&#21046;&#30340;&#27169;&#24335;&#12290;&#10;publish&#9;&#9;//&#21457;&#24067;&#10;subscribe&#9;//&#35746;&#38405;&#10;unsubscribe&#9;//&#21462;&#28040;&#35746;&#38405;&#10;&#10;var pubsub = &#123;&#125;;&#10;&#10;(function(p) &#123;&#10;&#9;var servicesList = &#123;&#125;;&#10;&#9;var key = 0;&#10;&#9;p.publish = function(serviceName, args) &#123;&#10;&#9;&#9;if(!servicesList[serviceName]) &#123;&#10;&#9;&#9;&#9;return false;&#10;&#9;&#9;&#125;&#10;&#10;&#9;&#9;var services = servicesList[serviceName];&#10;&#9;&#9;var len = services.length;&#10;&#9;&#9;while(len--) &#123;&#10;&#9;&#9;&#9;services[len].fn(serviceName, args);&#10;&#9;&#9;&#125;&#10;&#9;&#9;return this;&#10;&#9;&#125;&#10;&#10;&#9;p.subscribe = function(serviceName, fn) &#123;&#10;&#9;&#9;if(!servicesList[serviceName]) &#123;&#10;&#9;&#9;&#9;servicesList[serviceName] = [];&#10;&#9;&#9;&#125;&#10;&#9;&#9;servicesList[serviceName].push(&#123;&#10;&#9;&#9;&#9;&#34;key&#34;: ++key,&#10;&#9;&#9;&#9;&#34;fn&#34;: fn&#10;&#9;&#9;&#125;);&#10;&#9;&#9;return key;&#10;&#9;&#125;&#10;&#10;&#9;p.unsubscribe = function(key) &#123;&#10;&#9;&#9;var services, len;&#10;&#9;&#9;for(var m in servicesList) &#123;&#10;&#9;&#9;&#9;services = servicesList[m];&#10;&#9;&#9;&#9;if(services) &#123;&#10;&#9;&#9;&#9;&#9;var len = services.length;&#10;&#9;&#9;&#9;&#9;while(len--) &#123;&#10;&#9;&#9;&#9;&#9;&#9;if(services[len].key === key) &#123;&#10;&#9;&#9;&#9;&#9;&#9;&#9;services.splice(len, 1);&#10;&#9;&#9;&#9;&#9;&#9;&#9;return key;&#10;&#9;&#9;&#9;&#9;&#9;&#125;&#10;&#9;&#9;&#9;&#9;&#125;&#10;&#9;&#9;&#9;&#125;&#10;&#9;&#9;&#125;&#10;&#9;&#125;&#10;&#125;)(pubsub);&#10;&#10;function showMessage(msg) &#123;&#10;&#9;console.log(&#39;show:&#39; + msg);&#10;&#125;&#10;&#10;function showMessage2(msg) &#123;&#10;&#9;console.log(&#39;show2:&#39; + msg);&#10;&#125;&#10;&#10;pubsub.subscribe(&#39;text/msg&#39;, showMessage);&#10;pubsub.subscribe(&#39;text/msg&#39;, showMessage2);&#10;&#10;pubsub.publish(&#39;text/msg&#39;, &#39;is test&#39;);&#9;&#9;//show: is test show2: is test</span><br></pre></td></tr></table></figure></p>
+<p>观察者模式和中介者模式总结：<br>以房东租房子为例子，观察者模式下，房东就是被观察者，而租客就是观察者，当房东说有房子出租时，所有的房客都会收到通知并且去做相关的事情；而在中介者模式下，在房东与房客中间加入了中介，房东要告诉中介有房了，再由中介告诉租客。在单个房东的情况下，观察者模式可以很好的管理，但在多个房东与交叉的房客关系中，将会异常混乱，通过中介可以有效的解决关系混乱的问题。</p>
+<hr>
+<p>##原型模式（Ptorotype）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var prototypeCar = &#123;&#10;&#9;name: &#34;prototype&#34;&#10;&#125;;&#10;&#10;//&#26041;&#24335;&#19968;&#65306;&#10;var myCar = Object.create(prototypeCar);&#10;console.log(myCar.name);&#9;&#9;//prototype&#10;&#10;//&#26041;&#24335;&#20108;&#65306;&#10;var myCar2 = Object.create(prototypeCar, &#123;name: &#34;mycar&#34;&#125;);&#10;console.log(myCar2.name);&#9;&#9;//mycar&#10;&#10;//&#26041;&#24335;&#19977;&#65306;&#10;var myCar3 = &#123;&#125;;&#10;myCar3.prototype = prototypeCar;&#10;console.log(myCar.name);&#9;&#9;//prototype</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>##命令模式（Command Pattern）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function TvCommand(receiver) &#123;&#10;&#9;this.receiver = receiver;&#10;&#10;&#9;this.execute = function() &#123;&#10;&#9;&#9;receiver.action();&#10;&#9;&#125;;&#10;&#125;&#10;&#10;function turnOn() &#123;&#10;&#9;this.action = function() &#123;&#10;&#9;&#9;console.log(&#39;tv is turn on&#39;);&#10;&#9;&#125;&#10;&#125;&#10;&#10;function turnOff() &#123;&#10;&#9;this.action = function() &#123;&#10;&#9;&#9;console.log(&#39;tv is turn off&#39;);&#10;&#9;&#125;&#10;&#125;&#10;&#10;var TvManager = &#123;&#10;&#9;turnOn: function() &#123;&#10;&#9;&#9;new TvCommand(new turnOn()).execute();&#10;&#9;&#125;,&#10;&#9;turnOff: function() &#123;&#10;&#9;&#9;new TvCommand(new turnOff()).execute();&#10;&#9;&#125;&#10;&#125;;&#10;TvManager.turnOn();&#9;&#9;&#9;//tv is turn on&#10;TvManager.turnOff();&#9;&#9;&#9;//tv is turn off</span><br></pre></td></tr></table></figure></p>
+<p>命令模式用于“行为请求者”和“行为实现者”解耦，实现二者之间的松耦合，以便适应变化（分离变化与不变的因素）。</p>
+<hr>
+<p>##门面模式（Facade）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var addMyEvent = function(el, e, fn) &#123;&#10;&#9;if(el.addEventListener) &#123;&#10;&#9;&#9;el.addEventListener(e, fn, false);&#10;&#9;&#125; else if(el.attachEvent) &#123;&#10;&#9;&#9;el.attachEvent(&#39;on&#39; + e, fn);&#10;&#9;&#125; else &#123;&#10;&#9;&#9;el[&#39;on&#39; + e] = fn;&#10;&#9;&#125;&#10;&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>以上是一个跨浏览器增加事件监听的方法，采用门面模式，addMyEvent既为门面，对于使用者来说屏蔽了逻辑处理的复杂代码，而提供一个可实现需求而更友好的接口，可看成“方法抽象封装”。jQuery的$()、$().css()、$().attr()就是门面模式的经典代表。</p>
+<hr>
+<p>##工厂模式（Factory）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function Car(values) &#123;&#10;&#9;this.doors = values.doors || 4;&#10;&#9;this.color = values.color || &#39;black&#39;;&#10;&#125;&#10;&#10;function Truck(values) &#123;&#10;&#9;this.doors = values.doors || 2;&#10;&#9;this.color = values.color || &#39;blue&#39;;&#10;&#125;&#10;&#10;//&#26500;&#24314;&#20132;&#36890;&#24037;&#20855;&#30340;&#24037;&#21378;&#26041;&#27861;&#10;function VehicleFatory() &#123;&#125;&#10;&#10;VehicleFatory.prototype = (&#123;&#10;&#9;//&#20462;&#25913;&#24037;&#21378;&#26041;&#27861;&#21407;&#22411;&#65292;&#40664;&#35748;&#30340;&#20132;&#36890;&#24037;&#20855;&#20026;&#27773;&#36710;&#10;&#9;vehiclClass : Car,&#10;&#9;&#10;&#9;//&#26681;&#25454;&#21442;&#25968;&#21019;&#24314;&#20132;&#36890;&#24037;&#20855;&#24182;&#36820;&#22238;&#19968;&#20010;&#23454;&#20307;&#12290;&#10;&#9;createVehicle = function(values) &#123;&#10;&#9;&#9;if(values.type == &#39;car&#39;) &#123;&#10;&#9;&#9;&#9;this.vehiclClass = Car;&#10;&#9;&#9;&#125; else &#123;&#10;&#9;&#9;&#9;this.vehiclClass = Truck;&#10;&#9;&#9;&#125;&#10;&#9;&#9;return new this.vehiclClass(values);&#10;&#9;&#125;&#10;&#125;);&#10;&#10;var vFactory = new VehicleFatory();&#10;&#10;//&#21033;&#29992;&#20132;&#36890;&#24037;&#20855;&#24037;&#21378;&#21019;&#24314;&#19968;&#20010;&#27773;&#36710;&#31867;&#12290;&#10;var car = vFactory.createVehicle(&#123;type: &#39;car&#39;&#125;);&#10;&#10;//&#21033;&#29992;&#20132;&#36890;&#24037;&#20855;&#24037;&#21378;&#21019;&#24314;&#19968;&#20010;&#36135;&#36710;&#31867;&#12290;&#10;var truck = vFactory.createVehicle(&#123;type: &#39;truck&#39;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>通过代码构建一个工厂，当输出不同的参数就可以构建出不同的子类。</p>
+<hr>
+<p>##装饰者模式（Decorator Pattern）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function Macbook() &#123;&#10;&#9;this.cost = function()&#123; return 50; &#125;;&#10;&#9;this.screenSize = function() &#123; return 10.5; &#125;&#10;&#125;&#10;&#10;function Memory(macbook) &#123;&#10;&#9;var v = macbook.cost();&#10;&#9;macbook.cost = function() &#123;&#10;&#9;&#9;return v + 75;&#10;&#9;&#125;;&#10;&#125;&#10;&#10;function Engraving(macbook) &#123;&#10;&#9;var v = macbook.cost();&#10;&#9;macbook.cost = function() &#123;&#10;&#9;&#9;return v + 160;&#10;&#9;&#125;;&#10;&#125;&#10;&#10;var mb = new Macbook();&#10;console.log(mb.cost());&#9;&#9;&#9;//50&#10;&#10;Memory(mb);&#10;console.log(mb.cost());&#9;&#9;&#9;//125&#10;&#10;Engraving(mb);&#10;console.log(mb.cost());&#9;&#9;&#9;//285</span><br></pre></td></tr></table></figure></p>
+<p>以上案例，Memory和Engraving就是超类Macbook的装饰者，通过重载cost方法，在原有的基础价格上加上定制升级后的价格。</p>
+<hr>
+<p>##享元模式（Flyweight）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#20808;&#30475;&#19968;&#20010;&#24120;&#35268;&#23454;&#29616;&#30340;&#26041;&#27861;&#65292;&#20197;&#20070;&#31821;&#31649;&#29702;&#31995;&#32479;&#20026;&#20363;&#23376;&#12290;&#10;function Book(id, title, pageCount, isbn, getuser, gettime) &#123;&#10;&#9;this.id = id;&#10;&#9;this.title = title;&#10;&#9;this.pageCount = pageCount;&#10;&#9;this.isbn = isbn;&#10;&#9;this.getuser = getuser;&#10;&#9;this.gettime = gettime;&#10;&#9;this.status = &#39;O&#39;;&#10;&#125;&#10;&#10;Book.prototype = (&#123;&#10;&#9;getTitle : function() &#123;&#10;&#9;&#9;return this.title;&#10;&#9;&#125;,&#10;&#10;&#9;getBook : function(getuser, gettime) &#123;&#10;&#9;&#9;if(this.status == &#39;O&#39;) &#123;&#10;&#9;&#9;&#9;this.getuser = getuser;&#10;&#9;&#9;&#9;this.gettime = gettime;&#10;&#9;&#9;&#9;this.status = &#39;P&#39;;&#10;&#9;&#9;&#9;return true;&#10;&#9;&#9;&#125; else &#123;&#10;&#9;&#9;&#9;return false;&#10;&#9;&#9;&#125;&#10;&#9;&#125;&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>以上案例可以在小规模时工作的很好，但在一本书可能存在多个版本或者多个拷贝时，那么系统将会越来越慢。而享元模式就是把公共和私有的数据区分出来，既内在状态和外在状态，通过分析把更多可公用的数据进行整理，降低内容的占用。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#20139;&#20803;&#27169;&#24335;&#10;function Book(title, pageCount, isbn) &#123;&#10;&#9;this.title = title;&#10;&#9;this.pageCount = pageCount;&#10;&#9;this.isbn = isbn;&#10;&#125;&#10;//&#22806;&#22312;&#29366;&#24577;&#24050;&#32463;&#34987;&#31227;&#38500;&#12290;&#10;&#10;var BookFactory = (function() &#123;&#10;&#9;var books = &#123;&#125;, book;&#10;&#10;&#9;return &#123;&#10;&#9;&#9;createBook: function(title, pageCount, isbn) &#123;&#10;&#9;&#9;&#9;book = books[isbn];&#10;&#9;&#9;&#9;if(!book) &#123;&#10;&#9;&#9;&#9;&#9;book = new Book(title, pageCount, isbn);&#10;&#9;&#9;&#9;&#9;books[isbn] = book;&#10;&#9;&#9;&#9;&#125;&#10;&#9;&#9;&#9;return book;&#10;&#9;&#9;&#125;&#10;&#9;&#125;&#10;&#125;);&#10;//&#26500;&#24314;&#22522;&#26412;&#30340;&#24037;&#21378;&#29992;&#20110;&#26681;&#25454;ISBN&#21019;&#24314;&#25110;&#36820;&#22238;&#19968;&#26412;&#20070;&#12290;&#10;&#10;var BookRecordManager = (function() &#123;&#10;&#9;var bookRecordDatabase = &#123;&#125;;&#10;&#9;&#10;&#9;return &#123;&#10;&#9;&#9;addBookRecord : function(id, title, pageCount, isbn, getuser, gettime) &#123;&#10;&#9;&#9;&#9;var book = BookFactory.createBook(title, pageCount, isbn);&#10;&#9;&#9;&#9;&#10;&#9;&#9;&#9;bookRecordDatabase[id] = &#123;&#10;&#9;&#9;&#9;&#9;status: &#39;O&#39;,&#10;&#9;&#9;&#9;&#9;getuser: getuser,&#10;&#9;&#9;&#9;&#9;gettime: gettime,&#10;&#9;&#9;&#9;&#9;book: book&#10;&#9;&#9;&#9;&#125;;&#10;&#9;&#9;&#125;,&#10;&#10;&#9;&#9;getBook : function(id, getuser, gettime) &#123;&#10;&#9;&#9;&#9;var book = bookRecordDatabase[id];&#10;&#9;&#9;&#9;if(book &#38;&#38; book.status == &#39;O&#39;) &#123;&#10;&#9;&#9;&#9;&#9;book.getuser = getuser;&#10;&#9;&#9;&#9;&#9;book.gettime = gettime;&#10;&#9;&#9;&#9;&#9;book.status = &#39;P&#39;;&#10;&#9;&#9;&#9;&#9;return true;&#10;&#9;&#9;&#9;&#125; else &#123;&#10;&#9;&#9;&#9;&#9;return false;&#10;&#9;&#9;&#9;&#125;&#10;&#9;&#9;&#125;&#10;&#9;&#125;&#10;&#125;);&#10;//&#26500;&#24314;&#19968;&#20010;&#21333;&#20363;&#65292;&#29992;&#20110;&#31649;&#29702;&#25152;&#26377;&#30340;&#20070;&#31821;&#20449;&#24687;&#12290;&#36890;&#36807;&#20197;&#19978;&#27169;&#24335;&#65292;&#22312;&#26377;&#30456;&#21516;&#30340;&#20070;&#31821;&#22791;&#20221;&#26102;&#65292;&#20250;&#22823;&#22823;&#30340;&#38477;&#20302;&#20869;&#23384;&#30340;&#21344;&#29992;&#12290;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+	  
+		<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+		<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"32"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+	  
+	  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/10/30/arrayCopy/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          如何高效复制数组
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/10/30/开始/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">开始 - 转变</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-JS的设计模式" data-title="JS的设计模式" data-url="http://junozero.github.io/2014/10/30/JS的设计模式/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'junozero'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap" style="margin-top: 80px;">
+<h3 class="widget-title"></h3>
+<script type="text/javascript">document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E%3Cscript charset="utf-8" src="http://rp.baidu.com/rp3w/3w.js?sid=1517466735662991446') + '&t=' + (Math.ceil(new Date()/3600000)) + unescape('"%3E%3C/script%3E'));</script>
+</div>
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分　类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/w3c基础整理/">w3c基础整理</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/yeoman/">yeoman</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端面试题/">前端面试题</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随心/">随心</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标　签</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ECMA-262/" style="font-size: 14.29px;">ECMA-262</a> <a href="/tags/ECMAScript/" style="font-size: 14.29px;">ECMAScript</a> <a href="/tags/css/" style="font-size: 18.57px;">css</a> <a href="/tags/css-hack/" style="font-size: 11.43px;">css hack</a> <a href="/tags/div/" style="font-size: 10px;">div</a> <a href="/tags/html/" style="font-size: 15.71px;">html</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/javascript/" style="font-size: 17.14px;">javascript</a> <a href="/tags/w3c/" style="font-size: 10px;">w3c</a> <a href="/tags/xhtml/" style="font-size: 12.86px;">xhtml</a> <a href="/tags/yeoman/" style="font-size: 10px;">yeoman</a> <a href="/tags/学习/" style="font-size: 20px;">学习</a> <a href="/tags/效率/" style="font-size: 11.43px;">效率</a> <a href="/tags/教程/" style="font-size: 20px;">教程</a> <a href="/tags/随心/" style="font-size: 10px;">随心</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最　新</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2014/12/30/前端奇奇怪怪的面试题集合一/">前端奇奇怪怪的面试题集合一</a>
+          </li>
+        
+          <li>
+            <a href="/2014/12/30/w3c基础整理之ECMAScript（三）/">w3c基础整理之ECMAScript（三）</a>
+          </li>
+        
+          <li>
+            <a href="/2014/12/29/w3c基础整理之ECMAScript（二）/">w3c基础整理之ECMAScript（二）</a>
+          </li>
+        
+          <li>
+            <a href="/2014/12/26/w3c基础整理之ECMAScript（一）/">w3c基础整理之ECMAScript（一）</a>
+          </li>
+        
+          <li>
+            <a href="/2014/12/24/w3c基础整理之javascript/">w3c基础整理之javascript</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=1&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=1974917765&verifier=b3036f78&dpc=1"></iframe>
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 JuNoZero<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+	
+  <script type="text/javascript">
+	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Feaf367df663ef6379476299331002ff8' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/atom.xml" class="mobile-nav-link">RSS</a>
+  
+</nav>
+    
+
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> -->
+<script src="http://cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+  
+  <a href="https://github.com/junozero"><img style="position: absolute; top: 0; left: 0; border: 0; z-index: 1;" src="https://camo.githubusercontent.com/c6286ade715e9bea433b4705870de482a654f78a/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_white_ffffff.png"></a>
+</body>
+</html>
